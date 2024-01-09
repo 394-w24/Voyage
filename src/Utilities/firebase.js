@@ -5,6 +5,7 @@ import { getStorage } from "firebase/storage";
 const firebaseConfig = {
   apiKey: "AIzaSyA91-_18TUxVdbhFNakL1IY1awbx4U1Djw",
   authDomain: "voyage-f348c.firebaseapp.com",
+  databaseURL: "https://voyage-f348c-default-rtdb.firebaseio.com/",
   projectId: "voyage-f348c",
   storageBucket: "voyage-f348c.appspot.com",
   messagingSenderId: "264265134110",
