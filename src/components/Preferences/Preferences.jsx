@@ -1,16 +1,18 @@
 import React from "react";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { createTheme, ThemeProvider} from "@mui/material/styles";
 import theme from "/src/theme/theme.jsx";
 import CustomAppBar from "../CustomAppBar";
 import CustomDrawer from "../CustomDrawer";
 
 import {
+  Button,
   Drawer,
   Grid,
   Box,
   Card,
   CardContent,
   Checkbox,
+  Container,
   AppBar,
   Toolbar,
   Typography,
@@ -51,6 +53,7 @@ function Preferences() {
         <CustomDrawer />
 
         <Box component="main" sx={{ flexGrow: 1, p: 3, marginTop: 8 }}>
+        <Container maxWidth="lg">
         <Typography variant="h5" gutterBottom>
           Preferences
         </Typography>
@@ -136,6 +139,12 @@ function Preferences() {
             </Card>
           </Grid>
         </Grid>
+        <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: 2 }}>
+        <Button variant="contained" size="large" color="primary">
+          Generate Recommendations
+        </Button>
+      </Box>
+        </Container>
       </Box>
       </Box>
     </ThemeProvider>

@@ -21,10 +21,8 @@ import theme from "/src/theme/theme.jsx";
 import CustomAppBar from "../CustomAppBar";
 import CustomDrawer from "../CustomDrawer";
 
-// Add any additional imports you might need
 
-const Recommendations = () => {
-  // Add state and methods here if needed
+const Profile = () => {
 
   return (
     <ThemeProvider theme={theme}>
@@ -33,7 +31,7 @@ const Recommendations = () => {
       <Container maxWidth="lg">
         <Box component="main" sx={{ flexGrow: 1, p: 3, marginTop: 8 }}>
         <Typography variant="h5" gutterBottom>
-          Recommendations
+          Profile
         </Typography>
         </Box>
       </Container>
@@ -41,4 +39,4 @@ const Recommendations = () => {
   );
 }
 
-export default Recommendations;
+export default Profile;
