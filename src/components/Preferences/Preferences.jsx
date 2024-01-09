@@ -1,6 +1,6 @@
 import React from "react";
-import { firebaseSignOut } from "../../Utilities/firebaseUtils";
-import { useNavigate } from "react-router-dom";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import purple from "@mui/material/colors/purple";
 import {
   Drawer,
   Grid,
@@ -21,7 +21,6 @@ import {
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import SettingsIcon from "@mui/icons-material/Settings";
 import StarRateIcon from "@mui/icons-material/StarRate";
-
 import BeachAccessIcon from "@mui/icons-material/BeachAccess";
 import LocationCityIcon from "@mui/icons-material/LocationCity";
 import LandscapeIcon from "@mui/icons-material/Landscape";
@@ -36,41 +35,45 @@ const theme = createTheme({
     primary: {
       main: purple[500],
     },
-
   },
 });
 
-function App() {
-    const preferences = [
-        { icon: <BeachAccessIcon style={{ fontSize: 60 }} />, label: 'Tropical' },
-        { icon: <LocationCityIcon style={{ fontSize: 60 }} />, label: 'City' },
-        { icon: <LandscapeIcon style={{ fontSize: 60 }} />, label: 'Mountains' },
-        { icon: <AirportShuttleIcon style={{ fontSize: 60 }} />, label: 'Roadtrip' },
-        { icon: <CabinIcon style={{ fontSize: 60 }} />, label: 'Camping' },
-        { icon: <DirectionsBoatIcon style={{ fontSize: 60 }} />, label: 'Cruise' }
-      ];
-      
-  return (
-    <Box sx={{ display: 'flex' }}>
-      <AppBar position="fixed" sx={{ width: `calc(100% - ${drawerWidth}px)`, ml: `${drawerWidth}px` }}>
-        <Toolbar>
-          <Typography variant="h6" noWrap>
-            Voyage
-          </Typography>
-        </Toolbar>
-      </AppBar>
+const options = [
+  { icon: <BeachAccessIcon style={{ fontSize: 60 }} />, label: 'Tropical' },
+  { icon: <LocationCityIcon style={{ fontSize: 60 }} />, label: 'City' },
+  { icon: <LandscapeIcon style={{ fontSize: 60 }} />, label: 'Mountains' },
+  { icon: <AirportShuttleIcon style={{ fontSize: 60 }} />, label: 'Roadtrip' },
+  { icon: <CabinIcon style={{ fontSize: 60 }} />, label: 'Camping' },
+  { icon: <DirectionsBoatIcon style={{ fontSize: 60 }} />, label: 'Cruise' }
+];
 
-      <Drawer
-        variant="permanent"
-        sx={{
-          width: drawerWidth,
-          flexShrink: 0,
-          [`& .MuiDrawer-paper`]: {
+function Preferences() {
+  const signout = () => {
+    // Sign out logic
+  };
+
+  return (
+    <ThemeProvider theme={theme}>
+      <Box sx={{ display: 'flex' }}>
+        <AppBar position="fixed" sx={{ width: `calc(100% - ${drawerWidth}px)`, ml: `${drawerWidth}px` }}>
+          <Toolbar>
+            <Typography variant="h6" noWrap>
+              Voyage
+            </Typography>
+          </Toolbar>
+        </AppBar>
+
+        <Drawer
+          variant="permanent"
+          sx={{
             width: drawerWidth,
-            boxSizing: "border-box",
-          },
-        }}
-      >
+            flexShrink: 0,
+            [`& .MuiDrawer-paper`]: {
+              width: drawerWidth,
+              boxSizing: "border-box",
+            },
+          }}
+        >
         <List>
           <ListItem button>
             <ListItemIcon>
@@ -91,15 +94,15 @@ function App() {
             <ListItemText primary="Recommendations" />
           </ListItem>
         </List>
-        <button onClick={signout}>Signout</button>
-      </Drawer>
+          <button onClick={signout}>Signout</button>
+        </Drawer>
 
-      <Box component="main" sx={{ flexGrow: 1, p: 3, marginTop: 8 }}>
+        <Box component="main" sx={{ flexGrow: 1, p: 3, marginTop: 8 }}>
         <Typography variant="h5" gutterBottom>
           Preferences
         </Typography>
         <Grid container spacing={3}>
-          {preferences.map((preference, index) => (
+          {options.map((preference, index) => (
             <Grid item xs={12} sm={6} md={4} key={index}>
               <Card>
                 <CardContent>
@@ -181,9 +184,9 @@ function App() {
           </Grid>
         </Grid>
       </Box>
-    </Box>
+      </Box>
     </ThemeProvider>
   );
 }
 
-export default RecommendationsPage;
+export default Preferences;
