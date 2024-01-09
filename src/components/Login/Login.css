@@ -1,11 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Concert+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap");
-@font-face {
-  font-family: "Gilroy";
-  src: url("https://raw.githubusercontent.com/Hongda-OSU/PicGo-2.3.1/master/imgGilroy-Regular.ttf");
-  font-display: swap;
-}
 
 .login-page {
   width: 100dvw;

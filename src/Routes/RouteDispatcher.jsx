@@ -1,8 +1,8 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import { useAuthState } from "../utilities/firebaseUtils";
+import { useAuthState } from "../Utilities/firebaseUtils";
 import Login from "../Components/Login/Login";
-import RecommendationsPage from "../Components/recommendations/recommendationsPage";
-import PreferencesPage from "../Components/preferences/PreferencesPage";
+import RecommendationsPage from "../Components/Recommendations/RecommendationsPage";
+import PreferencesPage from "../Components/Preferences/PreferencesPage";
 
 const RouteDispatcher = () => {
   const [user, loading] = useAuthState();
@@ -14,8 +14,7 @@ const RouteDispatcher = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Login />} />
-        {/* <Route
+        <Route
           path="/"
           element={
             user ? (
@@ -24,7 +23,8 @@ const RouteDispatcher = () => {
               <Navigate replace to="recommendation" />
             )
           }
-        /> */}
+        />
+        <Route path="login" element={<Login />} />
         <Route path="recommendation" element={<RecommendationsPage />} />
         <Route path="preferences" element={<PreferencesPage />} />
       </Routes>

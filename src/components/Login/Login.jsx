@@ -67,6 +67,7 @@ const Login = () => {
               <OutlinedInput
                 className="email-input"
                 type={"text"}
+                value={email}
                 placeholder={"Email or phone number"}
                 sx={{
                   "& fieldset": { border: "none" },
@@ -88,6 +89,7 @@ const Login = () => {
               <OutlinedInput
                 className="password-input"
                 type={showPassword ? "text" : "password"}
+                value={password}
                 placeholder={"Enter Password"}
                 sx={{
                   "& fieldset": { border: "none" },

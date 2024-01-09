@@ -1,32 +1,66 @@
-import React from 'react';
-import { Drawer, Grid, Box, Card, CardContent, Checkbox, AppBar, Toolbar, Typography, List, ListItem, ListItemIcon, ListItemText, TextField } from '@mui/material';
+import React from "react";
+import { firebaseSignOut } from "../../Utilities/firebaseUtils";
+import { useNavigate } from "react-router-dom";
+import {
+  Drawer,
+  Grid,
+  Box,
+  Card,
+  CardContent,
+  Checkbox,
+  AppBar,
+  Toolbar,
+  Typography,
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
+  TextField,
+} from "@mui/material";
 
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import SettingsIcon from '@mui/icons-material/Settings';
-import StarRateIcon from '@mui/icons-material/StarRate';
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import SettingsIcon from "@mui/icons-material/Settings";
+import StarRateIcon from "@mui/icons-material/StarRate";
 
-import BeachAccessIcon from '@mui/icons-material/BeachAccess';
-import LocationCityIcon from '@mui/icons-material/LocationCity';
-import LandscapeIcon from '@mui/icons-material/Landscape';
-import AirportShuttleIcon from '@mui/icons-material/AirportShuttle';
-import CabinIcon from '@mui/icons-material/Cabin';
-import DirectionsBoatIcon from '@mui/icons-material/DirectionsBoat';
+import BeachAccessIcon from "@mui/icons-material/BeachAccess";
+import LocationCityIcon from "@mui/icons-material/LocationCity";
+import LandscapeIcon from "@mui/icons-material/Landscape";
+import AirportShuttleIcon from "@mui/icons-material/AirportShuttle";
+import CabinIcon from "@mui/icons-material/Cabin";
+import DirectionsBoatIcon from "@mui/icons-material/DirectionsBoat";
 
 const drawerWidth = 240;
 
-function App() {
-    const preferences = [
-        { icon: <BeachAccessIcon style={{ fontSize: 60 }} />, label: 'Tropical' },
-        { icon: <LocationCityIcon style={{ fontSize: 60 }} />, label: 'City' },
-        { icon: <LandscapeIcon style={{ fontSize: 60 }} />, label: 'Mountains' },
-        { icon: <AirportShuttleIcon style={{ fontSize: 60 }} />, label: 'Roadtrip' },
-        { icon: <CabinIcon style={{ fontSize: 60 }} />, label: 'Camping' },
-        { icon: <DirectionsBoatIcon style={{ fontSize: 60 }} />, label: 'Cruise' }
-      ];
-      
+function RecommendationsPage() {
+  const preferences = [
+    { icon: <BeachAccessIcon style={{ fontSize: 60 }} />, label: "Tropical" },
+    { icon: <LocationCityIcon style={{ fontSize: 60 }} />, label: "City" },
+    { icon: <LandscapeIcon style={{ fontSize: 60 }} />, label: "Mountains" },
+    {
+      icon: <AirportShuttleIcon style={{ fontSize: 60 }} />,
+      label: "Roadtrip",
+    },
+    { icon: <CabinIcon style={{ fontSize: 60 }} />, label: "Camping" },
+    { icon: <DirectionsBoatIcon style={{ fontSize: 60 }} />, label: "Cruise" },
+  ];
+
+  const navigate = useNavigate();
+  const signout = () => {
+    firebaseSignOut()
+      .then(() => {
+        navigate("/login");
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  };
+
   return (
-    <Box sx={{ display: 'flex' }}>
-      <AppBar position="fixed" sx={{ width: `calc(100% - ${drawerWidth}px)`, ml: `${drawerWidth}px` }}>
+    <Box sx={{ display: "flex" }}>
+      <AppBar
+        position="fixed"
+        sx={{ width: `calc(100% - ${drawerWidth}px)`, ml: `${drawerWidth}px` }}
+      >
         <Toolbar>
           <Typography variant="h6" noWrap>
             Voyage
@@ -39,7 +73,10 @@ function App() {
         sx={{
           width: drawerWidth,
           flexShrink: 0,
-          [`& .MuiDrawer-paper`]: { width: drawerWidth, boxSizing: 'border-box' },
+          [`& .MuiDrawer-paper`]: {
+            width: drawerWidth,
+            boxSizing: "border-box",
+          },
         }}
       >
         <List>
@@ -62,6 +99,7 @@ function App() {
             <ListItemText primary="Recommendations" />
           </ListItem>
         </List>
+        <button onClick={signout}>Signout</button>
       </Drawer>
 
       <Box component="main" sx={{ flexGrow: 1, p: 3, marginTop: 8 }}>
@@ -73,13 +111,19 @@ function App() {
             <Grid item xs={12} sm={6} md={4} key={index}>
               <Card>
                 <CardContent>
-                <Box display="flex" flexDirection="column" alignItems="center">
+                  <Box
+                    display="flex"
+                    flexDirection="column"
+                    alignItems="center"
+                  >
                     <Box display="flex" alignItems="center">
-                        {preference.icon}
-                        <Checkbox />
+                      {preference.icon}
+                      <Checkbox />
                     </Box>
-                    <Typography variant="subtitle1">{preference.label}</Typography>
-                    </Box>
+                    <Typography variant="subtitle1">
+                      {preference.label}
+                    </Typography>
+                  </Box>
                 </CardContent>
               </Card>
             </Grid>
@@ -94,8 +138,18 @@ function App() {
             <Card>
               <CardContent>
                 <Typography variant="h6">Min/Max Price Range</Typography>
-                <TextField label="Min" variant="outlined" margin="normal" fullWidth />
-                <TextField label="Max" variant="outlined" margin="normal" fullWidth />
+                <TextField
+                  label="Min"
+                  variant="outlined"
+                  margin="normal"
+                  fullWidth
+                />
+                <TextField
+                  label="Max"
+                  variant="outlined"
+                  margin="normal"
+                  fullWidth
+                />
               </CardContent>
             </Card>
           </Grid>
@@ -112,9 +166,24 @@ function App() {
             <Card>
               <CardContent>
                 <Typography variant="h6">Budget Details</Typography>
-                <TextField label="Hotel" variant="outlined" margin="normal" fullWidth />
-                <TextField label="Dining" variant="outlined" margin="normal" fullWidth />
-                <TextField label="Transportation" variant="outlined" margin="normal" fullWidth />
+                <TextField
+                  label="Hotel"
+                  variant="outlined"
+                  margin="normal"
+                  fullWidth
+                />
+                <TextField
+                  label="Dining"
+                  variant="outlined"
+                  margin="normal"
+                  fullWidth
+                />
+                <TextField
+                  label="Transportation"
+                  variant="outlined"
+                  margin="normal"
+                  fullWidth
+                />
               </CardContent>
             </Card>
           </Grid>
@@ -124,4 +193,4 @@ function App() {
   );
 }
 
-export default App;
+export default RecommendationsPage;
