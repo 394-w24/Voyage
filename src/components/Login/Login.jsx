@@ -17,16 +17,17 @@ import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import "./Login.css";
 
-const Login = () => {
-  const PreloadImages = () => {
-    useEffect(() => {
-      pageContents.forEach((item) => {
-        const img = new Image();
-        img.src = item.imageUrl;
-      });
-    }, []);
-  };
+const bgImages = [
+  "https://raw.githubusercontent.com/Hongda-OSU/PicGo-2.3.1/master/imgjose-duarte-yfQRbv7oYCg-unsplash.jpg",
+  "https://raw.githubusercontent.com/Hongda-OSU/PicGo-2.3.1/master/imgroberto-nickson-vZ1JAXUO3-0-unsplash.jpg",
+  "https://raw.githubusercontent.com/Hongda-OSU/PicGo-2.3.1/master/imgjoss-woodhead-3wFRlwS91yk-unsplash.jpg",
+  "https://raw.githubusercontent.com/Hongda-OSU/PicGo-2.3.1/master/imgryan-hutton-Jztmx9yqjBw-unsplash.jpg",
+  "https://raw.githubusercontent.com/Hongda-OSU/PicGo-2.3.1/master/imgdavid-marcu-oyrtK2hJqBY-unsplash.jpg",
+  "https://raw.githubusercontent.com/Hongda-OSU/PicGo-2.3.1/master/imgmanuel-meurisse-5c8fczgvar0-unsplash.jpg",
+];
 
+const Login = () => {
+  const [bgImage, setBgImage] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -41,13 +42,32 @@ const Login = () => {
   };
 
   useEffect(() => {
+    const images = bgImages.map((imageUrl) => {
+      const img = new Image();
+      img.src = imageUrl;
+      return img;
+    });
+
+    Promise.all(
+      images.map((image) => {
+        return new Promise((resolve) => {
+          image.onload = resolve;
+        });
+      })
+    ).then(() => {
+      const idx = Math.floor(Math.random() * bgImages.length);
+      setBgImage(bgImages[idx]);
+    });
+  }, []);
+
+  useEffect(() => {
     if (user) {
       navigate("/recommendation");
     }
   }, [user, navigate]);
 
   return (
-    <div className="login-page">
+    <div className="login-page" style={{ backgroundImage: `url(${bgImage})` }}>
       <span className="poster"></span>
       <span className="login">
         <div className="icon-title-container">
