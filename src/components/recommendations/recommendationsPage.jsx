@@ -1,5 +1,7 @@
 import React from 'react';
 import { Drawer, Grid, Box, Card, CardContent, Checkbox, AppBar, Toolbar, Typography, List, ListItem, ListItemIcon, ListItemText, TextField } from '@mui/material';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { purple } from '@mui/material/colors';
 
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import SettingsIcon from '@mui/icons-material/Settings';
@@ -14,25 +16,39 @@ import DirectionsBoatIcon from '@mui/icons-material/DirectionsBoat';
 
 const drawerWidth = 240;
 
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: purple[500],
+    },
+
+  },
+});
+
 function App() {
     const preferences = [
         { icon: <BeachAccessIcon style={{ fontSize: 60 }} />, label: 'Tropical' },
         { icon: <LocationCityIcon style={{ fontSize: 60 }} />, label: 'City' },
         { icon: <LandscapeIcon style={{ fontSize: 60 }} />, label: 'Mountains' },
-        { icon: <AirportShuttleIcon style={{ fontSize: 60 }} />, label: 'Roadtrip' },
+        { icon: <AirportShuttleIcon style={{ fontSize: 60 }} />, label: 'Public Transit' },
         { icon: <CabinIcon style={{ fontSize: 60 }} />, label: 'Camping' },
         { icon: <DirectionsBoatIcon style={{ fontSize: 60 }} />, label: 'Cruise' }
       ];
       
   return (
+    <ThemeProvider theme={theme}>
     <Box sx={{ display: 'flex' }}>
-      <AppBar position="fixed" sx={{ width: `calc(100% - ${drawerWidth}px)`, ml: `${drawerWidth}px` }}>
-        <Toolbar>
-          <Typography variant="h6" noWrap>
-            Voyage
-          </Typography>
-        </Toolbar>
-      </AppBar>
+        <AppBar position="fixed" sx={{ width: `calc(100% - ${drawerWidth}px)`, ml: `${drawerWidth}px` }}>
+      <Toolbar>
+        <Typography 
+          variant="h3"
+          noWrap
+          sx={{ flexGrow: 1, display: 'flex', justifyContent: 'center', fontWeight: 'bold' }}
+        >
+          Voyage
+        </Typography>
+      </Toolbar>
+    </AppBar>
 
       <Drawer
         variant="permanent"
@@ -121,6 +137,7 @@ function App() {
         </Grid>
       </Box>
     </Box>
+    </ThemeProvider>
   );
 }
 
