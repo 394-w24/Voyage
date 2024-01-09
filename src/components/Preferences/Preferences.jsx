@@ -30,6 +30,10 @@ import AirportShuttleIcon from "@mui/icons-material/AirportShuttle";
 import CabinIcon from "@mui/icons-material/Cabin";
 import DirectionsBoatIcon from "@mui/icons-material/DirectionsBoat";
 
+import AcUnitIcon from "@mui/icons-material/AcUnit";
+import WbSunnyIcon from "@mui/icons-material/WbSunny";
+import FilterDramaIcon from "@mui/icons-material/FilterDrama";
+import ThermostatIcon from "@mui/icons-material/Thermostat";
 
 const drawerWidth = 240;
 
@@ -41,6 +45,19 @@ const options = [
   { icon: <AirportShuttleIcon style={{ fontSize: 60 }} />, label: 'Roadtrip' },
   { icon: <CabinIcon style={{ fontSize: 60 }} />, label: 'Camping' },
   { icon: <DirectionsBoatIcon style={{ fontSize: 60 }} />, label: 'Cruise' }
+];
+
+const seasons = [
+  { icon: <FilterDramaIcon style={{ fontSize: 60 }} />, label: "Spring" },
+  { icon: <WbSunnyIcon style={{ fontSize: 60 }} />, label: "Summer" },
+  { icon: <ThermostatIcon style={{ fontSize: 60 }} />, label: "Autumn" },
+  { icon: <AcUnitIcon style={{ fontSize: 60 }} />, label: "Winter" },
+];
+
+const temperatures = [
+  { icon: <AcUnitIcon style={{ fontSize: 60 }} />, label: "Cold" },
+  { icon: <ThermostatIcon style={{ fontSize: 60 }} />, label: "Mild" },
+  { icon: <WbSunnyIcon style={{ fontSize: 60 }} />, label: "Sunny" },
 ];
 
 function Preferences() {
@@ -95,6 +112,60 @@ function Preferences() {
             </Grid>
           ))}
         </Grid>
+
+        <Typography variant="h5" gutterBottom>
+            Seasons
+          </Typography>
+          <Grid container spacing={3}>
+            {seasons.map((season, index) => (
+              <Grid item xs={12} sm={6} md={4} key={index}>
+                <Card>
+                  <CardContent>
+                    <Box
+                      display="flex"
+                      flexDirection="column"
+                      alignItems="center"
+                    >
+                      <Box display="flex" alignItems="center">
+                        {season.icon}
+                        <Checkbox />
+                      </Box>
+                      <Typography variant="subtitle1">
+                        {season.label}
+                      </Typography>
+                    </Box>
+                  </CardContent>
+                </Card>
+              </Grid>
+            ))}
+          </Grid>
+
+          <Typography variant="h5" gutterBottom>
+            Temperatures
+          </Typography>
+          <Grid container spacing={3}>
+            {temperatures.map((temperature, index) => (
+              <Grid item xs={12} sm={6} md={4} key={index}>
+                <Card>
+                  <CardContent>
+                    <Box
+                      display="flex"
+                      flexDirection="column"
+                      alignItems="center"
+                    >
+                      <Box display="flex" alignItems="center">
+                        {temperature.icon}
+                        <Checkbox />
+                      </Box>
+                      <Typography variant="subtitle1">
+                        {temperature.label}
+                      </Typography>
+                    </Box>
+                  </CardContent>
+                </Card>
+              </Grid>
+            ))}
+          </Grid>
 
         <Typography variant="h5" gutterBottom sx={{ marginTop: 4 }}>
           Budget
