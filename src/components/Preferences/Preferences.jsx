@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { createTheme, ThemeProvider} from "@mui/material/styles";
 import theme from "/src/theme/theme.jsx";
 import CustomAppBar from "../CustomAppBar";
@@ -44,6 +44,18 @@ const options = [
 ];
 
 function Preferences() {
+  const [checkedOptions, setCheckedOptions] = useState({});
+  const handleCheckboxChange = (label) => {
+    setCheckedOptions(prev => ({
+      ...prev,
+      [label]: !prev[label]
+    }));
+  };
+  const handleGenerateRecommendations = () => {
+    const selectedOptions = Object.keys(checkedOptions).filter(key => checkedOptions[key]);
+    console.log("Selected options:", selectedOptions);
+  };
+
 
   return (
     <ThemeProvider theme={theme}>
@@ -69,7 +81,10 @@ function Preferences() {
                   >
                     <Box display="flex" alignItems="center">
                       {preference.icon}
-                      <Checkbox />
+                      <Checkbox
+                        checked={checkedOptions[preference.label] || false}
+                        onChange={() => handleCheckboxChange(preference.label)}
+                      />
                     </Box>
                     <Typography variant="subtitle1">
                       {preference.label}
@@ -140,7 +155,7 @@ function Preferences() {
           </Grid>
         </Grid>
         <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: 2 }}>
-        <Button variant="contained" size="large" color="primary">
+        <Button variant="contained" size="large" color="primary" onClick={handleGenerateRecommendations}>
           Generate Recommendations
         </Button>
       </Box>
