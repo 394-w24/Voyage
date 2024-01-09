@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { useAuthState } from "../utilities/firebaseUtils";
+import Login from "../Components/Login/Login";
 import RecommendationsPage from "../Components/recommendations/recommendationsPage";
 import PreferencesPage from "../Components/preferences/PreferencesPage";
 
@@ -13,16 +14,17 @@ const RouteDispatcher = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route
+        <Route path="/" element={<Login />} />
+        {/* <Route
           path="/"
           element={
             user ? (
-              <Navigate replace to="home" />
+              <Navigate replace to="login" />
             ) : (
               <Navigate replace to="recommendation" />
             )
           }
-        />
+        /> */}
         <Route path="recommendation" element={<RecommendationsPage />} />
         <Route path="preferences" element={<PreferencesPage />} />
       </Routes>
