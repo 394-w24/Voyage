@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { useAuthState } from "../Utilities/firebaseUtils";
 import Login from "../Components/Login/Login";
-import Recommendations from "../components/recommendations/Recommendations";
+import Recommendations from "../components/Recommendations/Recommendations";
 import Preferences from "../components/Preferences/Preferences";
 
 const RouteDispatcher = () => {

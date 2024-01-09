@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Preferences from './Preferences'; // Adjust the path according to your folder structure
+import Preferences from 'src/components/Pages/Preferences/Preferences.jsx';
 
 function App() {
   return (

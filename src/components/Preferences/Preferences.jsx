@@ -1,6 +1,9 @@
 import React from "react";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import purple from "@mui/material/colors/purple";
+import theme from "/src/theme/theme.jsx";
+import CustomAppBar from "../CustomAppBar";
+import CustomDrawer from "../CustomDrawer";
+
 import {
   Drawer,
   Grid,
@@ -18,9 +21,6 @@ import {
   TextField,
 } from "@mui/material";
 
-import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import SettingsIcon from "@mui/icons-material/Settings";
-import StarRateIcon from "@mui/icons-material/StarRate";
 import BeachAccessIcon from "@mui/icons-material/BeachAccess";
 import LocationCityIcon from "@mui/icons-material/LocationCity";
 import LandscapeIcon from "@mui/icons-material/Landscape";
@@ -28,15 +28,9 @@ import AirportShuttleIcon from "@mui/icons-material/AirportShuttle";
 import CabinIcon from "@mui/icons-material/Cabin";
 import DirectionsBoatIcon from "@mui/icons-material/DirectionsBoat";
 
+
 const drawerWidth = 240;
 
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: purple[500],
-    },
-  },
-});
 
 const options = [
   { icon: <BeachAccessIcon style={{ fontSize: 60 }} />, label: 'Tropical' },
@@ -48,54 +42,13 @@ const options = [
 ];
 
 function Preferences() {
-  const signout = () => {
-    // Sign out logic
-  };
 
   return (
     <ThemeProvider theme={theme}>
       <Box sx={{ display: 'flex' }}>
-        <AppBar position="fixed" sx={{ width: `calc(100% - ${drawerWidth}px)`, ml: `${drawerWidth}px` }}>
-          <Toolbar>
-            <Typography variant="h6" noWrap>
-              Voyage
-            </Typography>
-          </Toolbar>
-        </AppBar>
 
-        <Drawer
-          variant="permanent"
-          sx={{
-            width: drawerWidth,
-            flexShrink: 0,
-            [`& .MuiDrawer-paper`]: {
-              width: drawerWidth,
-              boxSizing: "border-box",
-            },
-          }}
-        >
-        <List>
-          <ListItem button>
-            <ListItemIcon>
-              <AccountCircleIcon />
-            </ListItemIcon>
-            <ListItemText primary="Profile" />
-          </ListItem>
-          <ListItem button>
-            <ListItemIcon>
-              <SettingsIcon />
-            </ListItemIcon>
-            <ListItemText primary="Preferences" />
-          </ListItem>
-          <ListItem button>
-            <ListItemIcon>
-              <StarRateIcon />
-            </ListItemIcon>
-            <ListItemText primary="Recommendations" />
-          </ListItem>
-        </List>
-          <button onClick={signout}>Signout</button>
-        </Drawer>
+        <CustomAppBar />
+        <CustomDrawer />
 
         <Box component="main" sx={{ flexGrow: 1, p: 3, marginTop: 8 }}>
         <Typography variant="h5" gutterBottom>
