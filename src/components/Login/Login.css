@@ -1,0 +1,195 @@
+@import url("https://fonts.googleapis.com/css2?family=Concert+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap");
+
+.login-page {
+  width: 100dvw;
+  height: 100dvh;
+  display: flex;
+  flex-flow: row nowrap;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.poster {
+  position: absolute;
+  left: 0;
+  width: 65%;
+  height: 100%;
+}
+
+.login {
+  position: absolute;
+  right: 0;
+  width: 35%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 1);
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+.icon-title-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: auto;
+  margin: 40px 0 10px 0;
+}
+
+.login-icon {
+  height: 60%;
+  margin-left: 50px;
+}
+
+.login-title {
+  overflow-wrap: break-word;
+  color: rgba(0, 0, 0, 1);
+  font-family: "Concert One", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  margin-left: 1rem;
+}
+
+.slogan-container {
+  display: flex;
+  align-items: center;
+  height: auto;
+}
+
+.login-slogan {
+  overflow-wrap: break-word;
+  color: rgba(0, 0, 0, 1);
+  font-family: "Roboto", sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 0.1rem;
+  white-space: nowrap;
+  margin: 0 0 30px 70px;
+}
+
+.login-container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.email-container,
+.password-container,
+.signin-container,
+.google-signin-container {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+}
+
+.email-container {
+  margin-bottom: 10px;
+}
+
+.email-prompt,
+.password-prompt {
+  overflow-wrap: break-word;
+  color: rgba(0, 0, 0, 1);
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  text-align: left;
+  white-space: nowrap;
+  margin-left: 12px;
+}
+
+.email-form,
+.password-form {
+  background-color: #f5f5f5;
+  border: 1px solid #e0e0e0 !important;
+  border-radius: 8px !important;
+}
+
+.email-input,
+.password-input {
+  padding-right: 18px !important;
+}
+
+.email-input input,
+.password-input input {
+  overflow-wrap: break-word !important;
+  font-family: "Noto Sans JP", sans-serif !important;
+  white-space: nowrap !important;
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  padding: 12px 0 12px 16px !important;
+  margin: 4.5px 0 4.5px 0 !important;
+}
+
+.other-service-container {
+  width: 70%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 30px 0 60px 0;
+}
+
+.switch {
+  padding: 10px !important;
+}
+
+.MuiFormControlLabel-label {
+  color: rgba(22, 22, 22, 1) !important;
+  font-family: "Roboto", sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 400 !important;
+  text-align: left !important;
+  margin-top: 2px !important;
+}
+
+.beta-account-button {
+  padding: 0 !important;
+  color: #007aff !important;
+  font-size: 12px !important;
+  font-family: "Roboto", sans-serif !important;
+  font-weight: 400 !important;
+  text-align: left !important;
+  text-transform: none !important;
+}
+
+.sign-in-button {
+  background-color: #007aff !important;
+  color: #ffffff !important;
+  font-size: 16px !important;
+  font-family: "Roboto", sans-serif !important;
+  letter-spacing: 2px !important;
+  font-weight: 400 !important;
+  text-transform: none !important;
+  height: 55px !important;
+  border-radius: 10px !important;
+}
+
+.bottom-line {
+  width: 70%;
+  border-bottom: 1px solid #dfdfdf;
+  margin: 45px 0 45px 0;
+}
+
+.google-sign-in-button {
+  background-color: #272525 !important;
+  height: 55px !important;
+  border-radius: 10px !important;
+}
+
+.google-signin {
+  font-size: 16px !important;
+  font-family: "Roboto", sans-serif !important;
+  font-weight: 400 !important;
+  text-transform: none !important;
+  margin: 2px 0 0 10px !important;
+}
