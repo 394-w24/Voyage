@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Carousel from "react-material-ui-carousel";
 import {
   signInWithGoogle,
   signInWithEmailPassword,
@@ -18,16 +19,17 @@ import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import "./Login.css";
 
 const bgImages = [
-  "https://raw.githubusercontent.com/Hongda-OSU/PicGo-2.3.1/master/imgjose-duarte-yfQRbv7oYCg-unsplash.jpg",
-  "https://raw.githubusercontent.com/Hongda-OSU/PicGo-2.3.1/master/imgroberto-nickson-vZ1JAXUO3-0-unsplash.jpg",
+  "https://raw.githubusercontent.com/Hongda-OSU/PicGo-2.3.1/master/imgsean-oulashin-KMn4VEeEPR8-unsplash.jpg",
   "https://raw.githubusercontent.com/Hongda-OSU/PicGo-2.3.1/master/imgjoss-woodhead-3wFRlwS91yk-unsplash.jpg",
-  "https://raw.githubusercontent.com/Hongda-OSU/PicGo-2.3.1/master/imgryan-hutton-Jztmx9yqjBw-unsplash.jpg",
-  "https://raw.githubusercontent.com/Hongda-OSU/PicGo-2.3.1/master/imgdavid-marcu-oyrtK2hJqBY-unsplash.jpg",
-  "https://raw.githubusercontent.com/Hongda-OSU/PicGo-2.3.1/master/imgmanuel-meurisse-5c8fczgvar0-unsplash.jpg",
+  "https://raw.githubusercontent.com/Hongda-OSU/PicGo-2.3.1/master/imgkazuend-zBSlRlaf4zE-unsplash.jpg",
+  "https://raw.githubusercontent.com/Hongda-OSU/PicGo-2.3.1/master/imgmick-haupt-ELuTbEVQdBc-unsplash.jpg",
+  "https://raw.githubusercontent.com/Hongda-OSU/PicGo-2.3.1/master/imgraimond-klavins-ebhM0GQ87H8-unsplash.jpg",
+  "https://raw.githubusercontent.com/Hongda-OSU/PicGo-2.3.1/master/imgwill-truettner-o5pKjpb40YQ-unsplash.jpg",
+  "https://raw.githubusercontent.com/Hongda-OSU/PicGo-2.3.1/master/imgwinston-tjia-v9uQpbM9UCQ-unsplash.jpg",
 ];
 
 const Login = () => {
-  const [bgImage, setBgImage] = useState("");
+  const [loadedImages, setLoadedImages] = useState([]);
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -42,21 +44,16 @@ const Login = () => {
   };
 
   useEffect(() => {
-    const images = bgImages.map((imageUrl) => {
-      const img = new Image();
-      img.src = imageUrl;
-      return img;
-    });
-
     Promise.all(
-      images.map((image) => {
+      bgImages.map((imageUrl) => {
         return new Promise((resolve) => {
-          image.onload = resolve;
+          const img = new Image();
+          img.src = imageUrl;
+          img.onload = () => resolve(imageUrl);
         });
       })
-    ).then(() => {
-      const idx = Math.floor(Math.random() * bgImages.length);
-      setBgImage(bgImages[idx]);
+    ).then((loadedUrls) => {
+      setLoadedImages(loadedUrls);
     });
   }, []);
 
@@ -67,7 +64,25 @@ const Login = () => {
   }, [user, navigate]);
 
   return (
-    <div className="login-page" style={{ backgroundImage: `url(${bgImage})` }}>
+    <div className="login-page">
+      <Carousel
+        autoPlay
+        interval={12000}
+        animation="fade"
+        duration={1500}
+        indicators={false}
+        navButtonsAlwaysVisible={false}
+        fullHeightHover={false}
+        className="carousel"
+      >
+        {loadedImages.map((image, index) => (
+          <div
+            key={index}
+            className="bgImage"
+            style={{ backgroundImage: `url(${image})` }}
+          ></div>
+        ))}
+      </Carousel>
       <span className="poster"></span>
       <span className="login">
         <div className="icon-title-container">
