@@ -153,11 +153,10 @@ function Preferences() {
           destination.temperature.some((temperature) =>
             selectedTemperatures.includes(temperature)
           );
-
-        const matchesBudget =
-          !isRangeFilterActive &&
-          (!minBudget || destination.budget.min >= minBudget) &&
-          (!maxBudget || destination.budget.max <= maxBudget);
+        const matchesBudget = !isRangeFilterActive
+          ? true
+          : (!minBudget || destination.budget.min >= minBudget) &&
+            (!maxBudget || destination.budget.max <= maxBudget);
         const matchesHotelBudget =
           !hotelBudget || destination.hotelBudget === hotelBudget;
         const matchesDiningBudget =
