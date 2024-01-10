@@ -19,9 +19,9 @@ const RouteDispatcher = () => {
           path="/"
           element={
             user ? (
-              <Navigate replace to="login" />
-            ) : (
               <Navigate replace to="preferences" />
+            ) : (
+              <Navigate replace to="login" />
             )
           }
         />
