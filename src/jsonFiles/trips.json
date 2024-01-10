@@ -109,6 +109,116 @@
       "diningBudget": "$$",
       "transportationBudget": "$$",
       "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/Vancouver.jpg?alt=media&token=188423bb-f542-4a8e-b754-b91a4cd99a35"
+    },
+    {
+      "name": "Paris, France",
+      "season": ["Spring", "Summer"],
+      "temperature": ["Mild"],
+      "preferences": ["City", "Cultural"],
+      "budget": { "min": 150, "max": 300 },
+      "hotelBudget": "$$$",
+      "diningBudget": "$$$",
+      "transportationBudget": "$$",
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/paris.jpeg?alt=media&token=5c41a661-5239-4eae-a244-584ca4dfdb76"
+    },
+    {
+      "name": "New York, USA",
+      "season": ["Autumn", "Spring"],
+      "temperature": ["Mild"],
+      "preferences": ["City"],
+      "budget": { "min": 200, "max": 400 },
+      "hotelBudget": "$$$",
+      "diningBudget": "$$$",
+      "transportationBudget": "$$",
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/nyc.webp?alt=media&token=f443206b-144c-4063-9e02-03745a6bc245"
+    },
+    {
+      "name": "Cairo, Egypt",
+      "season": ["Winter"],
+      "temperature": ["Sunny"],
+      "preferences": ["City", "Cultural"],
+      "budget": { "min": 80, "max": 200 },
+      "hotelBudget": "$$",
+      "diningBudget": "$",
+      "transportationBudget": "$",
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/eygpt.webp?alt=media&token=5b2d3566-e847-4434-b5d3-763984398514"
+    },
+    {
+      "name": "Rio de Janeiro, Brazil",
+      "season": ["Summer"],
+      "temperature": ["Warm"],
+      "preferences": ["City", "Beach"],
+      "budget": { "min": 100, "max": 250 },
+      "hotelBudget": "$$",
+      "diningBudget": "$$",
+      "transportationBudget": "$",
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/brazil.webp?alt=media&token=c3802994-e7b4-43a7-a974-c4ce6aabdcd1"
+    },
+    {
+      "name": "Moscow, Russia",
+      "season": ["Winter"],
+      "temperature": ["Cold"],
+      "preferences": ["City", "Cultural"],
+      "budget": { "min": 100, "max": 300 },
+      "hotelBudget": "$$$",
+      "diningBudget": "$$",
+      "transportationBudget": "$$",
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/moscow.webp?alt=media&token=4714c2a2-416d-4b40-8798-3296ddc796fc"
+    },
+    {
+      "name": "Marrakech, Morocco",
+      "season": ["Spring", "Autumn"],
+      "temperature": ["Mild"],
+      "preferences": ["City", "Adventure"],
+      "budget": { "min": 60, "max": 180 },
+      "hotelBudget": "$$",
+      "diningBudget": "$",
+      "transportationBudget": "$",
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/morocco.webp?alt=media&token=fef3b983-103c-4331-b72f-9a4549f71d22"
+    },
+    {
+      "name": "Tokyo, Japan",
+      "season": ["Spring", "Autumn"],
+      "temperature": ["Mild"],
+      "preferences": ["City", "Cultural"],
+      "budget": { "min": 120, "max": 350 },
+      "hotelBudget": "$$$",
+      "diningBudget": "$$$",
+      "transportationBudget": "$$",
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/Tokyo-2021-GettyImages-1208124099.jpg?alt=media&token=aaa55147-77c8-4e21-b940-d0b36c524ecb"
+    },
+    {
+      "name": "Santorini, Greece",
+      "season": ["Summer"],
+      "temperature": ["Warm"],
+      "preferences": ["Beach", "Cultural"],
+      "budget": { "min": 100, "max": 300 },
+      "hotelBudget": "$$$",
+      "diningBudget": "$$",
+      "transportationBudget": "$$",
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/greece.avif?alt=media&token=0452bc40-36ed-4600-b5c6-d0de58d9a5a7"
+    },
+    {
+      "name": "Las Vegas, USA",
+      "season": ["Spring", "Autumn"],
+      "temperature": ["Warm"],
+      "preferences": ["City", "Adventure"],
+      "budget": { "min": 150, "max": 400 },
+      "hotelBudget": "$$$$",
+      "diningBudget": "$$$",
+      "transportationBudget": "$$",
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/vegas.jpeg?alt=media&token=114d69a4-34bd-4d47-b594-fba5dd63eed3"
+    },
+    {
+      "name": "Amsterdam, Netherlands",
+      "season": ["Spring", "Summer"],
+      "temperature": ["Mild"],
+      "preferences": ["City", "Cultural"],
+      "budget": { "min": 120, "max": 280 },
+      "hotelBudget": "$$",
+      "diningBudget": "$$",
+      "transportationBudget": "$",
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/netherland.webp?alt=media&token=41b1e81d-51b5-4283-b654-7f0731a0c88f"
     }
   ]
 }
