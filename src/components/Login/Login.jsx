@@ -20,12 +20,11 @@ import "./Login.css";
 
 const bgImages = [
   "https://raw.githubusercontent.com/Hongda-OSU/PicGo-2.3.1/master/imgsean-oulashin-KMn4VEeEPR8-unsplash.jpg",
-  "https://raw.githubusercontent.com/Hongda-OSU/PicGo-2.3.1/master/imgjoss-woodhead-3wFRlwS91yk-unsplash.jpg",
-  "https://raw.githubusercontent.com/Hongda-OSU/PicGo-2.3.1/master/imgkazuend-zBSlRlaf4zE-unsplash.jpg",
-  "https://raw.githubusercontent.com/Hongda-OSU/PicGo-2.3.1/master/imgmick-haupt-ELuTbEVQdBc-unsplash.jpg",
-  "https://raw.githubusercontent.com/Hongda-OSU/PicGo-2.3.1/master/imgraimond-klavins-ebhM0GQ87H8-unsplash.jpg",
-  "https://raw.githubusercontent.com/Hongda-OSU/PicGo-2.3.1/master/imgwill-truettner-o5pKjpb40YQ-unsplash.jpg",
-  "https://raw.githubusercontent.com/Hongda-OSU/PicGo-2.3.1/master/imgwinston-tjia-v9uQpbM9UCQ-unsplash.jpg",
+  "https://raw.githubusercontent.com/Hongda-OSU/PicGo-2.3.1/master/imgammie-ngo-vcu-OZBxxRk-unsplash.jpg",
+  "https://raw.githubusercontent.com/Hongda-OSU/PicGo-2.3.1/master/imgjezael-melgoza-alY6_OpdwRQ-unsplash.jpg",
+  "https://raw.githubusercontent.com/Hongda-OSU/PicGo-2.3.1/master/imgjorge-alcala-fbtHV94f-bA-unsplash.jpg",
+  "https://raw.githubusercontent.com/Hongda-OSU/PicGo-2.3.1/master/imgtheodor-lundqvist-WHhbYArwFt8-unsplash.jpg",
+  "https://raw.githubusercontent.com/Hongda-OSU/PicGo-2.3.1/master/imgstefan-pflaum-ytZOB9FLIqk-unsplash.jpg"
 ];
 
 const Login = () => {
@@ -67,7 +66,7 @@ const Login = () => {
     <div className="login-page">
       <Carousel
         autoPlay
-        interval={12000}
+        interval={3000}
         animation="fade"
         duration={1500}
         indicators={false}
