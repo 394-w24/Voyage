@@ -35,6 +35,8 @@ import WbSunnyIcon from "@mui/icons-material/WbSunny";
 import FilterDramaIcon from "@mui/icons-material/FilterDrama";
 import ThermostatIcon from "@mui/icons-material/Thermostat";
 import CardMedia from "@mui/material/CardMedia";
+import { useNavigate } from 'react-router-dom';
+import { ButtonBase } from '@mui/material';
 import destinationsData from '../../jsonFiles/trips.json';
 
 const drawerWidth = 240;
@@ -75,6 +77,12 @@ function Preferences() {
   const [isRangeFilterActive, setIsRangeFilterActive] = useState(false);
 
   const [recommendations, setRecommendations] = useState([]);
+
+  const navigate = useNavigate();
+
+  const handleCardClick = (destination) => {
+    navigate('/recommendation', { state: { destination } });
+  };
 
   const handleCheckboxChange = (label) => {
     setCheckedOptions(prev => ({
@@ -319,12 +327,14 @@ function Preferences() {
       <Grid container spacing={3} sx={{ marginTop: 2 }}>
         {recommendations.map((destination, index) => (
           <Grid item xs={12} sm={6} md={4} key={index}>
-            <Card>
-              <CardContent>
-                <Typography variant="h6">{destination.name}</Typography>
-                <img src={destination.image} alt={destination.name} style={{ width: '100%', height: 'auto' }} />
-              </CardContent>
-            </Card>
+            <ButtonBase onClick={() => handleCardClick(destination)}>
+              <Card>
+                <CardContent>
+                  <Typography variant="h6">{destination.name}</Typography>
+                  <img src={destination.image} alt={destination.name} style={{ width: '100%', height: 'auto' }} />
+                </CardContent>
+              </Card>
+            </ButtonBase>
           </Grid>
         ))}
       </Grid>
