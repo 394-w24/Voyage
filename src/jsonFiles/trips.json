@@ -20,7 +20,7 @@
       "hotelBudget": "$$$",
       "diningBudget": "$$",
       "transportationBudget": "$$",
-      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/Barcelona.jpg?alt=media&token=4e691695-c79b-429f-b20a-f34d7247171a"
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/barcelona2.webp?alt=media&token=6e288bed-6bdf-46b8-bd5a-764d4b34c552"
     },
     {
       "name": "Queenstown, New Zealand",
@@ -31,7 +31,7 @@
       "hotelBudget": "$$$",
       "diningBudget": "$$",
       "transportationBudget": "$$$",
-      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/Queenstown.jpeg?alt=media&token=093c8ea1-0ace-42c3-bcab-d4c606763af0"
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/new%20zealand2.webp?alt=media&token=edc9927b-4e69-4bb9-92f5-328b0391b482"
     },
     {
       "name": "Rome, Italy",
@@ -42,7 +42,7 @@
       "hotelBudget": "$$$",
       "diningBudget": "$$",
       "transportationBudget": "$",
-      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/rome.jpeg?alt=media&token=8daa733e-9987-4416-93a2-1e4e6f10a03b"
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/rome2.jpeg?alt=media&token=a1f4a4ba-ecd2-4c97-854c-dd7a9c81dbca"
     },
     {
       "name": "Sydney, Australia",
@@ -53,7 +53,7 @@
       "hotelBudget": "$$",
       "diningBudget": "$$",
       "transportationBudget": "$$",
-      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/sydney.jpeg?alt=media&token=324893e6-d487-4eb1-9144-645c774322e1"
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/sydney2.webp?alt=media&token=2f2b22f6-9b86-4efc-a0b9-e15e535e1f3b"
     },
     {
       "name": "Reykjavik, Iceland",
@@ -64,7 +64,7 @@
       "hotelBudget": "$$$$",
       "diningBudget": "$$$",
       "transportationBudget": "$$$",
-      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/iceland.jpeg?alt=media&token=396debde-81e9-4181-a0a1-84f71fb59043"
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/iceland2.webp?alt=media&token=64d19ea8-68c1-4025-bfc6-3199acc4cf09"
     },
     {
       "name": "Bangkok, Thailand",
@@ -75,7 +75,7 @@
       "hotelBudget": "$",
       "diningBudget": "$",
       "transportationBudget": "$",
-      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/bangkok.jpeg?alt=media&token=47281ea3-1f53-4f2f-8fff-70d24abb1b5a"
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/thai2.jpeg?alt=media&token=db1e00ed-5a07-457a-9553-c38527912de8"
     },
     {
       "name": "Cape Town, South Africa",
@@ -86,7 +86,7 @@
       "hotelBudget": "$$",
       "diningBudget": "$$",
       "transportationBudget": "$$",
-      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/Cape%20Town.jpg?alt=media&token=b0e69908-34af-4521-a6d9-2895de31338a"
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/capetown2.jpeg?alt=media&token=e742f974-432e-4608-85fe-4ecd4fa8cc81"
     },
     {
       "name": "Hanoi, Vietnam",
