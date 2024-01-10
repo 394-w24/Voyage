@@ -66,7 +66,7 @@ const Login = () => {
     <div className="login-page">
       <Carousel
         autoPlay
-        interval={3000}
+        interval={12000}
         animation="fade"
         duration={1500}
         indicators={false}
