@@ -21,9 +21,9 @@ const bgImages = [
   "https://raw.githubusercontent.com/Hongda-OSU/PicGo-2.3.1/master/imgjose-duarte-yfQRbv7oYCg-unsplash.jpg",
   "https://raw.githubusercontent.com/Hongda-OSU/PicGo-2.3.1/master/imgroberto-nickson-vZ1JAXUO3-0-unsplash.jpg",
   "https://raw.githubusercontent.com/Hongda-OSU/PicGo-2.3.1/master/imgjoss-woodhead-3wFRlwS91yk-unsplash.jpg",
-  "https://raw.githubusercontent.com/Hongda-OSU/PicGo-2.3.1/master/imgryan-hutton-Jztmx9yqjBw-unsplash.jpg",
-  "https://raw.githubusercontent.com/Hongda-OSU/PicGo-2.3.1/master/imgdavid-marcu-oyrtK2hJqBY-unsplash.jpg",
-  "https://raw.githubusercontent.com/Hongda-OSU/PicGo-2.3.1/master/imgmanuel-meurisse-5c8fczgvar0-unsplash.jpg",
+  "https://raw.githubusercontent.com/Hongda-OSU/PicGo-2.3.1/master/imgkazuend-zBSlRlaf4zE-unsplash.jpg",
+  "https://raw.githubusercontent.com/Hongda-OSU/PicGo-2.3.1/master/imgmick-haupt-ELuTbEVQdBc-unsplash.jpg",
+  "https://raw.githubusercontent.com/Hongda-OSU/PicGo-2.3.1/master/imgraimond-klavins-ebhM0GQ87H8-unsplash.jpg",
 ];
 
 const Login = () => {

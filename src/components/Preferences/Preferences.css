@@ -1,0 +1,16 @@
+.recommendation:hover {
+  box-shadow: 0 4px 12px 3px rgba(0, 0, 0, 0.4);
+  transform: scale(1.015);
+  filter: brightness(1.05);
+  ::before {
+    filter: brightness(0.5);
+    top: -100%;
+    left: 200%;
+  }
+}
+
+@media (max-width: 1280px) {
+  .recommendation {
+    transform: scale(0.8);
+  }
+}
