@@ -34,6 +34,8 @@ import AcUnitIcon from "@mui/icons-material/AcUnit";
 import WbSunnyIcon from "@mui/icons-material/WbSunny";
 import FilterDramaIcon from "@mui/icons-material/FilterDrama";
 import ThermostatIcon from "@mui/icons-material/Thermostat";
+import CardMedia from "@mui/material/CardMedia";
+import destinationsData from '../../jsonFiles/trips.json';
 
 const drawerWidth = 240;
 
@@ -62,17 +64,44 @@ const temperatures = [
 
 function Preferences() {
   const [checkedOptions, setCheckedOptions] = useState({});
+  const [checkedSeasons, setCheckedSeasons] = useState({});
+  const [checkedTemperatures, setCheckedTemperatures] = useState({});
+
+  const [recommendations, setRecommendations] = useState([]);
+
   const handleCheckboxChange = (label) => {
     setCheckedOptions(prev => ({
       ...prev,
       [label]: !prev[label]
     }));
   };
-  const handleGenerateRecommendations = () => {
-    const selectedOptions = Object.keys(checkedOptions).filter(key => checkedOptions[key]);
-    console.log("Selected options:", selectedOptions);
+  const handleCheckboxChangeSeason = (label) => {
+    setCheckedSeasons(prev => ({
+      ...prev,
+      [label]: !prev[label]
+    }));
+  };
+  const handleCheckboxChangeTemp = (label) => {
+    setCheckedTemperatures(prev => ({
+      ...prev,
+      [label]: !prev[label]
+    }));
   };
 
+  const handleGenerateRecommendations = () => {
+    const selectedPreferences = Object.keys(checkedOptions).filter(key => checkedOptions[key]);
+    const selectedSeasons = Object.keys(checkedSeasons).filter(key => checkedSeasons[key]);
+    const selectedTemperatures = Object.keys(checkedTemperatures).filter(key => checkedTemperatures[key]);
+
+    const filteredDestinations = destinationsData.destinations.filter(destination => {
+      const matchesPreference = selectedPreferences.length === 0 || selectedPreferences.some(preference => destination.preferences.includes(preference));
+      const matchesSeason = selectedSeasons.length === 0 || destination.season.some(season => selectedSeasons.includes(season));
+      const matchesTemperature = selectedTemperatures.length === 0 || destination.temperature.some(temperature => selectedTemperatures.includes(temperature));
+      return matchesPreference && matchesSeason && matchesTemperature;
+    });
+  
+    setRecommendations(filteredDestinations);
+  };
 
   return (
     <ThemeProvider theme={theme}>
@@ -128,7 +157,10 @@ function Preferences() {
                     >
                       <Box display="flex" alignItems="center">
                         {season.icon}
-                        <Checkbox />
+                        <Checkbox
+                        checked={checkedSeasons[season.label] || false}
+                        onChange={() => handleCheckboxChangeSeason(season.label)}
+                      />
                       </Box>
                       <Typography variant="subtitle1">
                         {season.label}
@@ -155,7 +187,10 @@ function Preferences() {
                     >
                       <Box display="flex" alignItems="center">
                         {temperature.icon}
-                        <Checkbox />
+                        <Checkbox
+                        checked={checkedTemperatures[temperature.label] || false}
+                        onChange={() => handleCheckboxChangeTemp(temperature.label)}
+                      />
                       </Box>
                       <Typography variant="subtitle1">
                         {temperature.label}
@@ -174,7 +209,7 @@ function Preferences() {
           <Grid item xs={12} sm={6} md={4}>
             <Card>
               <CardContent>
-                <Typography variant="h6">Min/Max Price Range</Typography>
+                <Typography variant="h6">Min/Max Price Range ($/day)</Typography>
                 <TextField
                   label="Min"
                   variant="outlined"
@@ -202,7 +237,7 @@ function Preferences() {
           <Grid item xs={12} md={4}>
             <Card>
               <CardContent>
-                <Typography variant="h6">Budget Details</Typography>
+                <Typography variant="h6">Budget Details ($/$$/$$$/$$$$)</Typography>
                 <TextField
                   label="Hotel"
                   variant="outlined"
@@ -226,10 +261,24 @@ function Preferences() {
           </Grid>
         </Grid>
         <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: 2 }}>
-        <Button variant="contained" size="large" color="primary" onClick={handleGenerateRecommendations}>
-          Generate Recommendations
-        </Button>
-      </Box>
+          <Button variant="contained" size="large" color="primary" onClick={handleGenerateRecommendations}>
+            Generate Recommendations
+          </Button>
+        </Box>
+      
+      <Grid container spacing={3} sx={{ marginTop: 2 }}>
+        {recommendations.map((destination, index) => (
+          <Grid item xs={12} sm={6} md={4} key={index}>
+            <Card>
+              <CardContent>
+                <Typography variant="h6">{destination.name}</Typography>
+                <img src={destination.image} alt={destination.name} style={{ width: '100%', height: 'auto' }} />
+              </CardContent>
+            </Card>
+          </Grid>
+        ))}
+      </Grid>
+
         </Container>
       </Box>
       </Box>
