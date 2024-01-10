@@ -193,3 +193,9 @@
   text-transform: none !important;
   margin: 2px 0 0 10px !important;
 }
+
+@media (max-width: 1280px) {
+  .login > * {
+    transform: scale(0.8);
+  }
+}

@@ -62,7 +62,7 @@ const Login = () => {
 
   useEffect(() => {
     if (user) {
-      navigate("/recommendation");
+      navigate("/preferences");
     }
   }, [user, navigate]);
 
