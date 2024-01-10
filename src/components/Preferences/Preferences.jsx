@@ -67,6 +67,13 @@ function Preferences() {
   const [checkedSeasons, setCheckedSeasons] = useState({});
   const [checkedTemperatures, setCheckedTemperatures] = useState({});
 
+  const [minBudget, setMinBudget] = useState('');
+  const [maxBudget, setMaxBudget] = useState('');
+  const [hotelBudget, setHotelBudget] = useState('');
+  const [diningBudget, setDiningBudget] = useState('');
+  const [transportationBudget, setTransportationBudget] = useState('');
+  const [isRangeFilterActive, setIsRangeFilterActive] = useState(false);
+
   const [recommendations, setRecommendations] = useState([]);
 
   const handleCheckboxChange = (label) => {
@@ -88,6 +95,30 @@ function Preferences() {
     }));
   };
 
+  const handleMinBudgetChange = (event) => {
+    setMinBudget(event.target.value);
+  };
+  
+  const handleMaxBudgetChange = (event) => {
+    setMaxBudget(event.target.value);
+  };
+  
+  const handleHotelBudgetChange = (event) => {
+    setHotelBudget(event.target.value);
+  };
+  
+  const handleDiningBudgetChange = (event) => {
+    setDiningBudget(event.target.value);
+  };
+  
+  const handleTransportationBudgetChange = (event) => {
+    setTransportationBudget(event.target.value);
+  };  
+
+  const handleRangeFilterChange = (event) => {
+    setIsRangeFilterActive(event.target.checked);
+  };
+
   const handleGenerateRecommendations = () => {
     const selectedPreferences = Object.keys(checkedOptions).filter(key => checkedOptions[key]);
     const selectedSeasons = Object.keys(checkedSeasons).filter(key => checkedSeasons[key]);
@@ -97,9 +128,15 @@ function Preferences() {
       const matchesPreference = selectedPreferences.length === 0 || selectedPreferences.some(preference => destination.preferences.includes(preference));
       const matchesSeason = selectedSeasons.length === 0 || destination.season.some(season => selectedSeasons.includes(season));
       const matchesTemperature = selectedTemperatures.length === 0 || destination.temperature.some(temperature => selectedTemperatures.includes(temperature));
-      return matchesPreference && matchesSeason && matchesTemperature;
+
+      const matchesBudget = !isRangeFilterActive && (!minBudget || destination.budget.min >= minBudget) && (!maxBudget || destination.budget.max <= maxBudget);
+      const matchesHotelBudget = !hotelBudget || destination.hotelBudget === hotelBudget;
+      const matchesDiningBudget = !diningBudget || destination.diningBudget === diningBudget;
+      const matchesTransportationBudget = !transportationBudget || destination.transportationBudget === transportationBudget;
+
+      return matchesPreference && matchesSeason && matchesTemperature && matchesBudget && matchesHotelBudget && matchesDiningBudget && matchesTransportationBudget;
     });
-  
+
     setRecommendations(filteredDestinations);
   };
 
@@ -215,12 +252,16 @@ function Preferences() {
                   variant="outlined"
                   margin="normal"
                   fullWidth
+                  value={minBudget}
+                  onChange={handleMinBudgetChange}
                 />
                 <TextField
                   label="Max"
                   variant="outlined"
                   margin="normal"
                   fullWidth
+                  value={maxBudget}
+                  onChange={handleMaxBudgetChange}
                 />
               </CardContent>
             </Card>
@@ -229,7 +270,10 @@ function Preferences() {
             <Card>
               <CardContent>
                 <Typography variant="h6">Range Filter</Typography>
-                <Checkbox /> only show trips in this range
+                <Checkbox
+                  checked={isRangeFilterActive}
+                  onChange={handleRangeFilterChange}
+                /> only show trips in this range
               </CardContent>
             </Card>
           </Grid>
@@ -243,18 +287,24 @@ function Preferences() {
                   variant="outlined"
                   margin="normal"
                   fullWidth
+                  value={hotelBudget}
+                  onChange={handleHotelBudgetChange}
                 />
                 <TextField
                   label="Dining"
                   variant="outlined"
                   margin="normal"
                   fullWidth
+                  value={diningBudget}
+                  onChange={handleDiningBudgetChange}
                 />
                 <TextField
                   label="Transportation"
                   variant="outlined"
                   margin="normal"
                   fullWidth
+                  value={transportationBudget}
+                  onChange={handleTransportationBudgetChange}
                 />
               </CardContent>
             </Card>
