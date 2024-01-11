@@ -219,6 +219,226 @@
       "diningBudget": "$$",
       "transportationBudget": "$",
       "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/netherland.webp?alt=media&token=41b1e81d-51b5-4283-b654-7f0731a0c88f"
+    },
+    {
+      "name": "Austin, Texas, USA",
+      "season": ["Spring", "Autumn"],
+      "temperature": ["Warm"],
+      "preferences": ["City", "Roadtrip"],
+      "budget": { "min": 120, "max": 300 },
+      "hotelBudget": "$$",
+      "diningBudget": "$$",
+      "transportationBudget": "$$",
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/austin.jpeg?alt=media&token=0e260eea-fba2-46de-b951-bf26a0c59c1c"
+    },
+    {
+      "name": "Aspen, Colorado, USA",
+      "season": ["Winter"],
+      "temperature": ["Cold"],
+      "preferences": ["Mountains", "Camping"],
+      "budget": { "min": 200, "max": 400 },
+      "hotelBudget": "$$$$",
+      "diningBudget": "$$$",
+      "transportationBudget": "$$$",
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/aspen.jpeg?alt=media&token=42d4dc15-e2f0-466d-8949-e32dc7fb3104"
+    },
+    {
+      "name": "Miami, Florida, USA",
+      "season": ["Summer"],
+      "temperature": ["Hot"],
+      "preferences": ["City", "Tropical"],
+      "budget": { "min": 150, "max": 350 },
+      "hotelBudget": "$$$",
+      "diningBudget": "$$",
+      "transportationBudget": "$$",
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/miami.webp?alt=media&token=c3d2d8d4-1623-4702-9361-5b060f8967d0"
+    },
+    {
+      "name": "Seattle, Washington, USA",
+      "season": ["Spring", "Autumn"],
+      "temperature": ["Mild"],
+      "preferences": ["City", "Cruise"],
+      "budget": { "min": 130, "max": 280 },
+      "hotelBudget": "$$",
+      "diningBudget": "$$",
+      "transportationBudget": "$$",
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/seattle.jpeg?alt=media&token=d8aef186-26cc-49b6-9c71-b8f9563de930"
+    },
+    {
+      "name": "Banff, Alberta, Canada",
+      "season": ["Winter", "Autumn"],
+      "temperature": ["Cold"],
+      "preferences": ["Mountains", "Camping"],
+      "budget": { "min": 180, "max": 360 },
+      "hotelBudget": "$$$",
+      "diningBudget": "$$",
+      "transportationBudget": "$$$",
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/banff.jpeg?alt=media&token=1c5a3636-aa19-4565-bf1b-5bd798f17d09"
+    },
+    {
+      "name": "Santa Fe, New Mexico, USA",
+      "season": ["Spring", "Autumn"],
+      "temperature": ["Mild"],
+      "preferences": ["City", "Camping"],
+      "budget": { "min": 100, "max": 250 },
+      "hotelBudget": "$$",
+      "diningBudget": "$$",
+      "transportationBudget": "$",
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/Santa-Fe-New-Mexico.webp?alt=media&token=d56c899f-6efd-43a8-a9a9-d8742f4771e7"
+    },
+    {
+      "name": "Charleston, South Carolina, USA",
+      "season": ["Spring", "Summer"],
+      "temperature": ["Warm"],
+      "preferences": ["City", "Tropical"],
+      "budget": { "min": 110, "max": 260 },
+      "hotelBudget": "$$",
+      "diningBudget": "$$",
+      "transportationBudget": "$$",
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/charleston.jpeg?alt=media&token=4420166a-1c1d-41af-b835-a4ba7323473d"
+    },
+    {
+      "name": "Savannah, Georgia, USA",
+      "season": ["Spring", "Summer"],
+      "temperature": ["Warm"],
+      "preferences": ["City", "Tropical"],
+      "budget": { "min": 90, "max": 200 },
+      "hotelBudget": "$",
+      "diningBudget": "$",
+      "transportationBudget": "$",
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/Georgia.jpeg?alt=media&token=2600258e-e31f-460b-aca6-5e692f419234"
+    },
+    {
+      "name": "Montreal, Quebec, Canada",
+      "season": ["Summer", "Autumn"],
+      "temperature": ["Mild"],
+      "preferences": ["City", "Cruise"],
+      "budget": { "min": 120, "max": 300 },
+      "hotelBudget": "$$$",
+      "diningBudget": "$$",
+      "transportationBudget": "$$",
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/Montreal.jpg?alt=media&token=0bea9f1b-613b-40db-aff1-f33f3cbd7b9d"
+    },
+    {
+      "name": "Nashville, Tennessee, USA",
+      "season": ["Spring", "Autumn"],
+      "temperature": ["Mild"],
+      "preferences": ["City", "Roadtrip"],
+      "budget": { "min": 130, "max": 270 },
+      "hotelBudget": "$$",
+      "diningBudget": "$$",
+      "transportationBudget": "$$",
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/Tennessee.webp?alt=media&token=aa54da92-de1c-4c65-b79d-ccd94cf241b5"
+    },
+    {
+      "name": "Portland, Oregon, USA",
+      "season": ["Spring", "Summer"],
+      "temperature": ["Mild"],
+      "preferences": ["City", "Roadtrip"],
+      "budget": { "min": 140, "max": 280 },
+      "hotelBudget": "$$",
+      "diningBudget": "$$",
+      "transportationBudget": "$$",
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/Portland.jpg?alt=media&token=0f786d4f-b396-4b75-8247-fa01d360ff83"
+    },
+    {
+      "name": "Quebec City, Quebec, Canada",
+      "season": ["Winter"],
+      "temperature": ["Cold"],
+      "preferences": ["City", "Camping"],
+      "budget": { "min": 150, "max": 300 },
+      "hotelBudget": "$$$",
+      "diningBudget": "$$",
+      "transportationBudget": "$$",
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/Quebec.webp?alt=media&token=2ff34aa2-3335-4ee4-812a-af1b6601f0d0"
+    },
+    {
+      "name": "Victoria, British Columbia, Canada",
+      "season": ["Summer"],
+      "temperature": ["Mild"],
+      "preferences": ["City", "Cruise"],
+      "budget": { "min": 160, "max": 320 },
+      "hotelBudget": "$$",
+      "diningBudget": "$$",
+      "transportationBudget": "$$",
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/victoria.jpeg?alt=media&token=ef363d89-415b-4e39-bd53-1f7d974869de"
+    },
+    {
+      "name": "San Diego, California, USA",
+      "season": ["Summer"],
+      "temperature": ["Warm"],
+      "preferences": ["City", "Tropical"],
+      "budget": { "min": 120, "max": 240 },
+      "hotelBudget": "$$",
+      "diningBudget": "$$",
+      "transportationBudget": "$",
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/sd.jpeg?alt=media&token=643049db-0fa4-4405-bb7e-379074145ffc"
+    },
+    {
+      "name": "Whistler, British Columbia, Canada",
+      "season": ["Winter"],
+      "temperature": ["Cold"],
+      "preferences": ["Mountains", "Camping"],
+      "budget": { "min": 180, "max": 360 },
+      "hotelBudget": "$$$$",
+      "diningBudget": "$$$",
+      "transportationBudget": "$$$",
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/Whistler.jpeg?alt=media&token=e526a714-25a3-45c9-8465-ed9405167e08"
+    },
+    {
+      "name": "Prague, Czech Republic",
+      "season": ["Spring", "Autumn"],
+      "temperature": ["Mild"],
+      "preferences": ["City"],
+      "budget": { "min": 80, "max": 200 },
+      "hotelBudget": "$$",
+      "diningBudget": "$$",
+      "transportationBudget": "$",
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/Prague.jpeg?alt=media&token=8836d0cf-655e-488b-92e9-8fefd56fc542"
+    },
+    {
+      "name": "Budapest, Hungary",
+      "season": ["Summer", "Spring"],
+      "temperature": ["Warm"],
+      "preferences": ["City"],
+      "budget": { "min": 70, "max": 180 },
+      "hotelBudget": "$",
+      "diningBudget": "$",
+      "transportationBudget": "$",
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/Budapest.webp?alt=media&token=88bd0a9d-27cd-4285-b7ab-28e1ded640ce"
+    },
+    {
+      "name": "Dublin, Ireland",
+      "season": ["Spring", "Autumn"],
+      "temperature": ["Mild"],
+      "preferences": ["City"],
+      "budget": { "min": 100, "max": 250 },
+      "hotelBudget": "$$",
+      "diningBudget": "$$",
+      "transportationBudget": "$$",
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/Dublin.webp?alt=media&token=b461dfd1-02cb-4382-93fb-745b6f4919eb"
+    },
+    {
+      "name": "Stockholm, Sweden",
+      "season": ["Summer"],
+      "temperature": ["Mild"],
+      "preferences": ["City", "Cruise"],
+      "budget": { "min": 120, "max": 300 },
+      "hotelBudget": "$$$",
+      "diningBudget": "$$",
+      "transportationBudget": "$$",
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/Stockholm.webp?alt=media&token=07f7a7b3-4e3f-47fe-aae5-c607a4574052"
+    },
+    {
+      "name": "Lisbon, Portugal",
+      "season": ["Summer", "Spring"],
+      "temperature": ["Warm"],
+      "preferences": ["City"],
+      "budget": { "min": 90, "max": 220 },
+      "hotelBudget": "$$",
+      "diningBudget": "$",
+      "transportationBudget": "$",
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/Lisbon.jpeg?alt=media&token=cf65605e-8921-4af4-b728-bed261631849"
     }
   ]
 }
