@@ -439,6 +439,116 @@
       "diningBudget": "$",
       "transportationBudget": "$",
       "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/Lisbon.jpeg?alt=media&token=cf65605e-8921-4af4-b728-bed261631849"
+    },
+    {
+      "name": "Hong Kong",
+      "season": ["Autumn", "Spring"],
+      "temperature": ["Mild"],
+      "preferences": ["City", "Cruise"],
+      "budget": { "min": 150, "max": 350 },
+      "hotelBudget": "$$$",
+      "diningBudget": "$$$",
+      "transportationBudget": "$$",
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/hk.jpeg?alt=media&token=057c895a-1b66-472b-9ad0-86c87c046419"
+    },
+    {
+      "name": "Beijing, China",
+      "season": ["Spring", "Autumn"],
+      "temperature": ["Mild"],
+      "preferences": ["City", "Mountains"],
+      "budget": { "min": 100, "max": 300 },
+      "hotelBudget": "$$",
+      "diningBudget": "$$",
+      "transportationBudget": "$",
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/beijing.jpeg?alt=media&token=726c556c-7f9e-4968-b419-3e238048dcd3"
+    },
+    {
+      "name": "Shanghai, China",
+      "season": ["Spring", "Autumn"],
+      "temperature": ["Mild"],
+      "preferences": ["City", "Cruise"],
+      "budget": { "min": 120, "max": 320 },
+      "hotelBudget": "$$$",
+      "diningBudget": "$$",
+      "transportationBudget": "$$",
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/shanghai.webp?alt=media&token=230c2924-4821-448d-99f6-df696e22330f"
+    },
+    {
+      "name": "Seoul, South Korea",
+      "season": ["Spring", "Autumn"],
+      "temperature": ["Mild"],
+      "preferences": ["City"],
+      "budget": { "min": 110, "max": 280 },
+      "hotelBudget": "$$",
+      "diningBudget": "$$",
+      "transportationBudget": "$",
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/seoul.jpeg?alt=media&token=4145ee88-2ceb-47a0-8070-498f2b023804"
+    },
+    {
+      "name": "Berlin, Germany",
+      "season": ["Summer", "Spring"],
+      "temperature": ["Mild"],
+      "preferences": ["City"],
+      "budget": { "min": 90, "max": 250 },
+      "hotelBudget": "$$",
+      "diningBudget": "$",
+      "transportationBudget": "$",
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/Berlin.jpeg?alt=media&token=e2fcabc8-1e83-4457-b8dc-d7868a5cab3f"
+    },
+    {
+      "name": "Vienna, Austria",
+      "season": ["Spring", "Autumn"],
+      "temperature": ["Mild"],
+      "preferences": ["City", "Cruise", "Roadtrip", "Mountains", "Camping"],
+      "budget": { "min": 100, "max": 300 },
+      "hotelBudget": "$$",
+      "diningBudget": "$$",
+      "transportationBudget": "$$",
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/Vienna.webp?alt=media&token=9aa6ad24-b391-4611-b8cf-9440eb0854df"
+    },
+    {
+      "name": "Istanbul, Turkey",
+      "season": ["Spring", "Autumn"],
+      "temperature": ["Mild"],
+      "preferences": ["City", "Tropical", "Cruise"],
+      "budget": { "min": 80, "max": 220 },
+      "hotelBudget": "$",
+      "diningBudget": "$",
+      "transportationBudget": "$",
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/Istanbul.jpeg?alt=media&token=123f022e-3164-4395-840c-032b0a96a554"
+    },
+    {
+      "name": "Madrid, Spain",
+      "season": ["Spring", "Autumn"],
+      "temperature": ["Mild"],
+      "preferences": ["City", "Cruise"],
+      "budget": { "min": 110, "max": 270 },
+      "hotelBudget": "$$",
+      "diningBudget": "$$",
+      "transportationBudget": "$$",
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/Madrid.jpeg?alt=media&token=f83bef86-0774-4a28-a7f6-540e37da1589"
+    },
+    {
+      "name": "Copenhagen, Denmark",
+      "season": ["Summer"],
+      "temperature": ["Mild"],
+      "preferences": ["City", "Cruise"],
+      "budget": { "min": 120, "max": 300 },
+      "hotelBudget": "$$$",
+      "diningBudget": "$$",
+      "transportationBudget": "$$",
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/Denmark.webp?alt=media&token=d182a8ad-ea81-43c0-ad01-1280ace9e32b"
+    },
+    {
+      "name": "Athens, Greece",
+      "season": ["Summer", "Spring"],
+      "temperature": ["Warm"],
+      "preferences": ["City", "Cruise"],
+      "budget": { "min": 90, "max": 250 },
+      "hotelBudget": "$$",
+      "diningBudget": "$$",
+      "transportationBudget": "$",
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/Athens.jpeg?alt=media&token=52b2d51a-1444-48a4-9eba-e22306e92d5b"
     }
   ]
 }
