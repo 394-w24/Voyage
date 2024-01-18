@@ -42,8 +42,8 @@ const Recommendations = () => {
 
   return (
     <ThemeProvider theme={theme}>
-      <CustomAppBar />
-      <CustomDrawer />
+      {/* <CustomAppBar />
+      <CustomDrawer /> */}
       <Container maxWidth="lg" style={{ marginLeft: "240px" }}>
         <Box component="main" sx={{ flexGrow: 1, p: 3, marginTop: 8 }}>
           <Typography variant="h5" gutterBottom>

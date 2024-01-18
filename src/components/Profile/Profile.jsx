@@ -26,8 +26,8 @@ const Profile = () => {
 
   return (
     <ThemeProvider theme={theme}>
-      <CustomAppBar />
-      <CustomDrawer />
+      {/* <CustomAppBar />
+      <CustomDrawer /> */}
       <Container maxWidth="lg">
         <Box component="main" sx={{ flexGrow: 1, p: 3, marginTop: 8 }}>
         <Typography variant="h5" gutterBottom>

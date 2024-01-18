@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import theme from "/src/theme/theme.jsx";
 import CustomAppBar from "../CustomAppBar";
@@ -76,7 +76,7 @@ function Preferences() {
   const [transportationBudget, setTransportationBudget] = useState("");
   const [isRangeFilterActive, setIsRangeFilterActive] = useState(false);
 
-  const [recommendations, setRecommendations] = useState([]);
+  const [recommendations, setRecommendations] = useState(destinationsData.destinations);
 
   const navigate = useNavigate();
 
@@ -127,7 +127,8 @@ function Preferences() {
     setIsRangeFilterActive(event.target.checked);
   };
 
-  const handleGenerateRecommendations = () => {
+  useEffect(() => {
+  // const handleGenerateRecommendations = () => {
     const selectedPreferences = Object.keys(checkedOptions).filter(
       (key) => checkedOptions[key]
     );
@@ -178,22 +179,22 @@ function Preferences() {
     );
 
     setRecommendations(filteredDestinations);
-  };
+  }, [checkedOptions, checkedSeasons, checkedTemperatures, minBudget, maxBudget, hotelBudget, diningBudget, transportationBudget, isRangeFilterActive]);
 
   return (
     <ThemeProvider theme={theme}>
       <Box sx={{ display: "flex" }}>
-        <CustomAppBar />
-        <CustomDrawer />
+        {/* <CustomAppBar />
+        <CustomDrawer /> */}
 
         <Box component="main" sx={{ flexGrow: 1, p: 3, marginTop: 8 }}>
           <Container maxWidth="lg">
             <Typography variant="h5" gutterBottom>
               Preferences
             </Typography>
-            <Grid container spacing={3}>
+            <Grid container spacing={1}>
               {options.map((preference, index) => (
-                <Grid item xs={12} sm={6} md={4} key={index}>
+                <Grid item xs={6} sm={4} md={2} key={index}>
                   <Card>
                     <CardContent>
                       <Box
@@ -225,7 +226,7 @@ function Preferences() {
             </Typography>
             <Grid container spacing={3}>
               {seasons.map((season, index) => (
-                <Grid item xs={12} sm={6} md={4} key={index}>
+                <Grid item xs={9} sm={6} md={3} key={index}>
                   <Card>
                     <CardContent>
                       <Box
@@ -362,7 +363,7 @@ function Preferences() {
                 </Card>
               </Grid>
             </Grid>
-            <Box
+            {/* <Box
               sx={{ display: "flex", justifyContent: "center", marginTop: 2 }}
             >
               <Button
@@ -373,29 +374,35 @@ function Preferences() {
               >
                 Generate Recommendations
               </Button>
-            </Box>
+            </Box> */}
 
             <Grid container spacing={3} sx={{ marginTop: 2 }}>
-              {recommendations.map((destination, index) => (
-                <Grid item xs={12} sm={6} md={4} key={index}>
-                  <ButtonBase onClick={() => handleCardClick(destination)}>
-                    <Card
-                      className="recommendation"
-                      style={{ width: "320px", minHeight: "400px" }}
-                    >
-                      <CardContent>
-                        <Typography variant="h6">{destination.name}</Typography>
-                        <img
-                          src={destination.image}
-                          alt={destination.name}
-                          style={{ width: "100%", height: "200px" }}
-                        />
-                      </CardContent>
-                    </Card>
-                  </ButtonBase>
+              {recommendations.length > 0 ? (
+                recommendations.map((destination, index) => (
+                  <Grid item xs={12} sm={6} md={4} key={index}>
+                    <ButtonBase onClick={() => handleCardClick(destination)}>
+                      <Card className="recommendation" style={{ width: "320px", minHeight: "400px" }}>
+                        <CardContent>
+                          <Typography variant="h6">{destination.name}</Typography>
+                          <img
+                            src={destination.image}
+                            alt={destination.name}
+                            style={{ width: "100%", height: "200px" }}
+                          />
+                        </CardContent>
+                      </Card>
+                    </ButtonBase>
+                  </Grid>
+                ))
+              ) : (
+                <Grid item xs={12}>
+                  <Typography variant="h6" style={{ textAlign: 'center' }}>
+                    No matching destinations for now, please try again.
+                  </Typography>
                 </Grid>
-              ))}
+              )}
             </Grid>
+
           </Container>
         </Box>
       </Box>
