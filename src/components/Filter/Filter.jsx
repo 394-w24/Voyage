@@ -194,7 +194,7 @@ function Filter() {
     isRangeFilterActive,
   ]);
 
-  const iconSize = 30;
+  const iconSize = 25;
 
   return (
     <ThemeProvider theme={theme}>

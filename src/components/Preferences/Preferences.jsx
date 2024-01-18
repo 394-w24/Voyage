@@ -79,12 +79,12 @@ function Preferences() {
   return (
     <ThemeProvider theme={theme}>
       <Box sx={{ display: "flex" }}>
-        <Box component="main" sx={{ flexGrow: 1, p: 3, marginTop: 8 }}>
+        <Box component="main" sx={{ flexGrow: 1, p: 3, marginTop: 8, marginLeft: 15 }}>
           <Container maxWidth="lg">
             <Grid container spacing={3} sx={{ marginTop: 2 }}>
               {recommendations.length > 0 ? (
                 recommendations.map((destination, index) => (
-                  <Grid item xs={12} sm={6} md={4} key={index}>
+                  <Grid item xs={12} sm={8} md={4} key={index}>
                     <ButtonBase onClick={() => handleCardClick(destination)}>
                       <Card
                         className="recommendation"
