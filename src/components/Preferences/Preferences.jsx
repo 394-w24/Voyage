@@ -60,14 +60,17 @@ function Preferences() {
   }, [addedToWishlist]);
 
   const handleAddToWishlist = (destination) => {
-    setAddedToWishlist((prevState) => ({
-      ...prevState,
-      [destination.name]: {
-        added: !prevState[destination.name]?.added,
-        destination: destination, // Store the entire destination object
-      },
-    }));
-  };  
+    setAddedToWishlist((prevState) => {
+      const isAdded = prevState[destination.name]?.added;
+      return {
+        ...prevState,
+        [destination.name]: {
+          added: !isAdded,
+          destination: destination,
+        },
+      };
+    });
+  };
 
   const handleCardClick = (destination) => {
     navigate("/recommendation", { state: { destination } });
