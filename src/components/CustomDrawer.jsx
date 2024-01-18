@@ -14,7 +14,7 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import SettingsIcon from "@mui/icons-material/Settings";
 import StarRateIcon from "@mui/icons-material/StarRate";
 import Filter from "./Filter/Filter";
-const drawerWidth = 350;
+const drawerWidth = 230;
 
 const CustomDrawer = (props) => {
   const navigate = useNavigate();
