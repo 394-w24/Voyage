@@ -115,9 +115,9 @@ function Preferences() {
                             size="medium"
                           >
                             {addedToWishlist[destination.name] ? (
-                              <AddCheckIcon style={{ fontSize: 28 }} />
+                              <AddCheckIcon style={{ fontSize: 28 }} sx={{marginTop: 1}} />
                             ) : (
-                              <AddIcon style={{ fontSize: 28 }} />
+                              <AddIcon style={{ fontSize: 28 }} sx={{marginTop: 1}} />
                             )}
                           </Button>
                         </CardContent>
