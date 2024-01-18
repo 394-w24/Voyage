@@ -29,12 +29,14 @@ const Recommendations = () => {
   // const [travelPlan, setTravelPlan] = useState('');
 
   const renderList = (items) => {
+    if (!items) return null; // Add a check here
     return items.map((item, index) => (
       <Typography key={index} variant="body1" component="span">
         {item}{index < items.length - 1 ? ', ' : ''}
       </Typography>
     ));
   };
+  
 
   // const generatePlan = () => {
   //   return setTravelPlan(items);

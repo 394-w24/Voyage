@@ -43,40 +43,29 @@ import destinationsData from "../../jsonFiles/trips.json";
 
 const drawerWidth = 240;
 
-const options = [
-  { icon: <BeachAccessIcon style={{ fontSize: 60 }} />, label: "Tropical" },
-  { icon: <LocationCityIcon style={{ fontSize: 60 }} />, label: "City" },
-  { icon: <LandscapeIcon style={{ fontSize: 60 }} />, label: "Mountains" },
-  { icon: <AirportShuttleIcon style={{ fontSize: 60 }} />, label: "Roadtrip" },
-  { icon: <CabinIcon style={{ fontSize: 60 }} />, label: "Camping" },
-  { icon: <DirectionsBoatIcon style={{ fontSize: 60 }} />, label: "Cruise" },
-];
-
-const seasons = [
-  { icon: <FilterDramaIcon style={{ fontSize: 60 }} />, label: "Spring" },
-  { icon: <WbSunnyIcon style={{ fontSize: 60 }} />, label: "Summer" },
-  { icon: <ThermostatIcon style={{ fontSize: 60 }} />, label: "Autumn" },
-  { icon: <AcUnitIcon style={{ fontSize: 60 }} />, label: "Winter" },
-];
-
-const temperatures = [
-  { icon: <AcUnitIcon style={{ fontSize: 60 }} />, label: "Cold" },
-  { icon: <ThermostatIcon style={{ fontSize: 60 }} />, label: "Mild" },
-  { icon: <WbSunnyIcon style={{ fontSize: 60 }} />, label: "Sunny" },
-];
-
 function Preferences() {
   const location = useLocation();
   const recommendations = location.state?.filteredDestinations || [];
 
   const navigate = useNavigate();
 
-  const [addedToWishlist, setAddedToWishlist] = useState({});
+  // const [addedToWishlist, setAddedToWishlist] = useState({});
+  const [addedToWishlist, setAddedToWishlist] = useState(() => {
+    const saved = localStorage.getItem("wishlist");
+    return saved ? JSON.parse(saved) : {};
+  });
 
-  const handleAddToWishlist = (destinationName) => {
+  useEffect(() => {
+    localStorage.setItem("wishlist", JSON.stringify(addedToWishlist));
+  }, [addedToWishlist]);
+
+  const handleAddToWishlist = (destinationName, destinationImage) => {
     setAddedToWishlist((prevState) => ({
       ...prevState,
-      [destinationName]: !prevState[destinationName],
+      [destinationName]: {
+        added: !prevState[destinationName]?.added,
+        image: destinationImage,
+      },
     }));
   };
 
@@ -99,7 +88,7 @@ function Preferences() {
                         style={{ width: "320px", minHeight: "350px" }}
                       >
                         <CardContent>
-                          <Typography variant="h6" style={{ height: '80px' }}>
+                          <Typography variant="h6" style={{ height: "80px" }}>
                             {destination.name}
                           </Typography>
                           <img
@@ -110,14 +99,17 @@ function Preferences() {
                           <Button
                             onClick={(event) => {
                               event.stopPropagation();
-                              handleAddToWishlist(destination.name);
+                              handleAddToWishlist(
+                                destination.name,
+                                destination.image
+                              );
                             }}
                             size="medium"
                           >
-                            {addedToWishlist[destination.name] ? (
-                              <AddCheckIcon style={{ fontSize: 28 }} sx={{marginTop: 1}} />
+                            {addedToWishlist[destination.name]?.added ? (
+                              <AddCheckIcon style={{ fontSize: 28 }} />
                             ) : (
-                              <AddIcon style={{ fontSize: 28 }} sx={{marginTop: 1}} />
+                              <AddIcon style={{ fontSize: 28 }} />
                             )}
                           </Button>
                         </CardContent>
