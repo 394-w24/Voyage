@@ -22,8 +22,7 @@ import {
 } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import theme from "/src/theme/theme.jsx";
-import CustomAppBar from "../CustomAppBar";
-import CustomDrawer from "../CustomDrawer";
+import CancelIcon from '@mui/icons-material/Cancel';
 
 const Profile = () => {
   const [user] = useAuthState();
@@ -56,24 +55,22 @@ const Profile = () => {
           )}
         </Box>
         <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-          <Typography variant="h5" gutterBottom>
-            Wishlist
-          </Typography>
-          <Grid container spacing={3}>
-            {Object.entries(wishlist).filter(([_, value]) => value.added).map(([key, value], index) => (
-              <Grid item xs={12} sm={6} md={4} key={index}>
-                <ButtonBase onClick={() => handleCardClick({ name: key, image: value.image })}>
-                  <Card className="wishlist-card" style={{ width: "320px", minHeight: "350px" }}>
-                    <CardContent>
-                      <Typography variant="h6">{key}</Typography>
-                      <img src={value.image} alt={key} style={{ width: "100%", height: "200px" }} />
-                    </CardContent>
-                  </Card>
-                </ButtonBase>
-              </Grid>
-            ))}
-          </Grid>
-        </Box>
+        <Typography variant="h5" gutterBottom>Wishlist</Typography>
+        <Grid container spacing={3}>
+          {Object.entries(wishlist).filter(([_, value]) => value.added).map(([key, value], index) => (
+            <Grid item xs={12} sm={6} md={4} key={index}>
+              <div onClick={() => handleCardClick(value.destination)} style={{ cursor: "pointer" }}>
+                <Card className="wishlist-card" style={{ width: "320px", minHeight: "350px" }}>
+                  <CardContent>
+                    <Typography variant="h6">{value.destination.name}</Typography>
+                    <img src={value.destination.image} alt={value.destination.name} style={{ width: "100%", height: "200px" }} />
+                  </CardContent>
+                </Card>
+              </div>
+            </Grid>
+          ))}
+        </Grid>
+      </Box>
       </Container>
     </ThemeProvider>
   );

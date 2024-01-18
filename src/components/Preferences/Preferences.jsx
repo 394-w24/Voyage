@@ -59,15 +59,15 @@ function Preferences() {
     localStorage.setItem("wishlist", JSON.stringify(addedToWishlist));
   }, [addedToWishlist]);
 
-  const handleAddToWishlist = (destinationName, destinationImage) => {
+  const handleAddToWishlist = (destination) => {
     setAddedToWishlist((prevState) => ({
       ...prevState,
-      [destinationName]: {
-        added: !prevState[destinationName]?.added,
-        image: destinationImage,
+      [destination.name]: {
+        added: !prevState[destination.name]?.added,
+        destination: destination, // Store the entire destination object
       },
     }));
-  };
+  };  
 
   const handleCardClick = (destination) => {
     navigate("/recommendation", { state: { destination } });
@@ -99,10 +99,7 @@ function Preferences() {
                           <Button
                             onClick={(event) => {
                               event.stopPropagation();
-                              handleAddToWishlist(
-                                destination.name,
-                                destination.image
-                              );
+                              handleAddToWishlist(destination);
                             }}
                             size="medium"
                           >
