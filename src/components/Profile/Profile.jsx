@@ -34,7 +34,8 @@ const Profile = () => {
     navigate("/recommendation", { state: { destination } });
   };
 
-  const removeFromWishlist = (destinationName) => {
+  const removeFromWishlist = (event, destinationName) => {
+    event.stopPropagation(); // This will prevent the event from bubbling up to the parent elements
     const updatedWishlist = { ...wishlist };
     if (updatedWishlist[destinationName]) {
       updatedWishlist[destinationName].added = false;
@@ -77,9 +78,8 @@ const Profile = () => {
               .filter(([_, value]) => value.added)
               .map(([key, value], index) => (
                 <Grid item xs={12} sm={6} md={4} key={index}>
-                  <div
+                  <ButtonBase
                     onClick={() => handleCardClick(value.destination)}
-                    style={{ cursor: "pointer" }}
                   >
                     <Card
                       className="wishlist-card"
@@ -105,8 +105,8 @@ const Profile = () => {
                             {value.destination.name}
                           </Typography>
                           <Button
-                            onClick={() =>
-                              removeFromWishlist(value.destination.name)
+                            onClick={(event) =>
+                              removeFromWishlist(event, value.destination.name)
                             }
                           >
                             <CancelIcon style={{ fontSize: 28 }} />
@@ -119,7 +119,7 @@ const Profile = () => {
                         />
                       </CardContent>
                     </Card>
-                  </div>
+                  </ButtonBase>
                 </Grid>
               ))}
           </Grid>
