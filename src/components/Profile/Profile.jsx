@@ -77,44 +77,49 @@ const Profile = () => {
               .filter(([_, value]) => value.added)
               .map(([key, value], index) => (
                 <Grid item xs={12} sm={6} md={4} key={index}>
-                  <Card
-                    className="wishlist-card"
-                    style={{ width: "320px", minHeight: "300px" }}
+                  <div
+                    onClick={() => handleCardClick(value.destination)}
+                    style={{ cursor: "pointer" }}
                   >
-                    <CardContent
-                      style={{
-                        display: "flex",
-                        flexDirection: "column",
-                        justifyContent: "space-between",
-                      }}
+                    <Card
+                      className="wishlist-card"
+                      style={{ width: "320px", minHeight: "300px" }}
                     >
-                      <div
+                      <CardContent
                         style={{
                           display: "flex",
+                          flexDirection: "column",
                           justifyContent: "space-between",
-                          alignItems: "center",
-                          marginBottom: "15px",
-                          minHeight: "65px",
                         }}
                       >
-                        <Typography variant="h6">
-                          {value.destination.name}
-                        </Typography>
-                        <Button
-                          onClick={() =>
-                            removeFromWishlist(value.destination.name)
-                          }
+                        <div
+                          style={{
+                            display: "flex",
+                            justifyContent: "space-between",
+                            alignItems: "center",
+                            marginBottom: "15px",
+                            minHeight: "65px",
+                          }}
                         >
-                          <CancelIcon style={{ fontSize: 28 }} />
-                        </Button>
-                      </div>
-                      <img
-                        src={value.destination.image}
-                        alt={value.destination.name}
-                        style={{ width: "100%", height: "200px" }}
-                      />
-                    </CardContent>
-                  </Card>
+                          <Typography variant="h6">
+                            {value.destination.name}
+                          </Typography>
+                          <Button
+                            onClick={() =>
+                              removeFromWishlist(value.destination.name)
+                            }
+                          >
+                            <CancelIcon style={{ fontSize: 28 }} />
+                          </Button>
+                        </div>
+                        <img
+                          src={value.destination.image}
+                          alt={value.destination.name}
+                          style={{ width: "100%", height: "200px" }}
+                        />
+                      </CardContent>
+                    </Card>
+                  </div>
                 </Grid>
               ))}
           </Grid>
