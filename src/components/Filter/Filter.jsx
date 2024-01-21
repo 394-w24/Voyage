@@ -1,27 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
-import theme from "/src/theme/theme.jsx";
-import CustomAppBar from "../CustomAppBar";
-import CustomDrawer from "../CustomDrawer";
-import "./Filter.css";
-
 import {
-  Button,
-  Drawer,
-  Grid,
   Box,
-  Card,
-  CardContent,
   Checkbox,
   Container,
-  AppBar,
-  Toolbar,
-  Typography,
-  List,
-  ListItem,
-  ListItemIcon,
-  ListItemText,
+  Grid,
   TextField,
+  Typography,
   Divider,
 } from "@mui/material";
 
@@ -31,17 +15,12 @@ import LandscapeIcon from "@mui/icons-material/Landscape";
 import AirportShuttleIcon from "@mui/icons-material/AirportShuttle";
 import CabinIcon from "@mui/icons-material/Cabin";
 import DirectionsBoatIcon from "@mui/icons-material/DirectionsBoat";
-
 import AcUnitIcon from "@mui/icons-material/AcUnit";
 import WbSunnyIcon from "@mui/icons-material/WbSunny";
 import FilterDramaIcon from "@mui/icons-material/FilterDrama";
 import ThermostatIcon from "@mui/icons-material/Thermostat";
-import CardMedia from "@mui/material/CardMedia";
 import { useNavigate } from "react-router-dom";
-import { ButtonBase } from "@mui/material";
 import destinationsData from "../../jsonFiles/trips.json";
-
-const drawerWidth = 230;
 
 const options = [
   { icon: <BeachAccessIcon style={{ fontSize: 60 }} />, label: "Tropical" },
@@ -77,15 +56,7 @@ function Filter() {
   const [transportationBudget, setTransportationBudget] = useState("");
   const [isRangeFilterActive, setIsRangeFilterActive] = useState(false);
 
-  const [recommendations, setRecommendations] = useState(
-    destinationsData.destinations
-  );
-
   const navigate = useNavigate();
-
-  const handleCardClick = (destination) => {
-    navigate("/recommendation", { state: { destination } });
-  };
 
   const handleCheckboxChange = (label) => {
     setCheckedOptions((prev) => ({
@@ -131,7 +102,6 @@ function Filter() {
   };
 
   useEffect(() => {
-    // const handleGenerateRecommendations = () => {
     const selectedPreferences = Object.keys(checkedOptions).filter(
       (key) => checkedOptions[key]
     );
@@ -181,7 +151,7 @@ function Filter() {
       }
     );
 
-    navigate("/preferences", { state: { filteredDestinations } });
+    navigate("/home", { state: { filteredDestinations } });
   }, [
     checkedOptions,
     checkedSeasons,
@@ -197,185 +167,174 @@ function Filter() {
   const iconSize = 25;
 
   return (
-    <ThemeProvider theme={theme}>
-      <Box sx={{ display: "flex" }}>
-        {/* <CustomAppBar />
-        <CustomDrawer /> */}
-
-        <Box
-          component="main"
-          sx={{
-            flexGrow: 1,
-            p: 1,
-            marginLeft: -2,
-            marginRight: -2,
-            marginTop: -2,
-          }}
-        >
-          <Container maxWidth="lg">
-            <Divider sx={{ my: 2 }} />
-            <Grid container spacing={1}>
-              {options.map((preference, index) => (
-                <Grid item xs={12} sm={9} md={9} key={index}>
-                  <Box display="flex" alignItems="center">
-                    {React.cloneElement(preference.icon, {
-                      style: { fontSize: iconSize },
-                    })}
-                    <Typography variant="body2">
-                      {"\u00A0\u00A0\u00A0"}
-                      {preference.label}
-                    </Typography>
-                    <Checkbox
-                      size="small" // Smaller checkbox
-                      checked={checkedOptions[preference.label] || false}
-                      onChange={() => handleCheckboxChange(preference.label)}
-                    />
-                  </Box>
-                </Grid>
-              ))}
-            </Grid>
-
-            <Divider sx={{ my: 2 }} />
-
-            <Grid container spacing={1}>
-              {seasons.map((season, index) => (
-                <Grid item xs={12} sm={9} md={9} key={index}>
-                  <Box display="flex" alignItems="center">
-                    {React.cloneElement(season.icon, {
-                      style: { fontSize: iconSize },
-                    })}
-                    <Typography variant="body2">
-                      {"\u00A0\u00A0\u00A0"}
-                      {season.label}
-                    </Typography>
-                    <Checkbox
-                      size="small"
-                      checked={checkedSeasons[season.label] || false}
-                      onChange={() => handleCheckboxChangeSeason(season.label)}
-                    />
-                  </Box>
-                </Grid>
-              ))}
-            </Grid>
-
-            <Divider sx={{ my: 2 }} />
-
-            <Grid container spacing={1}>
-              {temperatures.map((temperature, index) => (
-                <Grid item xs={12} sm={9} md={9} key={index}>
-                  <Box display="flex" alignItems="center">
-                    {React.cloneElement(temperature.icon, {
-                      style: { fontSize: iconSize },
-                    })}
-                    <Typography variant="body2">
-                      {"\u00A0\u00A0\u00A0"}
-                      {temperature.label}
-                    </Typography>
-                    <Checkbox
-                      size="small"
-                      checked={checkedTemperatures[temperature.label] || false}
-                      onChange={() =>
-                        handleCheckboxChangeTemp(temperature.label)
-                      }
-                    />
-                  </Box>
-                </Grid>
-              ))}
-            </Grid>
-
-            <Divider sx={{ my: 2 }} />
-
-            <Grid
-              container
-              spacing={1}
-              sx={{ flexGrow: 1, p: 1, marginTop: -3, marginLeft: -2 }}
-            >
-              <Grid item xs={12} sm={12} md={12}>
-                <Card>
-                  <CardContent>
-                    <Typography variant="body2">Price Range ($/day)</Typography>
-                    <TextField
-                      label="Min"
-                      size="small"
-                      variant="outlined"
-                      margin="dense"
-                      fullWidth
-                      value={minBudget}
-                      onChange={handleMinBudgetChange}
-                    />
-                    <TextField
-                      label="Max"
-                      size="small"
-                      variant="outlined"
-                      margin="dense"
-                      fullWidth
-                      value={maxBudget}
-                      onChange={handleMaxBudgetChange}
-                    />
-
-                    <Grid
-                      container
-                      spacing={1}
-                      sx={{ marginTop: 0.5, marginLeft: -1 }}
-                    >
-                      <Grid item xs={12} sm={12} md={12}>
-                        <Box display="flex" alignItems="center">
-                          <Typography variant="body2">
-                            only show trips within this range
-                          </Typography>
-                          <Checkbox
-                            size="small"
-                            checked={isRangeFilterActive}
-                            onChange={handleRangeFilterChange}
-                          />
-                        </Box>
-                      </Grid>
-                    </Grid>
-                  </CardContent>
-                </Card>
+    <Box sx={{ display: "flex" }}>
+      <Box
+        component="main"
+        sx={{
+          flexGrow: 1,
+          p: 1,
+          marginLeft: -2,
+          marginRight: -2,
+          marginTop: -2,
+        }}
+      >
+        <Container maxWidth="lg">
+          <Divider sx={{ my: 2 }} />
+          <Grid container spacing={1}>
+            <Typography variant="subtitle1">Travel Options</Typography>
+            {options.map((preference, index) => (
+              <Grid item xs={12} sm={9} md={9} key={index}>
+                <Box display="flex" alignItems="center">
+                  {React.cloneElement(preference.icon, {
+                    style: { fontSize: iconSize },
+                  })}
+                  <Typography variant="body2">
+                    {"\u00A0\u00A0\u00A0"}
+                    {preference.label}
+                  </Typography>
+                  <Checkbox
+                    size="small"
+                    checked={checkedOptions[preference.label] || false}
+                    onChange={() => handleCheckboxChange(preference.label)}
+                  />
+                </Box>
               </Grid>
+            ))}
+          </Grid>
 
-              <Grid item xs={12} sm={12} md={12}>
-                <Card>
-                  <CardContent>
+          <Divider sx={{ my: 2 }} />
+
+          <Grid container spacing={1}>
+            <Typography variant="subtitle1">Seasons</Typography>
+            {seasons.map((season, index) => (
+              <Grid item xs={12} sm={9} md={9} key={index}>
+                <Box display="flex" alignItems="center">
+                  {React.cloneElement(season.icon, {
+                    style: { fontSize: iconSize },
+                  })}
+                  <Typography variant="body2">
+                    {"\u00A0\u00A0\u00A0"}
+                    {season.label}
+                  </Typography>
+                  <Checkbox
+                    size="small"
+                    checked={checkedSeasons[season.label] || false}
+                    onChange={() => handleCheckboxChangeSeason(season.label)}
+                  />
+                </Box>
+              </Grid>
+            ))}
+          </Grid>
+
+          <Divider sx={{ my: 2 }} />
+
+          <Grid container spacing={1}>
+            <Typography variant="subtitle1">Temperatures</Typography>
+            {temperatures.map((temperature, index) => (
+              <Grid item xs={12} sm={9} md={9} key={index}>
+                <Box display="flex" alignItems="center">
+                  {React.cloneElement(temperature.icon, {
+                    style: { fontSize: iconSize },
+                  })}
+                  <Typography variant="body2">
+                    {"\u00A0\u00A0\u00A0"}
+                    {temperature.label}
+                  </Typography>
+                  <Checkbox
+                    size="small"
+                    checked={checkedTemperatures[temperature.label] || false}
+                    onChange={() => handleCheckboxChangeTemp(temperature.label)}
+                  />
+                </Box>
+              </Grid>
+            ))}
+          </Grid>
+
+          <Divider sx={{ my: 2 }} />
+
+          <Grid
+            container
+            spacing={1}
+            sx={{ flexGrow: 1, p: 1, marginLeft: -2 }}
+          >
+            <Typography variant="subtitle1">Pricing Information</Typography>
+            <Grid item xs={12} sm={12} md={12}>
+              <Typography variant="body2">Price Range ($/day)</Typography>
+              <TextField
+                label="Min"
+                size="small"
+                variant="outlined"
+                margin="dense"
+                fullWidth
+                value={minBudget}
+                onChange={handleMinBudgetChange}
+              />
+              <TextField
+                label="Max"
+                size="small"
+                variant="outlined"
+                margin="dense"
+                fullWidth
+                value={maxBudget}
+                onChange={handleMaxBudgetChange}
+              />
+
+              <Grid
+                container
+                spacing={1}
+                sx={{ marginTop: 0.5, marginLeft: -1 }}
+              >
+                <Grid item xs={12} sm={12} md={12}>
+                  <Box display="flex" alignItems="center">
                     <Typography variant="body2">
-                      Budget Details (Please use $/$$/$$$/$$$$)
+                      Only show trips within this range
                     </Typography>
-                    <TextField
-                      label="Hotel"
+                    <Checkbox
                       size="small"
-                      variant="outlined"
-                      margin="dense"
-                      fullWidth
-                      value={hotelBudget}
-                      onChange={handleHotelBudgetChange}
+                      checked={isRangeFilterActive}
+                      onChange={handleRangeFilterChange}
                     />
-                    <TextField
-                      label="Dining"
-                      size="small"
-                      variant="outlined"
-                      margin="dense"
-                      fullWidth
-                      value={diningBudget}
-                      onChange={handleDiningBudgetChange}
-                    />
-                    <TextField
-                      label="Transportation"
-                      size="small"
-                      variant="outlined"
-                      margin="dense"
-                      fullWidth
-                      value={transportationBudget}
-                      onChange={handleTransportationBudgetChange}
-                    />
-                  </CardContent>
-                </Card>
+                  </Box>
+                </Grid>
               </Grid>
             </Grid>
-          </Container>
-        </Box>
+
+            <Grid item xs={12} sm={12} md={12} sx={{ marginBottom: "80px" }}>
+              <Typography variant="body2">
+                Budget Details (Please use $/$$/$$$/$$$$)
+              </Typography>
+              <TextField
+                label="Hotel"
+                size="small"
+                variant="outlined"
+                margin="dense"
+                fullWidth
+                value={hotelBudget}
+                onChange={handleHotelBudgetChange}
+              />
+              <TextField
+                label="Dining"
+                size="small"
+                variant="outlined"
+                margin="dense"
+                fullWidth
+                value={diningBudget}
+                onChange={handleDiningBudgetChange}
+              />
+              <TextField
+                label="Transportation"
+                size="small"
+                variant="outlined"
+                margin="dense"
+                fullWidth
+                value={transportationBudget}
+                onChange={handleTransportationBudgetChange}
+              />
+            </Grid>
+          </Grid>
+        </Container>
       </Box>
-    </ThemeProvider>
+    </Box>
   );
 }
 
