@@ -4,6 +4,7 @@ import Login from "../Components/Login/Login";
 import Recommendations from "../components/Recommendations/Recommendations";
 import Preferences from "../components/Preferences/Preferences";
 import Profile from "../components/Profile/Profile";
+import Home from "../Components/Home/Home"
 
 const RouteDispatcher = () => {
   const [user, loading] = useAuthState();
@@ -26,6 +27,7 @@ const RouteDispatcher = () => {
           }
         />
         <Route path="login" element={<Login />} />
+        <Route path="home" element={<Home />} />
         <Route path="recommendation" element={<Recommendations />} />
         <Route path="preferences" element={<Preferences />} />
         <Route path="profile" element={<Profile />} />
