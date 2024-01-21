@@ -16,7 +16,7 @@ import {
   TextField,
 } from "@mui/material";
 
-const drawerWidth = 240;
+const drawerWidth = 230;
 
 const CustomAppBar = (props) => {
   return (

@@ -1,30 +1,25 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom"; // 更正了 useNavigate 的导入
 import { firebaseSignOut } from "../Utilities/firebaseUtils";
 import {
   Drawer,
-  Grid,
-  Box,
-  Card,
-  CardContent,
-  Checkbox,
-  AppBar,
-  Toolbar,
-  Typography,
   List,
   ListItem,
   ListItemIcon,
   ListItemText,
-  TextField,
+  Typography,
 } from "@mui/material";
 
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import SettingsIcon from "@mui/icons-material/Settings";
 import StarRateIcon from "@mui/icons-material/StarRate";
-const drawerWidth = 240;
+import Filter from "./Filter/Filter";
+const drawerWidth = 230;
 
 const CustomDrawer = (props) => {
   const navigate = useNavigate();
+  const location = useLocation(); 
+
   const signout = () => {
     firebaseSignOut()
       .then(() => {
@@ -34,6 +29,7 @@ const CustomDrawer = (props) => {
         console.error(err);
       });
   };
+
   const handleNavigation = (path) => {
     navigate(path);
   };
@@ -70,6 +66,10 @@ const CustomDrawer = (props) => {
           <ListItemText primary="Recommendations" />
         </ListItem>
       </List>
+      {location.pathname === "/preferences" && (<>
+        <Filter />
+        </>
+      )}
       <button onClick={signout}>Signout</button>
     </Drawer>
   );
