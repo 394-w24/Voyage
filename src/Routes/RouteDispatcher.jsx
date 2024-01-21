@@ -5,6 +5,7 @@ import Login from '../Components/Login/Login';
 import Recommendations from '../components/Recommendations/Recommendations';
 import Preferences from '../components/Preferences/Preferences';
 import Profile from '../components/Profile/Profile';
+import Community from '../components/Community/Community';
 import CustomAppBar from '../components/CustomAppBar';
 import CustomDrawer from '../components/CustomDrawer';
 
@@ -38,6 +39,7 @@ const RouteDispatcher = () => {
         <Route path="recommendation" element={<Recommendations />} />
         <Route path="preferences" element={<Preferences />} />
         <Route path="profile" element={<Profile />} />
+        <Route path="community" element={<Community />} />
       </Routes>
     </BrowserRouter>
   );
