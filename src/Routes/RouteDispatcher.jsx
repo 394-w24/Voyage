@@ -35,7 +35,6 @@ const RouteDispatcher = () => {
           }
         />
         <Route path="login" element={<Login />} />
-        <Route path="home" element={<Home />} />
         <Route path="recommendation" element={<Recommendations />} />
         <Route path="preferences" element={<Preferences />} />
         <Route path="profile" element={<Profile />} />
