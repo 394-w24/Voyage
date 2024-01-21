@@ -1,0 +1,25 @@
+.home {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background-color: rgba(241, 249, 248, 1);
+}
+
+.home-container {
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.home-content {
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: repeat(5, 220px);
+  grid-template-rows: repeat(5, 320px);
+  gap: 30px;
+  justify-content: center;
+  overflow: auto;
+}
