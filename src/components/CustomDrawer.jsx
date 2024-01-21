@@ -13,6 +13,7 @@ import {
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import SettingsIcon from "@mui/icons-material/Settings";
 import StarRateIcon from "@mui/icons-material/StarRate";
+import PeopleIcon from '@mui/icons-material/People';
 import Filter from "./Filter/Filter";
 const drawerWidth = 230;
 
@@ -59,13 +60,22 @@ const CustomDrawer = (props) => {
           </ListItemIcon>
           <ListItemText primary="Preferences" />
         </ListItem>
-        <ListItem button onClick={() => handleNavigation("/recommendation")}>
+        {/* <ListItem button onClick={() => handleNavigation("/recommendation")}>
           <ListItemIcon>
             <StarRateIcon />
           </ListItemIcon>
           <ListItemText primary="Recommendations" />
+        </ListItem> */}
+        <ListItem button onClick={() => handleNavigation("/community")}>
+          <ListItemIcon>
+            <PeopleIcon />
+          </ListItemIcon>
+          <ListItemText primary="Community" />
         </ListItem>
       </List>
+      {/* {location.pathname === "/community" && (
+            
+      )} */}
       {location.pathname === "/preferences" && (<>
         <Filter />
         </>

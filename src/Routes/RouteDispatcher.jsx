@@ -32,6 +32,7 @@ const RouteDispatcher = () => {
         <Route path="recommendation" element={<Recommendations />} />
         <Route path="preferences" element={<Preferences />} />
         <Route path="profile" element={<Profile />} />
+        <Route path="community" element={<Community />} />
       </Routes>
     </BrowserRouter>
   );
