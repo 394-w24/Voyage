@@ -9,7 +9,8 @@
       "hotelBudget": "$$",
       "diningBudget": "$$",
       "transportationBudget": "$",
-      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/Tokyo-2021-GettyImages-1208124099.jpg?alt=media&token=aaa55147-77c8-4e21-b940-d0b36c524ecb"
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/Tokyo-2021-GettyImages-1208124099.jpg?alt=media&token=aaa55147-77c8-4e21-b940-d0b36c524ecb",
+      "info": "Kyoto, Japan, renowned for its rich cultural heritage and serene beauty, is a city that captivates travelers year-round. During the tranquil spring season, cherry blossoms adorn the landscape, creating a picturesque setting for exploring historic temples and traditional tea ceremonies. Mild weather in Kyoto makes it a delightful destination for outdoor adventures. This city perfectly blends modernity with its ancient roots, offering a unique experience for those seeking both urban and natural beauty. With a moderate budget range, you can savor local cuisine and stay in comfortable accommodations. Kyoto beckons with its timeless allure, waiting to be explored."
     },
     {
       "name": "Barcelona, Spain",
@@ -20,7 +21,8 @@
       "hotelBudget": "$$$",
       "diningBudget": "$$",
       "transportationBudget": "$$",
-      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/barcelona2.webp?alt=media&token=6e288bed-6bdf-46b8-bd5a-764d4b34c552"
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/barcelona2.webp?alt=media&token=6e288bed-6bdf-46b8-bd5a-764d4b34c552",
+      "info": "Barcelona, Spain, is a vibrant coastal city known for its sunny Mediterranean climate and rich cultural scene. During the summer season, its beautiful beaches and lively atmosphere make it a top destination for travelers. This city seamlessly combines urban sophistication with tropical charm, offering a diverse range of experiences. With a moderate to high budget, you can enjoy exquisite dining, explore its iconic architecture, and stay in luxurious accommodations. Barcelona's unique blend of history, art, and cuisine creates an unforgettable journey for those seeking the perfect mix of city life and coastal beauty. Barcelona awaits, promising a memorable escape."
     },
     {
       "name": "Queenstown, New Zealand",
@@ -31,7 +33,8 @@
       "hotelBudget": "$$$",
       "diningBudget": "$$",
       "transportationBudget": "$$$",
-      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/new%20zealand2.webp?alt=media&token=edc9927b-4e69-4bb9-92f5-328b0391b482"
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/new%20zealand2.webp?alt=media&token=edc9927b-4e69-4bb9-92f5-328b0391b482",
+      "info": "Queenstown, New Zealand, nestled amidst the breathtaking Southern Alps, is an autumn wonderland. With crisp, cool weather and stunning foliage, it's a paradise for nature lovers and adventure seekers. The city is known for its mesmerizing landscapes, offering opportunities for road trips and outdoor exploration. Despite its tranquil surroundings, Queenstown provides a range of accommodations and dining experiences for travelers with moderate to high budgets. Discover the charm of this mountainous paradise as you embark on thrilling adventures and immerse yourself in its natural beauty during the colorful autumn season. Queenstown promises an unforgettable escape for all adventurers."
     },
     {
       "name": "Rome, Italy",
@@ -42,7 +45,8 @@
       "hotelBudget": "$$$",
       "diningBudget": "$$",
       "transportationBudget": "$",
-      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/rome2.jpeg?alt=media&token=a1f4a4ba-ecd2-4c97-854c-dd7a9c81dbca"
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/rome2.jpeg?alt=media&token=a1f4a4ba-ecd2-4c97-854c-dd7a9c81dbca",
+      "info": "Rome, Italy, a city steeped in history and culture, beckons travelers with its mild spring and autumn seasons. Its iconic landmarks, including the Colosseum and Vatican City, tell tales of ancient grandeur. A preferred destination for city explorers and cruise enthusiasts, Rome offers a perfect blend of modern amenities and historical marvels. With a moderate budget, you can relish Italian cuisine, stay in charming hotels, and traverse the city's cobblestone streets. Rome's timeless charm and rich heritage promise an enchanting experience, making it a must-visit for anyone seeking a journey through the ages. Discover Rome's beauty and immerse yourself in its captivating history."
     },
     {
       "name": "Sydney, Australia",
@@ -53,7 +57,8 @@
       "hotelBudget": "$$",
       "diningBudget": "$$",
       "transportationBudget": "$$",
-      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/sydney2.webp?alt=media&token=2f2b22f6-9b86-4efc-a0b9-e15e535e1f3b"
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/sydney2.webp?alt=media&token=2f2b22f6-9b86-4efc-a0b9-e15e535e1f3b",
+      "info": "Sydney, Australia, bathed in mild winter temperatures, is a captivating city that seamlessly merges urban sophistication with tropical allure. Known for its iconic Sydney Opera House and stunning harbor, it's a top choice for city and cruise enthusiasts. With a moderate budget, you can savor diverse cuisines, explore cultural landmarks, and enjoy comfortable accommodations. Sydney's coastal beauty, Bondi Beach, and vibrant arts scene offer a dynamic experience year-round. Whether you're strolling along the Sydney Harbour Bridge or discovering indigenous culture, this city promises a unique blend of cosmopolitan delights and natural wonders that will leave you enchanted. Explore Sydney and embrace its diversity and charm."
     },
     {
       "name": "Reykjavik, Iceland",
@@ -64,18 +69,20 @@
       "hotelBudget": "$$$$",
       "diningBudget": "$$$",
       "transportationBudget": "$$$",
-      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/iceland2.webp?alt=media&token=64d19ea8-68c1-4025-bfc6-3199acc4cf09"
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/iceland2.webp?alt=media&token=64d19ea8-68c1-4025-bfc6-3199acc4cf09",
+      "info": "Reykjavik, Iceland, bathed in summer's cool embrace, is a haven for nature enthusiasts and adventurers. Surrounded by stunning mountains and captivating landscapes, it's an ideal destination for mountain lovers and camping aficionados. Despite its remote location, Reykjavik offers various accommodations and dining options for travelers with moderate to high budgets. This city is a gateway to Iceland's breathtaking natural wonders, including the mesmerizing Northern Lights. Explore its unique culture, soak in geothermal pools, and embark on thrilling outdoor excursions. Reykjavik invites you to experience the serenity of Iceland's wilderness and discover the magic of its summer season."
     },
     {
       "name": "Bangkok, Thailand",
       "season": ["Winter"],
       "temperature": ["Sunny"],
-      "preferences": ["City", "Tropical","Cruise"],
+      "preferences": ["City", "Tropical", "Cruise"],
       "budget": { "min": 50, "max": 150 },
       "hotelBudget": "$",
       "diningBudget": "$",
       "transportationBudget": "$",
-      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/thai2.jpeg?alt=media&token=db1e00ed-5a07-457a-9553-c38527912de8"
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/thai2.jpeg?alt=media&token=db1e00ed-5a07-457a-9553-c38527912de8",
+      "info": "Bangkok, Thailand, basks in the sunny embrace of winter, making it a year-round hotspot for city and tropical enthusiasts. This bustling metropolis offers a mix of modernity and tradition, with a rich cultural heritage reflected in its temples, street markets, and cuisine. Even on a tight budget, you can savor delicious street food, explore ornate temples, and experience the city's vibrant energy. Bangkok's charm lies in its dynamic street life, floating markets, and lively nightlife. Discover the cultural tapestry, vibrant street scenes, and serene temples that make Bangkok an enchanting destination, where every corner has a story to tell."
     },
     {
       "name": "Cape Town, South Africa",
@@ -86,7 +93,8 @@
       "hotelBudget": "$$",
       "diningBudget": "$$",
       "transportationBudget": "$$",
-      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/capetown2.jpeg?alt=media&token=e742f974-432e-4608-85fe-4ecd4fa8cc81"
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/capetown2.jpeg?alt=media&token=e742f974-432e-4608-85fe-4ecd4fa8cc81",
+      "info": "Cape Town, South Africa, bathed in mild spring temperatures, is a picturesque city nestled between majestic mountains and the glistening sea. It's a haven for mountain enthusiasts and road trip aficionados, offering breathtaking views and outdoor adventures. With a moderate budget, you can indulge in delectable cuisine, explore the city's rich history, and stay in charming accommodations. Cape Town's diverse culture, vibrant arts scene, and stunning landscapes make it a captivating destination. Whether you're hiking Table Mountain, visiting historic landmarks, or lounging on pristine beaches, Cape Town promises an unforgettable journey through its natural and cultural wonders."
     },
     {
       "name": "Hanoi, Vietnam",
@@ -97,7 +105,8 @@
       "hotelBudget": "$",
       "diningBudget": "$",
       "transportationBudget": "$",
-      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/haoni.jpg?alt=media&token=a125396f-2654-444e-af0a-4699932bca64"
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/haoni.jpg?alt=media&token=a125396f-2654-444e-af0a-4699932bca64",
+      "info": "Hanoi, Vietnam, offers a delightful blend of history and modernity. With cool autumn weather, it's a charming destination for city and tropical enthusiasts. Discover its rich culture through ancient temples, bustling street markets, and sumptuous street food. Even on a tight budget, you can savor local flavors, explore historic sites, and stay in cozy accommodations. Hanoi's old-world charm, combined with its bustling city life, creates an enticing contrast that's waiting to be explored."
     },
     {
       "name": "Vancouver, Canada",
@@ -108,7 +117,8 @@
       "hotelBudget": "$$$",
       "diningBudget": "$$",
       "transportationBudget": "$$",
-      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/Vancouver.jpg?alt=media&token=188423bb-f542-4a8e-b754-b91a4cd99a35"
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/Vancouver.jpg?alt=media&token=188423bb-f542-4a8e-b754-b91a4cd99a35",
+      "info": "Vancouver, Canada, boasts warm summer temperatures and stunning natural beauty. Nestled between the city and mountains, it's a paradise for city and mountain lovers. Enjoy outdoor activities like hiking and cycling, and explore diverse neighborhoods. With a moderate budget, you can dine on fresh seafood, visit cultural attractions, and stay in comfortable hotels. Vancouver's picturesque landscapes, including Stanley Park and Granville Island, offer endless adventures in this coastal gem."
     },
     {
       "name": "Paris, France",
@@ -119,7 +129,8 @@
       "hotelBudget": "$$$",
       "diningBudget": "$$$",
       "transportationBudget": "$$",
-      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/paris.jpeg?alt=media&token=5c41a661-5239-4eae-a244-584ca4dfdb76"
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/paris.jpeg?alt=media&token=5c41a661-5239-4eae-a244-584ca4dfdb76",
+      "info": "Paris, France, is a timeless city that shines in mild spring and summer weather. Renowned for its iconic landmarks like the Eiffel Tower and Louvre Museum, it's a top choice for city and cruise enthusiasts. Experience exquisite French cuisine, explore art and history, and stay in charming accommodations. Paris's romantic ambiance, charming neighborhoods, and cultural richness make it an unparalleled destination for travelers seeking a perfect blend of cosmopolitan and historic experiences."
     },
     {
       "name": "New York, USA",
@@ -130,29 +141,32 @@
       "hotelBudget": "$$$",
       "diningBudget": "$$$",
       "transportationBudget": "$$",
-      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/nyc.webp?alt=media&token=f443206b-144c-4063-9e02-03745a6bc245"
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/nyc.webp?alt=media&token=f443206b-144c-4063-9e02-03745a6bc245",
+      "info": "New York, USA, showcases its mild autumn and spring seasons with a blend of urban sophistication and cultural richness. As a city enthusiast's dream, it offers iconic landmarks like Times Square and Central Park. Explore world-class dining, cultural attractions, and comfortable accommodations, even with a moderate budget. The city's energy is contagious, and its diverse neighborhoods, museums, and theaters provide endless entertainment. Whether you're strolling through historic streets, catching a Broadway show, or enjoying the skyline from the Empire State Building, New York promises an unforgettable experience in every corner. Discover the city that never sleeps and be captivated by its allure."
     },
     {
       "name": "Cairo, Egypt",
       "season": ["Winter"],
       "temperature": ["Sunny"],
-      "preferences": ["City", "Tropical","Roadtrip"],
+      "preferences": ["City", "Tropical", "Roadtrip"],
       "budget": { "min": 80, "max": 200 },
       "hotelBudget": "$$",
       "diningBudget": "$",
       "transportationBudget": "$",
-      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/eygpt.webp?alt=media&token=5b2d3566-e847-4434-b5d3-763984398514"
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/eygpt.webp?alt=media&token=5b2d3566-e847-4434-b5d3-763984398514",
+      "info": "Cairo, Egypt, bathed in sunny winter weather, is a captivating blend of ancient history and vibrant city life. As a city and tropical destination, it offers a unique mix of cultural wonders and modern amenities. Even on a tight budget, you can explore ancient pyramids, sample flavorful street food, and find comfortable accommodations. Cairo's bustling markets, historical sites like the Giza Pyramids, and the enchanting Nile River create an atmosphere that's both enchanting and dynamic. Immerse yourself in the mysteries of Egypt's past and the lively spirit of its present as you journey through this remarkable city."
     },
     {
       "name": "Rio de Janeiro, Brazil",
       "season": ["Summer"],
       "temperature": ["Warm"],
-      "preferences": ["City", "Tropical", "Cruise"], 
+      "preferences": ["City", "Tropical", "Cruise"],
       "budget": { "min": 100, "max": 250 },
       "hotelBudget": "$$",
       "diningBudget": "$$",
       "transportationBudget": "$",
-      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/brazil.webp?alt=media&token=c3802994-e7b4-43a7-a974-c4ce6aabdcd1"
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/brazil.webp?alt=media&token=c3802994-e7b4-43a7-a974-c4ce6aabdcd1",
+      "info": "Rio de Janeiro, Brazil, basks in warm summer temperatures, offering a vibrant fusion of urban excitement and tropical paradise. It's a dream destination for city and tropical enthusiasts, boasting iconic landmarks like Christ the Redeemer and Copacabana Beach. With a moderate budget, you can savor Brazilian cuisine, enjoy samba rhythms, and find comfortable accommodations. Rio's Carnival spirit, lush rainforests, and stunning coastline create a captivating backdrop for your adventures. Whether you're dancing at Carnival, exploring Sugarloaf Mountain, or relaxing on golden sands, Rio de Janeiro promises an exhilarating and unforgettable experience in the heart of Brazil."
     },
     {
       "name": "Moscow, Russia",
@@ -163,7 +177,8 @@
       "hotelBudget": "$$$",
       "diningBudget": "$$",
       "transportationBudget": "$$",
-      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/moscow.webp?alt=media&token=4714c2a2-416d-4b40-8798-3296ddc796fc"
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/moscow.webp?alt=media&token=4714c2a2-416d-4b40-8798-3296ddc796fc",
+      "info": "Moscow, Russia, enveloped in a cold winter's embrace, is a city that seamlessly marries its rich history with modern grandeur. As a destination for city and cruise enthusiasts, it offers iconic landmarks like the Kremlin and Red Square. Even on a moderate budget, you can indulge in Russian cuisine, explore historical treasures, and find comfortable accommodations. Moscow's opulent architecture, cultural heritage, and vibrant nightlife provide a captivating blend of old-world charm and contemporary allure. Whether you're visiting museums, attending a ballet performance, or cruising along the Moskva River, Moscow invites you to uncover the depths of its cultural riches."
     },
     {
       "name": "Marrakech, Morocco",
@@ -174,7 +189,8 @@
       "hotelBudget": "$$",
       "diningBudget": "$",
       "transportationBudget": "$",
-      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/morocco.webp?alt=media&token=fef3b983-103c-4331-b72f-9a4549f71d22"
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/morocco.webp?alt=media&token=fef3b983-103c-4331-b72f-9a4549f71d22",
+      "info": "Marrakech, Morocco, immersed in mild spring and autumn temperatures, is a mesmerizing tapestry of culture and history. It beckons city and road trip enthusiasts with its exotic allure. On a budget-friendly journey, you can savor the flavors of Moroccan cuisine, wander through enchanting souks, and find charming accommodations. Marrakech's medina, with its labyrinthine streets and stunning architecture, creates an atmospheric backdrop for your exploration. Discover vibrant marketplaces, serene gardens, and the intoxicating ambiance of the city's riads. Marrakech invites you to embark on an enchanting journey through its intricate blend of tradition and modernity."
     },
     {
       "name": "Tokyo, Japan",
@@ -185,7 +201,8 @@
       "hotelBudget": "$$$",
       "diningBudget": "$$$",
       "transportationBudget": "$$",
-      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/Tokyo-2021-GettyImages-1208124099.jpg?alt=media&token=aaa55147-77c8-4e21-b940-d0b36c524ecb"
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/Tokyo-2021-GettyImages-1208124099.jpg?alt=media&token=aaa55147-77c8-4e21-b940-d0b36c524ecb",
+      "info": "Tokyo, Japan, enveloped in the embrace of spring, is a dynamic city that seamlessly merges tradition and modernity. It's a top destination for city and mountain enthusiasts, offering iconic landmarks like Tokyo Tower and the serene beauty of Mount Fuji. Even on a moderate budget, you can savor delectable Japanese cuisine, explore historic temples, and find comfortable accommodations. Tokyo's bustling streets, neon-lit skyscrapers, and tranquil gardens provide a rich tapestry of experiences. Whether you're strolling through Asakusa's ancient streets, indulging in sushi delights, or taking in panoramic city views, Tokyo promises an unforgettable journey through its diverse and captivating landscapes."
     },
     {
       "name": "Santorini, Greece",
@@ -196,7 +213,8 @@
       "hotelBudget": "$$$",
       "diningBudget": "$$",
       "transportationBudget": "$$",
-      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/greece.avif?alt=media&token=0452bc40-36ed-4600-b5c6-d0de58d9a5a7"
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/greece.avif?alt=media&token=0452bc40-36ed-4600-b5c6-d0de58d9a5a7",
+      "info": "Santorini, Greece, bathed in the Mediterranean sun, is a picturesque paradise that captures the essence of island life. This tropical and city enthusiast's dream offers stunning landscapes, including the iconic blue-domed churches and breathtaking sunsets. On a moderate budget, you can relish Greek cuisine, explore charming villages, and find cozy accommodations with scenic views. Santorini's romantic ambiance, crystal-clear waters, and historic sites make it an ideal destination for relaxation and exploration. Whether you're savoring local delicacies in Oia, sunbathing on the unique volcanic beaches, or immersing yourself in ancient history, Santorini promises an enchanting experience in the heart of the Aegean Sea."
     },
     {
       "name": "Las Vegas, USA",
@@ -207,7 +225,8 @@
       "hotelBudget": "$$$$",
       "diningBudget": "$$$",
       "transportationBudget": "$$",
-      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/vegas.jpeg?alt=media&token=114d69a4-34bd-4d47-b594-fba5dd63eed3"
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/vegas.jpeg?alt=media&token=114d69a4-34bd-4d47-b594-fba5dd63eed3",
+      "info": "Las Vegas, USA, is a dazzling oasis in the heart of the Nevada desert. Known as the Entertainment Capital of the World, this city offers an electrifying blend of city life and desert landscapes. Famous for its iconic Strip, lavish hotels, and world-class casinos, Las Vegas is a haven for entertainment seekers. With a flexible budget, you can dine at renowned restaurants, attend spectacular shows, and stay in luxurious accommodations. Whether you're testing your luck at the gaming tables, exploring nearby natural wonders like the Grand Canyon, or enjoying the vibrant nightlife, Las Vegas promises an exhilarating and unforgettable experience."
     },
     {
       "name": "Amsterdam, Netherlands",
@@ -218,7 +237,8 @@
       "hotelBudget": "$$",
       "diningBudget": "$$",
       "transportationBudget": "$",
-      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/netherland.webp?alt=media&token=41b1e81d-51b5-4283-b654-7f0731a0c88f"
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/netherland.webp?alt=media&token=41b1e81d-51b5-4283-b654-7f0731a0c88f",
+      "info": "Amsterdam, Netherlands, known for its picturesque canals and historic charm, is a city that beckons travelers with its unique blend of cultural richness and natural beauty. As a destination for city and cruise enthusiasts, it offers iconic landmarks like the Anne Frank House and the Van Gogh Museum. Even on a moderate budget, you can indulge in Dutch delicacies, explore centuries-old architecture, and find cozy accommodations. Amsterdam's vibrant art scene, vibrant neighborhoods, and scenic waterways provide a captivating backdrop for your exploration. Whether you're cycling along the canals, admiring world-class art, or savoring Dutch pancakes, Amsterdam promises an enriching and memorable journey."
     },
     {
       "name": "Austin, Texas, USA",
@@ -229,7 +249,8 @@
       "hotelBudget": "$$",
       "diningBudget": "$$",
       "transportationBudget": "$$",
-      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/austin.jpeg?alt=media&token=0e260eea-fba2-46de-b951-bf26a0c59c1c"
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/austin.jpeg?alt=media&token=0e260eea-fba2-46de-b951-bf26a0c59c1c",
+      "info": "Austin, Texas, USA, is a lively city known for its vibrant music scene, cultural diversity, and outdoor attractions. Nestled in the heart of the Lone Star State, Austin is a haven for music and city enthusiasts alike. With a moderate budget, you can enjoy live music at iconic venues, savor mouthwatering barbecue, and find comfortable accommodations. Austin's friendly atmosphere, beautiful parks, and unique festivals create a dynamic and inviting environment. Whether you're exploring the trails of Barton Creek Greenbelt, attending the renowned South by Southwest festival, or indulging in Tex-Mex cuisine, Austin promises a warm Texan welcome and an unforgettable experience."
     },
     {
       "name": "Aspen, Colorado, USA",
@@ -240,7 +261,8 @@
       "hotelBudget": "$$$$",
       "diningBudget": "$$$",
       "transportationBudget": "$$$",
-      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/aspen.jpeg?alt=media&token=42d4dc15-e2f0-466d-8949-e32dc7fb3104"
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/aspen.jpeg?alt=media&token=42d4dc15-e2f0-466d-8949-e32dc7fb3104",
+      "info": "Aspen, Colorado, USA, nestled in the Rocky Mountains, is a premier destination for outdoor enthusiasts and winter sports aficionados. This mountain and city enthusiast's paradise offers world-class skiing, snowboarding, and year-round outdoor activities. With a flexible budget, you can relish gourmet dining, explore the charming downtown, and find cozy alpine accommodations. Aspen's stunning natural beauty, vibrant arts scene, and luxury resorts create a captivating blend of adventure and relaxation. Whether you're hitting the slopes, attending cultural events like the Aspen Music Festival, or unwinding in the hot springs, Aspen promises a memorable and invigorating escape in the heart of the Rockies."
     },
     {
       "name": "Miami, Florida, USA",
@@ -251,7 +273,8 @@
       "hotelBudget": "$$$",
       "diningBudget": "$$",
       "transportationBudget": "$$",
-      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/miami.webp?alt=media&token=c3d2d8d4-1623-4702-9361-5b060f8967d0"
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/miami.webp?alt=media&token=c3d2d8d4-1623-4702-9361-5b060f8967d0",
+      "info": "Miami, Florida, USA, bathed in perpetual sunshine, is a vibrant and diverse city that beckons travelers with its stunning beaches and cultural richness. As a destination for tropical and city enthusiasts, it offers iconic attractions like South Beach and the Art Deco Historic District. Even on a moderate budget, you can savor Latin-inspired cuisine, explore vibrant neighborhoods, and find comfortable accommodations. Miami's lively nightlife, art scene, and water activities provide a dynamic backdrop for your exploration. Whether you're lounging on the white sandy shores, admiring colorful street art in Wynwood, or dancing the night away in the city's vibrant clubs, Miami promises an unforgettable and sun-kissed adventure."
     },
     {
       "name": "Seattle, Washington, USA",
@@ -262,7 +285,8 @@
       "hotelBudget": "$$",
       "diningBudget": "$$",
       "transportationBudget": "$$",
-      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/seattle.jpeg?alt=media&token=d8aef186-26cc-49b6-9c71-b8f9563de930"
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/seattle.jpeg?alt=media&token=d8aef186-26cc-49b6-9c71-b8f9563de930",
+      "info": "Seattle, Washington, USA, nestled in the Pacific Northwest, is a city of breathtaking natural beauty and innovative urban culture. Surrounded by mountains, forests, and waterways, it's an ideal destination for outdoor enthusiasts and city lovers. With a flexible budget, you can savor gourmet coffee, explore iconic landmarks like the Space Needle, and find comfortable accommodations. Seattle's vibrant music scene, diverse neighborhoods, and culinary delights offer a rich tapestry of experiences. Whether you're hiking in nearby national parks, attending live music concerts, or indulging in Pacific Northwest cuisine, Seattle promises a unique and memorable journey in the heart of the Emerald City."
     },
     {
       "name": "Banff, Alberta, Canada",
@@ -273,7 +297,8 @@
       "hotelBudget": "$$$",
       "diningBudget": "$$",
       "transportationBudget": "$$$",
-      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/banff.jpeg?alt=media&token=1c5a3636-aa19-4565-bf1b-5bd798f17d09"
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/banff.jpeg?alt=media&token=1c5a3636-aa19-4565-bf1b-5bd798f17d09",
+      "info": "Banff, Alberta, Canada, nestled in the heart of the Canadian Rockies, is a pristine haven for nature lovers and outdoor adventurers. Known for its stunning landscapes, this mountain and road trip enthusiast's dream offers breathtaking national parks, crystal-clear lakes, and abundant wildlife. With a flexible budget, you can explore Banff's hiking trails, take in the beauty of Lake Louise, and find cozy accommodations. Banff's serene wilderness, charming town, and outdoor activities provide a perfect escape from city life. Whether you're skiing in winter, hiking in summer, or marveling at the northern lights, Banff promises an unforgettable journey in the heart of the Rockies."
     },
     {
       "name": "Santa Fe, New Mexico, USA",
@@ -284,7 +309,8 @@
       "hotelBudget": "$$",
       "diningBudget": "$$",
       "transportationBudget": "$",
-      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/Santa-Fe-New-Mexico.webp?alt=media&token=d56c899f-6efd-43a8-a9a9-d8742f4771e7"
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/Santa-Fe-New-Mexico.webp?alt=media&token=d56c899f-6efd-43a8-a9a9-d8742f4771e7",
+      "info": "Santa Fe, New Mexico, USA, nestled in the Sangre de Cristo Mountains, is a captivating blend of culture, history, and natural beauty. Known for its adobe architecture, this city is a haven for art enthusiasts and spiritual seekers. With a flexible budget, you can explore the city's art galleries, savor delicious Southwestern cuisine, and find comfortable accommodations in charming adobe-style inns. Santa Fe's rich Native American and Spanish heritage, along with its vibrant arts scene, create a unique atmosphere. Whether you're wandering through the historic Plaza, visiting ancient Pueblos, or enjoying the healing energies of the desert, Santa Fe promises an enriching and culturally immersive experience."
     },
     {
       "name": "Charleston, South Carolina, USA",
@@ -295,7 +321,8 @@
       "hotelBudget": "$$",
       "diningBudget": "$$",
       "transportationBudget": "$$",
-      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/charleston.jpeg?alt=media&token=4420166a-1c1d-41af-b835-a4ba7323473d"
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/charleston.jpeg?alt=media&token=4420166a-1c1d-41af-b835-a4ba7323473d",
+      "info": "Charleston, South Carolina, USA, steeped in history and Southern charm, is a city that beckons with its timeless beauty and rich heritage. Known for its cobblestone streets and antebellum architecture, it offers a glimpse into America's past. With a flexible budget, you can savor Lowcountry cuisine, explore historic plantations, and find accommodations in elegant Southern-style inns. Charleston's historic district, scenic waterfront, and warm hospitality create an enchanting atmosphere. Whether you're strolling along Rainbow Row, touring historic forts, or indulging in soulful cuisine, Charleston promises a delightful and culturally significant journey through the heart of the South."
     },
     {
       "name": "Savannah, Georgia, USA",
@@ -306,7 +333,8 @@
       "hotelBudget": "$",
       "diningBudget": "$",
       "transportationBudget": "$",
-      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/Georgia.jpeg?alt=media&token=2600258e-e31f-460b-aca6-5e692f419234"
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/Georgia.jpeg?alt=media&token=2600258e-e31f-460b-aca6-5e692f419234",
+      "info": "Savannah, Georgia, USA, a city of Southern elegance and historic charm, invites visitors to step back in time and experience its timeless beauty. Known for its cobblestone streets and well-preserved historic district, it's a destination that exudes old-world allure. With a flexible budget, you can savor Southern cuisine, take historic tours, and find accommodations in charming antebellum inns. Savannah's lush squares, moss-draped oak trees, and vibrant arts scene create a picturesque and romantic atmosphere. Whether you're exploring historic landmarks, enjoying riverfront walks, or experiencing the city's unique hospitality, Savannah promises a captivating journey through the heart of the South."
     },
     {
       "name": "Montreal, Quebec, Canada",
@@ -317,7 +345,8 @@
       "hotelBudget": "$$$",
       "diningBudget": "$$",
       "transportationBudget": "$$",
-      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/Montreal.jpg?alt=media&token=0bea9f1b-613b-40db-aff1-f33f3cbd7b9d"
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/Montreal.jpg?alt=media&token=0bea9f1b-613b-40db-aff1-f33f3cbd7b9d",
+      "info": "Montreal, Quebec, Canada, a dynamic and multicultural city, offers a rich blend of history, culture, and modernity. Known for its European charm, it boasts a vibrant arts scene, diverse neighborhoods, and a thriving culinary culture. With a flexible budget, you can indulge in delicious cuisine, explore historic Old Montreal, and find accommodations in boutique hotels. Montreal's festivals, bilingual atmosphere, and scenic St. Lawrence River create a unique and lively ambiance. Whether you're exploring art galleries, enjoying live music, or savoring poutine, Montreal promises a captivating journey through Canada's cultural capital."
     },
     {
       "name": "Nashville, Tennessee, USA",
@@ -328,7 +357,8 @@
       "hotelBudget": "$$",
       "diningBudget": "$$",
       "transportationBudget": "$$",
-      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/Tennessee.webp?alt=media&token=aa54da92-de1c-4c65-b79d-ccd94cf241b5"
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/Tennessee.webp?alt=media&token=aa54da92-de1c-4c65-b79d-ccd94cf241b5",
+      "info": "Nashville, Tennessee, USA, often referred to as \"Music City,\" is a vibrant and iconic destination known for its rich musical heritage and lively atmosphere. With a thriving country music scene, historic music venues, and a dynamic nightlife, it's a place where music lovers can immerse themselves in the sounds of the South. Explore the Country Music Hall of Fame, enjoy live performances on Broadway, and savor Southern cuisine in this lively city. Nashville's friendly locals and energetic vibe create an unforgettable experience for visitors looking to embrace the heart and soul of American music culture."
     },
     {
       "name": "Portland, Oregon, USA",
@@ -339,7 +369,8 @@
       "hotelBudget": "$$",
       "diningBudget": "$$",
       "transportationBudget": "$$",
-      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/Portland.jpg?alt=media&token=0f786d4f-b396-4b75-8247-fa01d360ff83"
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/Portland.jpg?alt=media&token=0f786d4f-b396-4b75-8247-fa01d360ff83",
+      "info": "Portland, Oregon, USA, nestled in the Pacific Northwest, is a city renowned for its vibrant arts scene, eco-friendliness, and culinary delights. Known for its lush parks, craft breweries, and progressive culture, it's a haven for nature enthusiasts and creatives alike. With a flexible budget, you can explore the city's scenic parks, savor farm-to-table cuisine, and find accommodations in boutique hotels. Portland's iconic Powell's Books, scenic bridges, and quirky neighborhoods create a unique and welcoming atmosphere. Whether you're hiking in Forest Park, sampling local coffee, or exploring the famous food carts, Portland promises an eclectic and environmentally-conscious urban adventure."
     },
     {
       "name": "Quebec City, Quebec, Canada",
@@ -350,7 +381,8 @@
       "hotelBudget": "$$$",
       "diningBudget": "$$",
       "transportationBudget": "$$",
-      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/Quebec.webp?alt=media&token=2ff34aa2-3335-4ee4-812a-af1b6601f0d0"
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/Quebec.webp?alt=media&token=2ff34aa2-3335-4ee4-812a-af1b6601f0d0",
+      "info": "Quebec City, Quebec, Canada, a charming and historic gem, transports visitors to a bygone era of European elegance in North America. With its well-preserved Old Town, cobblestone streets, and iconic Château Frontenac, it's a UNESCO World Heritage site and a testament to Canada's rich heritage. With a flexible budget, you can savor French-inspired cuisine, wander through charming streets, and stay in boutique hotels. Quebec City's lively festivals, Winter Carnival, and enchanting architecture create an atmosphere that feels straight out of a fairy tale. Whether you're exploring the city's fortifications, enjoying maple treats, or admiring the St. Lawrence River views, Quebec City offers a captivating journey through history and culture."
     },
     {
       "name": "Victoria, British Columbia, Canada",
@@ -361,7 +393,8 @@
       "hotelBudget": "$$",
       "diningBudget": "$$",
       "transportationBudget": "$$",
-      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/victoria.jpeg?alt=media&token=ef363d89-415b-4e39-bd53-1f7d974869de"
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/victoria.jpeg?alt=media&token=ef363d89-415b-4e39-bd53-1f7d974869de",
+      "info": "Victoria, British Columbia, Canada, nestled on Vancouver Island, is a picturesque and serene destination known for its historic charm, lush gardens, and coastal beauty. With its British influence, it offers visitors a taste of old-world elegance in a modern setting. With a flexible budget, you can explore the stunning Butchart Gardens, indulge in afternoon tea, and find accommodations in quaint inns. Victoria's mild climate, vibrant arts scene, and scenic Inner Harbour provide a relaxing and enchanting atmosphere. Whether you're strolling along the Inner Harbour Causeway, visiting Royal BC Museum, or whale-watching in the Pacific, Victoria promises a tranquil and culturally rich coastal escape."
     },
     {
       "name": "San Diego, California, USA",
@@ -372,7 +405,8 @@
       "hotelBudget": "$$",
       "diningBudget": "$$",
       "transportationBudget": "$",
-      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/sd.jpeg?alt=media&token=643049db-0fa4-4405-bb7e-379074145ffc"
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/sd.jpeg?alt=media&token=643049db-0fa4-4405-bb7e-379074145ffc",
+      "info": "San Diego, California, USA, located along the stunning Pacific Coast, is a sun-kissed paradise renowned for its beautiful beaches, vibrant culture, and outdoor adventures. With its pleasant climate year-round, it's a haven for beach lovers, surf enthusiasts, and nature seekers. With a flexible budget, you can enjoy miles of coastline, explore Balboa Park's museums, and find accommodations in beachfront hotels. San Diego's diverse neighborhoods, world-class zoo, and thriving craft beer scene create a dynamic and welcoming atmosphere. Whether you're catching waves at Pacific Beach, exploring the Gaslamp Quarter, or visiting the USS Midway Museum, San Diego promises a coastal getaway filled with sunshine and fun."
     },
     {
       "name": "Whistler, British Columbia, Canada",
@@ -383,7 +417,8 @@
       "hotelBudget": "$$$$",
       "diningBudget": "$$$",
       "transportationBudget": "$$$",
-      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/Whistler.jpeg?alt=media&token=e526a714-25a3-45c9-8465-ed9405167e08"
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/Whistler.jpeg?alt=media&token=e526a714-25a3-45c9-8465-ed9405167e08",
+      "info": "Whistler, British Columbia, Canada, nestled in the Coast Mountains, is a world-renowned destination for outdoor enthusiasts and adventure seekers. Known for its breathtaking scenery, it offers year-round activities such as skiing, snowboarding, mountain biking, and hiking. With a flexible budget, you can explore Whistler and Blackcomb mountains, dine in vibrant village restaurants, and stay in cozy alpine lodges. Whistler's charming pedestrian village, vibrant arts scene, and thrilling outdoor adventures provide an exciting and invigorating atmosphere. Whether you're hitting the slopes in winter, exploring alpine trails in summer, or enjoying the lively après-ski scene, Whistler promises an unforgettable mountain retreat in the heart of nature."
     },
     {
       "name": "Prague, Czech Republic",
@@ -394,7 +429,8 @@
       "hotelBudget": "$$",
       "diningBudget": "$$",
       "transportationBudget": "$",
-      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/Prague.jpeg?alt=media&token=8836d0cf-655e-488b-92e9-8fefd56fc542"
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/Prague.jpeg?alt=media&token=8836d0cf-655e-488b-92e9-8fefd56fc542",
+      "info": "Prague, Czech Republic, often called the \"City of a Hundred Spires,\" is a mesmerizing European destination known for its rich history, stunning architecture, and enchanting atmosphere. With its picturesque Old Town, historic Charles Bridge, and majestic Prague Castle, it's a haven for history buffs, art enthusiasts, and romantics. With a flexible budget, you can explore the city's iconic landmarks, savor traditional Czech cuisine, and stay in charming boutique hotels. Prague's cobblestone streets, vibrant cultural scene, and lively pubs create a captivating and romantic ambiance. Whether you're admiring the Astronomical Clock, touring historic cathedrals, or cruising along the Vltava River, Prague promises an unforgettable journey through time and culture."
     },
     {
       "name": "Budapest, Hungary",
@@ -405,7 +441,8 @@
       "hotelBudget": "$",
       "diningBudget": "$",
       "transportationBudget": "$",
-      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/Budapest.webp?alt=media&token=88bd0a9d-27cd-4285-b7ab-28e1ded640ce"
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/Budapest.webp?alt=media&token=88bd0a9d-27cd-4285-b7ab-28e1ded640ce",
+      "info": "Budapest, Hungary, the \"Pearl of the Danube,\" is a captivating European destination that seamlessly blends history, culture, and natural beauty. Its iconic landmarks, including Buda Castle, Fisherman's Bastion, and the Parliament Building, offer a glimpse into centuries of rich history. With a flexible budget, you can indulge in thermal baths, savor Hungarian cuisine, and stay in charming riverside hotels. Budapest's vibrant nightlife, renowned music festivals, and stunning river views create an unforgettable atmosphere. Whether you're exploring historic districts, cruising the Danube, or enjoying a soak in the Széchenyi Thermal Bath, Budapest promises a unique and memorable experience in the heart of Europe."
     },
     {
       "name": "Dublin, Ireland",
@@ -416,7 +453,8 @@
       "hotelBudget": "$$",
       "diningBudget": "$$",
       "transportationBudget": "$$",
-      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/Dublin.webp?alt=media&token=b461dfd1-02cb-4382-93fb-745b6f4919eb"
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/Dublin.webp?alt=media&token=b461dfd1-02cb-4382-93fb-745b6f4919eb",
+      "info": "Dublin, Ireland, is a city steeped in literary history and vibrant culture. It's renowned for its warm hospitality, lively pub scene, and charming Georgian architecture. Visitors can explore iconic sites like Trinity College, home to the Book of Kells, and St. Patrick's Cathedral. With a flexible budget, you can enjoy traditional Irish music, sample hearty cuisine in cozy pubs, and stay in elegant hotels. Dublin's rich literary heritage, showcased in the Dublin Writers Museum and along the Literary Pub Crawl, offers a unique cultural experience. Whether you're wandering through Temple Bar, visiting historic libraries, or enjoying a pint of Guinness, Dublin promises a warm Irish welcome and a memorable journey."
     },
     {
       "name": "Stockholm, Sweden",
@@ -427,7 +465,8 @@
       "hotelBudget": "$$$",
       "diningBudget": "$$",
       "transportationBudget": "$$",
-      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/Stockholm.webp?alt=media&token=07f7a7b3-4e3f-47fe-aae5-c607a4574052"
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/Stockholm.webp?alt=media&token=07f7a7b3-4e3f-47fe-aae5-c607a4574052",
+      "info": "Stockholm, Sweden, known as the \"Venice of the North,\" is a captivating blend of modernity and history set amidst a stunning archipelago. This Scandinavian gem boasts a rich cultural scene with world-class museums like the Vasa Museum and ABBA Museum. With a flexible budget, you can savor Swedish cuisine, explore the charming Old Town (Gamla Stan), and stay in stylish Nordic-designed accommodations. Stockholm's green spaces, like Djurgården Island, provide a tranquil escape, while the bustling streets of Södermalm offer vibrant nightlife. Whether you're cruising the waterways, immersing in Nordic design, or sipping fika (coffee) in cozy cafés, Stockholm promises an unforgettable Scandinavian adventure."
     },
     {
       "name": "Lisbon, Portugal",
@@ -438,7 +477,8 @@
       "hotelBudget": "$$",
       "diningBudget": "$",
       "transportationBudget": "$",
-      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/Lisbon.jpeg?alt=media&token=cf65605e-8921-4af4-b728-bed261631849"
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/Lisbon.jpeg?alt=media&token=cf65605e-8921-4af4-b728-bed261631849",
+      "info": "Lisbon, Portugal, is a city of vibrant colors, historic charm, and a captivating blend of old and new. Known for its picturesque hillsides, cobblestone streets, and iconic yellow trams, Lisbon offers a unique European experience. Visitors can explore historic sites like the Jerónimos Monastery and São Jorge Castle, indulge in delicious Portuguese cuisine, and enjoy live Fado music in cozy taverns. With a flexible budget, you can stay in charming boutique hotels and discover hidden gems in the Alfama district. Lisbon's warm climate, stunning river views, and friendly locals make it a perfect destination for travelers seeking a rich cultural experience and coastal beauty."
     },
     {
       "name": "Hong Kong",
@@ -449,7 +489,8 @@
       "hotelBudget": "$$$",
       "diningBudget": "$$$",
       "transportationBudget": "$$",
-      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/hk.jpeg?alt=media&token=057c895a-1b66-472b-9ad0-86c87c046419"
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/hk.jpeg?alt=media&token=057c895a-1b66-472b-9ad0-86c87c046419",
+      "info": "Hong Kong, a bustling metropolis on China's southern coast, is a captivating blend of East and West. This dynamic city boasts iconic skyscrapers, a vibrant street food scene, and a rich history. Visitors can explore the bustling streets of Kowloon, take in panoramic views from Victoria Peak, and savor dim sum in traditional teahouses. With a flexible budget, you can stay in luxurious hotels, shop in upscale boutiques, and experience Hong Kong's lively nightlife. Its unique fusion of cultures, stunning harbor views, and world-class attractions make Hong Kong an exciting destination for travelers seeking an unforgettable urban adventure in Asia."
     },
     {
       "name": "Beijing, China",
@@ -460,7 +501,8 @@
       "hotelBudget": "$$",
       "diningBudget": "$$",
       "transportationBudget": "$",
-      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/beijing.jpeg?alt=media&token=726c556c-7f9e-4968-b419-3e238048dcd3"
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/beijing.jpeg?alt=media&token=726c556c-7f9e-4968-b419-3e238048dcd3",
+      "info": "Beijing, China's capital, is a city steeped in history and modernity. Known for its iconic landmarks like the Great Wall, Forbidden City, and Temple of Heaven, Beijing offers a glimpse into China's rich cultural heritage. Visitors can wander through ancient hutongs (narrow alleys), indulge in Peking duck, and explore the city's thriving arts scene. With a flexible budget, you can stay in luxurious hotels and experience the city's high-end shopping districts. Beijing's blend of traditional architecture and modern skyscrapers, along with its vibrant street life, make it a captivating destination for travelers seeking a harmonious fusion of the past and present in the heart of China."
     },
     {
       "name": "Shanghai, China",
@@ -471,7 +513,8 @@
       "hotelBudget": "$$$",
       "diningBudget": "$$",
       "transportationBudget": "$$",
-      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/shanghai.webp?alt=media&token=230c2924-4821-448d-99f6-df696e22330f"
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/shanghai.webp?alt=media&token=230c2924-4821-448d-99f6-df696e22330f",
+      "info": "Shanghai, China's largest city, is a dynamic fusion of tradition and modernity. Known for its stunning skyline, historic temples, and bustling streets, Shanghai offers a diverse range of experiences. Visitors can wander through the ancient alleys of the Old Town, marvel at the futuristic architecture of Pudong, and sample authentic Chinese cuisine at street vendors or Michelin-starred restaurants. With a flexible budget, you can explore world-class shopping districts, attend captivating acrobatic shows, and stay in luxurious accommodations. Shanghai's vibrant culture, thriving arts scene, and rapid development make it a captivating destination for travelers seeking a taste of both old and new China."
     },
     {
       "name": "Seoul, South Korea",
@@ -482,7 +525,8 @@
       "hotelBudget": "$$",
       "diningBudget": "$$",
       "transportationBudget": "$",
-      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/seoul.jpeg?alt=media&token=4145ee88-2ceb-47a0-8070-498f2b023804"
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/seoul.jpeg?alt=media&token=4145ee88-2ceb-47a0-8070-498f2b023804",
+      "info": "Seoul, South Korea's vibrant capital, is a city where tradition meets modernity. It's known for its stunning palaces, bustling markets, and a thriving K-pop culture. Visitors can explore historic sites like Gyeongbokgung Palace, indulge in Korean BBQ, and shop for the latest fashion trends in Myeongdong. With a flexible budget, you can stay in stylish hotels, enjoy street food delights, and immerse yourself in Seoul's vibrant nightlife. Seoul's blend of ancient temples and futuristic skyscrapers, along with its warm hospitality, make it an ideal destination for travelers looking to experience both the past and the present of this captivating city."
     },
     {
       "name": "Berlin, Germany",
@@ -493,7 +537,8 @@
       "hotelBudget": "$$",
       "diningBudget": "$",
       "transportationBudget": "$",
-      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/Berlin.jpeg?alt=media&token=e2fcabc8-1e83-4457-b8dc-d7868a5cab3f"
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/Berlin.jpeg?alt=media&token=e2fcabc8-1e83-4457-b8dc-d7868a5cab3f",
+      "info": "Berlin, Germany's vibrant capital, is a city steeped in history and modernity. Known for its iconic landmarks like the Berlin Wall and Brandenburg Gate, the city offers a blend of culture, art, and nightlife. Visitors can explore world-class museums, stroll through lush parks, and savor delicious street food. With a flexible budget, you can stay in trendy boutique hotels and dine in Michelin-starred restaurants. Berlin's creative energy, historical significance, and diverse neighborhoods make it an ideal destination for travelers seeking both a cultural journey and contemporary urban experiences in the heart of Europe."
     },
     {
       "name": "Vienna, Austria",
@@ -504,7 +549,8 @@
       "hotelBudget": "$$",
       "diningBudget": "$$",
       "transportationBudget": "$$",
-      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/Vienna.webp?alt=media&token=9aa6ad24-b391-4611-b8cf-9440eb0854df"
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/Vienna.webp?alt=media&token=9aa6ad24-b391-4611-b8cf-9440eb0854df",
+      "info": "Vienna, Austria's elegant capital, is a city steeped in history and culture. Known for its grand architecture, classical music heritage, and delicious pastries, Vienna offers a charming European experience. Visitors can explore historic landmarks like Schönbrunn Palace and St. Stephen's Cathedral, attend classical concerts, and indulge in Sachertorte cake at traditional coffeehouses. With a flexible budget, you can stay in stylish hotels and enjoy fine dining in the city's renowned restaurants. Vienna's cultural richness, beautiful parks, and friendly atmosphere make it a perfect destination for travelers seeking a mix of art, history, and culinary delights in the heart of Europe."
     },
     {
       "name": "Istanbul, Turkey",
@@ -515,7 +561,8 @@
       "hotelBudget": "$",
       "diningBudget": "$",
       "transportationBudget": "$",
-      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/Istanbul.jpeg?alt=media&token=123f022e-3164-4395-840c-032b0a96a554"
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/Istanbul.jpeg?alt=media&token=123f022e-3164-4395-840c-032b0a96a554",
+      "info": "Istanbul, Turkey, is a captivating city that straddles two continents, Europe and Asia, across the Bosphorus Strait. This historic metropolis is a treasure trove of culture and heritage. Visitors can explore the grandeur of the Hagia Sophia, marvel at the stunning Blue Mosque, and wander through the bustling Grand Bazaar. With a flexible budget, you can savor delicious Turkish cuisine at local eateries, stay in boutique hotels, and experience a traditional hammam bath. Istanbul's rich history, architectural wonders, and the unique blend of East and West create an enchanting atmosphere that draws travelers from around the world."
     },
     {
       "name": "Madrid, Spain",
@@ -526,7 +573,8 @@
       "hotelBudget": "$$",
       "diningBudget": "$$",
       "transportationBudget": "$$",
-      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/Madrid.jpeg?alt=media&token=f83bef86-0774-4a28-a7f6-540e37da1589"
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/Madrid.jpeg?alt=media&token=f83bef86-0774-4a28-a7f6-540e37da1589",
+      "info": "Madrid, Spain's lively capital, is a city that never sleeps. Known for its rich history, stunning architecture, and vibrant culture, Madrid offers a unique Spanish experience. Visitors can explore iconic landmarks like the Royal Palace and Puerta del Sol, indulge in delectable tapas, and witness the passion of flamenco performances. With a flexible budget, you can stay in charming boutique hotels and immerse yourself in the local art scene. Madrid's warm climate, beautiful parks, and bustling plazas make it an ideal destination for travelers seeking a lively and culturally rich European adventure."
     },
     {
       "name": "Copenhagen, Denmark",
@@ -537,7 +585,8 @@
       "hotelBudget": "$$$",
       "diningBudget": "$$",
       "transportationBudget": "$$",
-      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/Denmark.webp?alt=media&token=d182a8ad-ea81-43c0-ad01-1280ace9e32b"
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/Denmark.webp?alt=media&token=d182a8ad-ea81-43c0-ad01-1280ace9e32b",
+      "info": "Copenhagen, the charming capital of Denmark, is a city where historic elegance meets modern innovation. Known for its picturesque canals, colorful townhouses, and world-renowned cuisine, Copenhagen offers a delightful Scandinavian experience. Visitors can explore the fairy-tale-like Tivoli Gardens, bike through the city's bike-friendly streets, and savor Danish pastries in cozy cafés. With a flexible budget, you can stay in stylish design hotels and discover the city's Nordic gastronomy scene. Copenhagen's rich cultural heritage, eco-friendly initiatives, and friendly locals make it a perfect destination for travelers seeking a blend of tradition and contemporary living in the heart of Scandinavia."
     },
     {
       "name": "Athens, Greece",
@@ -548,7 +597,8 @@
       "hotelBudget": "$$",
       "diningBudget": "$$",
       "transportationBudget": "$",
-      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/Athens.jpeg?alt=media&token=52b2d51a-1444-48a4-9eba-e22306e92d5b"
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/Athens.jpeg?alt=media&token=52b2d51a-1444-48a4-9eba-e22306e92d5b",
+      "info": "Athens, Greece, the cradle of Western civilization, is a city steeped in history and culture. Known for its ancient landmarks like the Acropolis, Parthenon, and Agora, Athens offers a journey back in time. Visitors can explore archaeological treasures, stroll through charming Plaka neighborhoods, and indulge in delectable Greek cuisine at tavernas. With a flexible budget, you can stay in boutique hotels with Acropolis views and savor authentic souvlaki and baklava. Athens' sunny climate, friendly locals, and rich heritage make it a perfect destination for history enthusiasts and those seeking a taste of Greece's legendary past and vibrant present."
     }
   ]
 }

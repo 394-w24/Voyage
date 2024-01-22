@@ -181,7 +181,7 @@ function Filter() {
         <Container maxWidth="lg">
           <Divider sx={{ my: 2 }} />
           <Grid container spacing={1}>
-            <Typography variant="subtitle1">Travel Options</Typography>
+            {/* <Typography variant="subtitle1">Travel Options</Typography> */}
             {options.map((preference, index) => (
               <Grid item xs={12} sm={9} md={9} key={index}>
                 <Box display="flex" alignItems="center">
@@ -205,7 +205,7 @@ function Filter() {
           <Divider sx={{ my: 2 }} />
 
           <Grid container spacing={1}>
-            <Typography variant="subtitle1">Seasons</Typography>
+            {/* <Typography variant="subtitle1">Seasons</Typography> */}
             {seasons.map((season, index) => (
               <Grid item xs={12} sm={9} md={9} key={index}>
                 <Box display="flex" alignItems="center">
@@ -229,7 +229,7 @@ function Filter() {
           <Divider sx={{ my: 2 }} />
 
           <Grid container spacing={1}>
-            <Typography variant="subtitle1">Temperatures</Typography>
+            {/* <Typography variant="subtitle1">Temperatures</Typography> */}
             {temperatures.map((temperature, index) => (
               <Grid item xs={12} sm={9} md={9} key={index}>
                 <Box display="flex" alignItems="center">
@@ -255,9 +255,9 @@ function Filter() {
           <Grid
             container
             spacing={1}
-            sx={{ flexGrow: 1, p: 1, marginLeft: -2 }}
+            sx={{ p: 1, marginLeft: -2 }}
           >
-            <Typography variant="subtitle1">Pricing Information</Typography>
+            {/* <Typography variant="subtitle1">Pricing Information</Typography> */}
             <Grid item xs={12} sm={12} md={12}>
               <Typography variant="body2">Price Range ($/day)</Typography>
               <TextField

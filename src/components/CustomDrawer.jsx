@@ -80,7 +80,7 @@ const CustomDrawer = (props) => {
         <Filter />
         </>
       )}
-      <button onClick={signout}>Signout</button>
+      <Button onClick={signout} variant="contained" size="medium" color="primary">Signout</Button>
     </Drawer>
   );
 };

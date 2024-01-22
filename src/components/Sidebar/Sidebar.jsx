@@ -2,6 +2,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { List, ListItem, ListItemIcon, ListItemText } from "@mui/material";
 import SettingsIcon from "@mui/icons-material/Settings";
 import StarRateIcon from "@mui/icons-material/StarRate";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import Filter from "../Filter/Filter";
 import "./Sidebar.css";
 
@@ -21,11 +22,17 @@ const Sidebar = () => {
           </ListItemIcon>
           <ListItemText primary="HOME" />
         </ListItem>
-        <ListItem button onClick={() => handleNavigation("/recommendation")}>
+        <ListItem button onClick={() => handleNavigation("/community")}>
           <ListItemIcon>
             <StarRateIcon />
           </ListItemIcon>
-          <ListItemText primary="WISHLIST" />
+          <ListItemText primary="COMMUNITY" />
+        </ListItem>
+        <ListItem button onClick={() => handleNavigation("/profile")}>
+          <ListItemIcon>
+            <AccountCircleIcon />
+          </ListItemIcon>
+          <ListItemText primary="PROFILE" />
         </ListItem>
         {location.pathname === "/home" && <Filter />}
       </List>
