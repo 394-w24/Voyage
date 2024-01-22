@@ -14,7 +14,7 @@
     },
     {
       "name": "Barcelona, Spain",
-      "season": ["Summer"],
+      "season": ["Summer", "Autumn"],
       "temperature": ["Sunny"],
       "preferences": ["City", "Tropical"],
       "budget": { "min": 120, "max": 300 },
@@ -74,9 +74,9 @@
     },
     {
       "name": "Bangkok, Thailand",
-      "season": ["Winter"],
+      "season": ["Autumn", "Winter"],
       "temperature": ["Sunny"],
-      "preferences": ["City", "Tropical", "Cruise"],
+      "preferences": ["City", "Tropical", "Cruise", "Camping"],
       "budget": { "min": 50, "max": 150 },
       "hotelBudget": "$",
       "diningBudget": "$",
@@ -99,7 +99,7 @@
     {
       "name": "Hanoi, Vietnam",
       "season": ["Autumn"],
-      "temperature": ["Cool"],
+      "temperature": ["Cold"],
       "preferences": ["City", "Tropical"],
       "budget": { "min": 40, "max": 120 },
       "hotelBudget": "$",
@@ -110,8 +110,8 @@
     },
     {
       "name": "Vancouver, Canada",
-      "season": ["Summer"],
-      "temperature": ["Warm"],
+      "season": ["Summer", "Autumn"],
+      "temperature": ["Mild", "Sunny"],
       "preferences": ["City", "Mountains"],
       "budget": { "min": 130, "max": 300 },
       "hotelBudget": "$$$",
@@ -146,7 +146,7 @@
     },
     {
       "name": "Cairo, Egypt",
-      "season": ["Winter"],
+      "season": ["Autumn", "Winter"],
       "temperature": ["Sunny"],
       "preferences": ["City", "Tropical", "Roadtrip"],
       "budget": { "min": 80, "max": 200 },
@@ -158,8 +158,8 @@
     },
     {
       "name": "Rio de Janeiro, Brazil",
-      "season": ["Summer"],
-      "temperature": ["Warm"],
+      "season": ["Summer", "Autumn"],
+      "temperature": ["Mild", "Sunny"],
       "preferences": ["City", "Tropical", "Cruise"],
       "budget": { "min": 100, "max": 250 },
       "hotelBudget": "$$",
@@ -207,7 +207,7 @@
     {
       "name": "Santorini, Greece",
       "season": ["Summer"],
-      "temperature": ["Warm"],
+      "temperature": ["Mild", "Sunny"],
       "preferences": ["Tropical", "Cruise"],
       "budget": { "min": 100, "max": 300 },
       "hotelBudget": "$$$",
@@ -218,8 +218,8 @@
     },
     {
       "name": "Las Vegas, USA",
-      "season": ["Spring", "Autumn"],
-      "temperature": ["Warm"],
+      "season": ["Spring", "Autumn", "Winter"],
+      "temperature": ["Mild", "Sunny"],
       "preferences": ["City", "Roadtrip"],
       "budget": { "min": 150, "max": 400 },
       "hotelBudget": "$$$$",
@@ -242,8 +242,8 @@
     },
     {
       "name": "Austin, Texas, USA",
-      "season": ["Spring", "Autumn"],
-      "temperature": ["Warm"],
+      "season": ["Spring", "Autumn", "Winter"],
+      "temperature": ["Mild", "Sunny"],
       "preferences": ["City", "Roadtrip"],
       "budget": { "min": 120, "max": 300 },
       "hotelBudget": "$$",
@@ -267,8 +267,8 @@
     {
       "name": "Miami, Florida, USA",
       "season": ["Summer"],
-      "temperature": ["Hot"],
-      "preferences": ["City", "Tropical"],
+      "temperature": ["Sunny"],
+      "preferences": ["City", "Tropical", "Camping"],
       "budget": { "min": 150, "max": 350 },
       "hotelBudget": "$$$",
       "diningBudget": "$$",
@@ -315,7 +315,7 @@
     {
       "name": "Charleston, South Carolina, USA",
       "season": ["Spring", "Summer"],
-      "temperature": ["Warm"],
+      "temperature": ["Sunny"],
       "preferences": ["City", "Tropical"],
       "budget": { "min": 110, "max": 260 },
       "hotelBudget": "$$",
@@ -327,7 +327,7 @@
     {
       "name": "Savannah, Georgia, USA",
       "season": ["Spring", "Summer"],
-      "temperature": ["Warm"],
+      "temperature": ["Mild", "Sunny"],
       "preferences": ["City", "Tropical"],
       "budget": { "min": 90, "max": 200 },
       "hotelBudget": "$",
@@ -399,8 +399,8 @@
     {
       "name": "San Diego, California, USA",
       "season": ["Summer"],
-      "temperature": ["Warm"],
-      "preferences": ["City", "Tropical"],
+      "temperature": ["Mild", "Sunny"],
+      "preferences": ["City", "Roadtrip", "Camping"],
       "budget": { "min": 120, "max": 240 },
       "hotelBudget": "$$",
       "diningBudget": "$$",
@@ -434,8 +434,8 @@
     },
     {
       "name": "Budapest, Hungary",
-      "season": ["Summer", "Spring"],
-      "temperature": ["Warm"],
+      "season": ["Summer", "Spring", "Winter"],
+      "temperature": ["Mild", "Sunny"],
       "preferences": ["City"],
       "budget": { "min": 70, "max": 180 },
       "hotelBudget": "$",
@@ -470,8 +470,8 @@
     },
     {
       "name": "Lisbon, Portugal",
-      "season": ["Summer", "Spring"],
-      "temperature": ["Warm"],
+      "season": ["Summer", "Spring", "Winter"],
+      "temperature": ["Mild", "Sunny"],
       "preferences": ["City"],
       "budget": { "min": 90, "max": 220 },
       "hotelBudget": "$$",
@@ -591,7 +591,7 @@
     {
       "name": "Athens, Greece",
       "season": ["Summer", "Spring"],
-      "temperature": ["Warm"],
+      "temperature": ["Mild", "Sunny"],
       "preferences": ["City", "Cruise"],
       "budget": { "min": 90, "max": 250 },
       "hotelBudget": "$$",
@@ -599,6 +599,66 @@
       "transportationBudget": "$",
       "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/Athens.jpeg?alt=media&token=52b2d51a-1444-48a4-9eba-e22306e92d5b",
       "info": "Athens, Greece, the cradle of Western civilization, is a city steeped in history and culture. Known for its ancient landmarks like the Acropolis, Parthenon, and Agora, Athens offers a journey back in time. Visitors can explore archaeological treasures, stroll through charming Plaka neighborhoods, and indulge in delectable Greek cuisine at tavernas. With a flexible budget, you can stay in boutique hotels with Acropolis views and savor authentic souvlaki and baklava. Athens' sunny climate, friendly locals, and rich heritage make it a perfect destination for history enthusiasts and those seeking a taste of Greece's legendary past and vibrant present."
-    }
+    },
+    {
+      "name": "New Orleans, USA",
+      "season": ["Spring", "Summer", "Autumn"],
+      "temperature": ["Mild"],
+      "preferences": ["City", "Tropical", "Camping"],
+      "budget": { "min": 120, "max": 300 },
+      "hotelBudget": "$$$",
+      "diningBudget": "$$",
+      "transportationBudget": "$$",
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/new%20Orleans.jpeg?alt=media&token=8c789e46-7a99-471e-add3-7d9c0e10b00d",
+      "info": "New Orleans, USA, famous for its vibrant music scene and unique Creole culture, is a city like no other. Explore the historic French Quarter, savor Cajun and Creole cuisine, and dance to the rhythm of jazz in the birthplace of this musical genre. With a flexible budget, you can stay in charming French Quarter hotels, sample delicious beignets, and experience the lively Mardi Gras festivities. New Orleans' rich heritage, lively street life, and warm hospitality make it an unforgettable destination for culture and music enthusiasts."
+    },    
+    {
+      "name": "Alaska, USA",
+      "season": ["Spring", "Summer", "Winter"],
+      "temperature": ["Cold", "Mild"],
+      "preferences": ["Camping", "Cruise"],
+      "budget": { "min": 150, "max": 400 },
+      "hotelBudget": "$$$",
+      "diningBudget": "$$",
+      "transportationBudget": "$$",
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/alaska2.jpeg?alt=media&token=47b71a55-3d4e-4b94-adf6-053ed444917b",
+      "info": "Alaska, USA, the last frontier, offers an unparalleled wilderness experience. Discover stunning national parks, go wildlife spotting, and embark on epic outdoor adventures like hiking and fishing. With a flexible budget, you can stay in cozy lodges, savor fresh seafood, and witness the beauty of the Northern Lights. Alaska's pristine landscapes, diverse wildlife, and rugged beauty make it a top choice for nature enthusiasts and adventure seekers."
+    },
+    {
+      "name": "Wyoming, USA",
+      "season": ["Spring", "Summer", "Autumn"],
+      "temperature": ["Cold", "Mild"],
+      "preferences": ["Camping","Roadtrip"],
+      "budget": { "min": 130, "max": 280 },
+      "hotelBudget": "$$",
+      "diningBudget": "$$",
+      "transportationBudget": "$$",
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/Wyoming.jpeg?alt=media&token=ed5b53f8-7fea-4ad5-833a-349699389aa2",
+      "info": "Wyoming, USA, known for its vast national parks and natural wonders, is a paradise for outdoor enthusiasts. Explore iconic sites like Yellowstone National Park, witness Old Faithful, and go horseback riding in the Wild West. With a flexible budget, you can stay in rustic cabins, dine at local steakhouses, and experience the rugged charm of Wyoming. Wyoming's breathtaking landscapes, wildlife encounters, and cowboy culture offer a true taste of the American frontier."
+    },
+    {
+      "name": "Molde, Norway",
+      "season": ["Spring", "Summer", "Winter"],
+      "temperature": ["Mild", "Cold"],
+      "preferences": ["Mountains", "Cruise"],
+      "budget": { "min": 150, "max": 350 },
+      "hotelBudget": "$$$",
+      "diningBudget": "$$",
+      "transportationBudget": "$$$",
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/norway2.webp?alt=media&token=59350660-7f1c-4415-8aad-40102fb4bac3",
+      "info": "Norway, a land of fjords and Northern Lights, offers stunning natural beauty year-round. Explore the majestic fjords, go dog sledding in winter, and hike in the pristine wilderness. With a flexible budget, you can stay in cozy cabins, savor Nordic cuisine, and witness the magic of the midnight sun. Norway's breathtaking landscapes, outdoor adventures, and Scandinavian charm make it an ideal destination for nature lovers and those seeking a serene escape."
+    },
+    {
+      "name": "Vermont, USA",
+      "season": ["Spring", "Summer", "Autumn", "Winter"],
+      "temperature": ["Mild", "Cold"],
+      "preferences": ["Mountains", "Camping", "Roadtrip"],
+      "budget": { "min": 120, "max": 250 },
+      "hotelBudget": "$$",
+      "diningBudget": "$$",
+      "transportationBudget": "$$",
+      "image": "https://firebasestorage.googleapis.com/v0/b/voyage-f348c.appspot.com/o/Vermont.jpeg?alt=media&token=f29d224e-a287-4e5e-a333-c1bac498007b",
+      "info": "Vermont, USA, is a picturesque state renowned for its stunning fall foliage. Experience the vibrant colors of autumn, explore charming villages, and indulge in maple syrup tastings. With a flexible budget, you can stay in cozy inns, dine at farm-to-table restaurants, and enjoy outdoor activities like hiking and biking. Vermont's natural beauty, rustic charm, and seasonal delights make it an ideal destination for a peaceful and scenic getaway."
+    }    
   ]
 }
