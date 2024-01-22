@@ -1,0 +1,53 @@
+.wishlist {
+    width: 75vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background-color: rgba(241, 249, 248, 1);
+  }
+  
+  .wishlist-container {
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .wishlist .travel-items-container {
+    flex-grow: 1;
+    margin: 50px; /* You may want to increase the right margin if necessary */
+    max-height: 85vh;
+    align-items: flex-start; /* This aligns the container's items to the top if it's a flex container */
+  }
+  
+  .wishlist .travel-items {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: repeat(5, 240px);
+    grid-template-rows: auto;
+    gap: 35px;
+    justify-content: start;
+    overflow: auto;
+    padding: 0px 0px 20px 0;
+}
+
+  @media (max-width: 1600px) {
+    .travel-items {
+      grid-template-columns: repeat(4, 240px);
+    }
+  }
+  
+  @media (max-width: 1400px) {
+    .travel-items {
+      grid-template-columns: repeat(3, 240px);
+    }
+  }
+  
+  @media (max-width: 1200px) {
+    .travel-items {
+      grid-template-columns: repeat(2, 240px);
+    }
+  }
+  

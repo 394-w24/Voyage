@@ -13,7 +13,7 @@ const TravelCardItem = ({ destination, addedToWishlist, handleAddToWishlist }) =
   
   return (
     <>
-      <Card sx={{ height: "350px" }} onClick={handleOpenModal} className="travel-card">
+      <Card sx={{ height: "330px" }} onClick={handleOpenModal} className="travel-card">
         <CardMedia
           component="img"
           height="140"

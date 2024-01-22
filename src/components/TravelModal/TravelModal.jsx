@@ -27,7 +27,7 @@ const TravelModal = ({
   addedToWishlist,
   handleAddToWishlist,
 }) => {
-  const isAdded = addedToWishlist[destination.name]?.added;
+  const isAdded = addedToWishlist === true ? true : addedToWishlist[destination.name]?.added;
 
   return (
     <Modal

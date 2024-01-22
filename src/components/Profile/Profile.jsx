@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuthState } from "../../Utilities/firebaseUtils"; // Import the useAuthState hook
 import {
@@ -27,16 +27,14 @@ import CancelIcon from "@mui/icons-material/Cancel";
 import Header from "../Header/Header";
 import Sidebar from "../Sidebar/Sidebar";
 import { firebaseSignOut } from "../../Utilities/firebaseUtils";
+import TravelCardItem from "../TravelCardItem/TravelCardItem";
 import "../Home/Home.css";
+import "./Wishlist.css";
 
 const Profile = () => {
   const [user] = useAuthState();
   const navigate = useNavigate();
   const wishlist = JSON.parse(localStorage.getItem("wishlist")) || {};
-
-  const handleCardClick = (destination) => {
-    navigate("/recommendation", { state: { destination } });
-  };
 
   const removeFromWishlist = (event, destinationName) => {
     event.stopPropagation(); // This will prevent the event from bubbling up to the parent elements
@@ -57,6 +55,32 @@ const Profile = () => {
         console.error(err);
       });
   };
+
+  const [addedToWishlist, setAddedToWishlist] = useState(() => {
+    const saved = localStorage.getItem("wishlist");
+    return saved ? JSON.parse(saved) : {};
+  });
+
+  const handleAddOrRemoveFromWishlist = (destination) => {
+    setAddedToWishlist((prevState) => {
+      const isAdded = prevState[destination.name]?.added;
+      const updatedState = {
+        ...prevState,
+        [destination.name]: {
+          added: !isAdded,
+          destination: destination,
+        },
+      };
+
+      // Update local storage and return updated state
+      localStorage.setItem("wishlist", JSON.stringify(updatedState));
+      return updatedState;
+    });
+  };
+
+  useEffect(() => {
+    localStorage.setItem("wishlist", JSON.stringify(addedToWishlist));
+  }, [addedToWishlist]);
 
   return (
     <>
@@ -91,64 +115,37 @@ const Profile = () => {
                     </Typography>
                   )}
                 </Box>
-                <Box component="main" sx={{ marginTop: 5 }}>
-                  <Typography variant="h5" gutterBottom>
+
+                <Box component="main" sx={{ marginTop: 7, marginLeft: -7 }}>
+                  <Typography variant="h5" gutterBottom sx={{marginBottom: -3, marginLeft: 7}}>
                     Wishlist
                   </Typography>
-                  <Grid container spacing={3}>
-                    {Object.entries(wishlist)
-                      .filter(([_, value]) => value.added)
-                      .map(([key, value], index) => (
-                        <Grid item xs={12} sm={6} md={4} key={index}><ButtonBase
-                            onClick={() => handleCardClick(value.destination)}
-                          >
-                            <Card
-                              className="wishlist-card"
-                              style={{ width: "320px", minHeight: "300px" }}
-                            >
-                              <CardContent
-                                style={{
-                                  display: "flex",
-                                  flexDirection: "column",
-                                  justifyContent: "space-between",
-                                }}
-                              >
-                                <div
-                                  style={{
-                                    display: "flex",
-                                    justifyContent: "space-between",
-                                    alignItems: "center",
-                                    marginBottom: "15px",
-                                    minHeight: "65px",
-                                  }}
-                                >
-                                  <Typography variant="h6">
-                                    {value.destination.name}
-                                  </Typography>
-                                  <Button
-                                    onClick={(event) =>
-                                      removeFromWishlist(
-                                        event,
-                                        value.destination.name
-                                      )
-                                    }
-                                  >
-                                    <CancelIcon style={{ fontSize: 28 }} />
-                                  </Button>
-                                </div>
-                                <img
-                                  src={value.destination.image}
-                                  alt={value.destination.name}
-                                  style={{ width: "100%", height: "200px" }}
-                                />
-                              </CardContent>
-                            </Card>
-                          </ButtonBase>
-                        </Grid>
-                      ))}
-                  </Grid>
+                  <div className="wishlist">
+                    <div className="wishlist-container">
+                      <div className="travel-items-container">
+                        <div className="travel-items">
+                          {Object.entries(wishlist)
+                            .filter(([_, value]) => value.added)
+                            .map(([key, value], index) => (
+                              <TravelCardItem
+                                key={index}
+                                destination={value.destination}
+                                handleAddToWishlist={() =>
+                                  handleAddOrRemoveFromWishlist(
+                                    value.destination
+                                  )
+                                }
+                                addedToWishlist={
+                                  addedToWishlist[value.destination.name]?.added
+                                }
+                              />
+                            ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </Box>
-                <Box component="main" sx={{ marginTop: 8 }}>
+                <Box component="main" sx={{ marginBottom: 3 }}>
                   <Button variant="contained" color="primary" onClick={signout}>
                     Signout
                   </Button>
