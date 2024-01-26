@@ -16,26 +16,70 @@ const RouteDispatcher = () => {
     return <div>Loading...</div>;
   }
 
+  const PrivateRoute = ({ children }) => {
+    return user ? children : <Navigate replace to="/login" />;
+  };
+
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="/login" element={<Login />} />
         <Route
           path="/"
           element={
-            user ? (
-              <Navigate replace to="home" />
-            ) : (
-              <Navigate replace to="login" />
-            )
+            <PrivateRoute>
+              <Home />
+            </PrivateRoute>
           }
         />
-        <Route path="login" element={<Login />} />
-        <Route path="home" element={<Home />} />
-        <Route path="recommendation" element={<Recommendations />} />
-        <Route path="preferences" element={<Preferences />} />
-        <Route path="profile" element={<Profile />} />
-        <Route path="community" element={<Community />} />
-        <Route path="publish" element={<Publish />} />
+        <Route
+          path="/home"
+          element={
+            <PrivateRoute>
+              <Home />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/recommendation"
+          element={
+            <PrivateRoute>
+              <Recommendations />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/preferences"
+          element={
+            <PrivateRoute>
+              <Preferences />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/profile"
+          element={
+            <PrivateRoute>
+              <Profile />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/community"
+          element={
+            <PrivateRoute>
+              <Community />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/publish"
+          element={
+            <PrivateRoute>
+              <Publish />
+            </PrivateRoute>
+          }
+        />
       </Routes>
     </BrowserRouter>
   );

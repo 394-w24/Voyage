@@ -83,19 +83,20 @@ const Profile = () => {
 
     const unsubscribe = onValue(postsRef, (snapshot) => {
       const data = snapshot.val();
-      // Convert the object of objects into an array
-      const postsArray = data
-        ? Object.keys(data).map((key) => ({
-            id: key,
-            ...data[key],
-          }))
+      // Convert the object of objects into an array and filter by userId
+      const userPosts = data
+        ? Object.keys(data)
+            .map((key) => ({
+              id: key,
+              ...data[key],
+            }))
+            .filter((post) => post.userId === user.uid) // Filter posts where post.userId matches logged-in user's uid
         : [];
-      setPosts(postsArray);
+      setPosts(userPosts);
     });
 
-    // Don't forget to unsubscribe when the component unmounts
     return () => unsubscribe();
-  }, []);
+  }, [user]);
 
   return (
     <>
