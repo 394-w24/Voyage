@@ -36,16 +36,6 @@ const Profile = () => {
   const navigate = useNavigate();
   const wishlist = JSON.parse(localStorage.getItem("wishlist")) || {};
 
-  const removeFromWishlist = (event, destinationName) => {
-    event.stopPropagation(); // This will prevent the event from bubbling up to the parent elements
-    const updatedWishlist = { ...wishlist };
-    if (updatedWishlist[destinationName]) {
-      updatedWishlist[destinationName].added = false;
-      localStorage.setItem("wishlist", JSON.stringify(updatedWishlist));
-      window.location.reload();
-    }
-  };
-
   const signout = () => {
     firebaseSignOut()
       .then(() => {
@@ -108,7 +98,11 @@ const Profile = () => {
                       <Typography variant="subtitle1">
                         Email: {user.email}
                       </Typography>
+                  <Button variant="contained" color="primary" onClick={signout} sx={{ marginTop: 3 }}>
+                    Signout
+                  </Button>
                     </Box>
+                    
                   ) : (
                     <Typography variant="subtitle1">
                       No user is currently signed in.
@@ -144,11 +138,6 @@ const Profile = () => {
                       </div>
                     </div>
                   </div>
-                </Box>
-                <Box component="main" sx={{ marginBottom: 3 }}>
-                  <Button variant="contained" color="primary" onClick={signout}>
-                    Signout
-                  </Button>
                 </Box>
               </Box>
             </div>
