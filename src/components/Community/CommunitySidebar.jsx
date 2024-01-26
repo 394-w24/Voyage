@@ -55,7 +55,7 @@ const CommunitySidebar = () => {
         <ListItem
           button
           onClick={() => handleNavigation("/publish")}
-          sx={{ my: 2, marginLeft: 1 }}
+          sx={{ my: 2, marginTop: -1, marginLeft: 1 }}
         >
           <ListItemIcon>
             <PublishIcon />
