@@ -4,6 +4,7 @@ import SettingsIcon from "@mui/icons-material/Settings";
 import StarRateIcon from "@mui/icons-material/StarRate";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import Filter from "../Filter/Filter";
+import CommunitySidebar from "../Community/CommunitySidebar";
 import "./Sidebar.css";
 
 const Sidebar = () => {
@@ -35,6 +36,7 @@ const Sidebar = () => {
           <ListItemText primary="PROFILE" />
         </ListItem>
         {location.pathname === "/home" && <Filter />}
+        {location.pathname === "/community" && <CommunitySidebar />}
       </List>
     </div>
   );

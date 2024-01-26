@@ -27,6 +27,8 @@ import CancelIcon from "@mui/icons-material/Cancel";
 import Header from "../Header/Header";
 import Sidebar from "../Sidebar/Sidebar";
 import { firebaseSignOut } from "../../Utilities/firebaseUtils";
+import { getFirebaseApp } from "../../Utilities/firebase";
+import { getDatabase, ref, onValue } from "firebase/database";
 import TravelCardItem from "../TravelCardItem/TravelCardItem";
 import "../Home/Home.css";
 import "./Wishlist.css";
@@ -72,6 +74,29 @@ const Profile = () => {
     localStorage.setItem("wishlist", JSON.stringify(addedToWishlist));
   }, [addedToWishlist]);
 
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    const app = getFirebaseApp();
+    const database = getDatabase(app);
+    const postsRef = ref(database, "posts");
+
+    const unsubscribe = onValue(postsRef, (snapshot) => {
+      const data = snapshot.val();
+      // Convert the object of objects into an array
+      const postsArray = data
+        ? Object.keys(data).map((key) => ({
+            id: key,
+            ...data[key],
+          }))
+        : [];
+      setPosts(postsArray);
+    });
+
+    // Don't forget to unsubscribe when the component unmounts
+    return () => unsubscribe();
+  }, []);
+
   return (
     <>
       <div className="home">
@@ -98,11 +123,15 @@ const Profile = () => {
                       <Typography variant="subtitle1">
                         Email: {user.email}
                       </Typography>
-                  <Button variant="contained" color="primary" onClick={signout} sx={{ marginTop: 3 }}>
-                    Signout
-                  </Button>
+                      <Button
+                        variant="contained"
+                        color="primary"
+                        onClick={signout}
+                        sx={{ marginTop: 3 }}
+                      >
+                        Signout
+                      </Button>
                     </Box>
-                    
                   ) : (
                     <Typography variant="subtitle1">
                       No user is currently signed in.
@@ -110,8 +139,77 @@ const Profile = () => {
                   )}
                 </Box>
 
+                <Box
+                  component="main"
+                  sx={{
+                    maxHeight: "300px", // Maximum height is limited to 900px
+                    marginTop: 7,
+                    marginLeft: -7,
+                  }}
+                >
+                  <Typography
+                    variant="h5"
+                    gutterBottom
+                    sx={{ marginBottom: -3, marginLeft: 7 }}
+                  >
+                    Post
+                  </Typography>
+                  <div className="wishlist">
+                    <div className="wishlist-container">
+                      <div className="travel-items-container">
+                        <div className="travel-items">
+                          {posts.map((post) => (
+                            <div key={post.id} className="travel-item">
+                              {post.image && (
+                                <img
+                                  src={post.image}
+                                  alt="Post"
+                                  style={{ width: "300px", height: "auto" }}
+                                />
+                              )}
+                              <Typography variant="h6">{post.title}</Typography>
+                              <Box
+                                display="flex"
+                                alignItems="center"
+                                justifyContent="space-between"
+                                mb={1}
+                                style={{ width: "300px" }}
+                              >
+                                <Box display="flex" alignItems="center">
+                                  <Avatar
+                                    alt={post.userName}
+                                    src={post.userAvatar}
+                                    sx={{
+                                      width: 20,
+                                      height: 20,
+                                      marginRight: 1,
+                                    }}
+                                  />
+                                  <Typography variant="subtitle1">
+                                    {post.userName}
+                                  </Typography>
+                                </Box>
+                                <Typography variant="subtitle2">
+                                  Posted at :{" "}
+                                  {post.createdAt.substring(0, 10) +
+                                    " " +
+                                    post.createdAt.substring(11, 16)}
+                                </Typography>
+                              </Box>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </Box>
+
                 <Box component="main" sx={{ marginTop: 7, marginLeft: -7 }}>
-                  <Typography variant="h5" gutterBottom sx={{marginBottom: -3, marginLeft: 7}}>
+                  <Typography
+                    variant="h5"
+                    gutterBottom
+                    sx={{ marginBottom: -3, marginLeft: 7 }}
+                  >
                     Wishlist
                   </Typography>
                   <div className="wishlist">

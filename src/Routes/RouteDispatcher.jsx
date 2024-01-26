@@ -7,6 +7,7 @@ import Recommendations from "../components/Recommendations/Recommendations";
 import Preferences from "../components/Preferences/Preferences";
 import Profile from "../components/Profile/Profile";
 import Community from "../Components/Community/Community";
+import Publish from "../Components/Community/Publish";
 
 const RouteDispatcher = () => {
   const [user, loading] = useAuthState();
@@ -34,6 +35,7 @@ const RouteDispatcher = () => {
         <Route path="preferences" element={<Preferences />} />
         <Route path="profile" element={<Profile />} />
         <Route path="community" element={<Community />} />
+        <Route path="publish" element={<Publish />} />
       </Routes>
     </BrowserRouter>
   );

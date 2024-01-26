@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuthState } from "../../Utilities/firebaseUtils"; // Import the useAuthState hook
 import {
@@ -26,9 +26,33 @@ import theme from "/src/theme/theme.jsx";
 import CancelIcon from "@mui/icons-material/Cancel";
 import Header from "../Header/Header";
 import Sidebar from "../Sidebar/Sidebar";
+import { ref, getDatabase, onValue } from "firebase/database";
+import { getFirebaseApp } from "../../Utilities/firebase"; // Ensure this path is correct
 import "../Home/Home.css";
 
 const Community = () => {
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    const app = getFirebaseApp();
+    const database = getDatabase(app);
+    const postsRef = ref(database, "posts");
+
+    const unsubscribe = onValue(postsRef, (snapshot) => {
+      const data = snapshot.val();
+      // Convert the object of objects into an array
+      const postsArray = data
+        ? Object.keys(data).map((key) => ({
+            id: key,
+            ...data[key],
+          }))
+        : [];
+      setPosts(postsArray);
+    });
+
+    // Don't forget to unsubscribe when the component unmounts
+    return () => unsubscribe();
+  }, []);
 
   return (
     <>
@@ -38,15 +62,64 @@ const Community = () => {
           <Sidebar />
           <div className="travel-items-container">
             <div className="travel-items">
-            <Typography variant="h5" gutterBottom>
+              <Typography variant="h5" gutterBottom>
                 Community
               </Typography>
-            </div>
+              {posts.map((post) => (
+                <div key={post.id} className="post-item">
+                  <Card
+                    sx={{ width: "300px", height: "auto" }}
+                    className="travel-card"
+                  >
+                    {post.image && (
+                      <img
+                        src={post.image}
+                        alt="Post"
+                        style={{ width: "300px", height: "auto" }}
+                      />
+                    )}
+                    <Typography variant="h6" style={{ marginLeft: 3 }}>
+                      {post.title}
+                    </Typography>
+                    <Box
+                      display="flex"
+                      alignItems="center"
+                      justifyContent="space-between"
+                      mb={1}
+                      style={{ width: "300px" }}
+                    >
+                      <Box
+                        display="flex"
+                        alignItems="center"
+                        style={{ marginLeft: 3 }}
+                      >
+                        <Avatar
+                          alt={post.userName}
+                          src={post.userAvatar}
+                          sx={{ width: 20, height: 20, marginRight: 1 }}
+                        />
+                        <Typography variant="subtitle1">
+                          {post.userName}
+                        </Typography>
+                      </Box>
+                      <Typography
+                        variant="subtitle2"
+                        style={{ marginRight: 3 }}
+                      >
+                        Posted at :{" "}
+                        {post.createdAt.substring(0, 10) +
+                          " " +
+                          post.createdAt.substring(11, 16)}
+                      </Typography>
+                    </Box>
+                  </Card>
+                </div>
+              ))}
             </div>
           </div>
         </div>
+      </div>
     </>
-    
   );
 };
 
