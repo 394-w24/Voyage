@@ -61,16 +61,17 @@ const Community = () => {
         <div className="home-container">
           <Sidebar />
           <div className="travel-items-container">
-            <div className="travel-items">
-              <Typography variant="h5" gutterBottom>
-                Community
-              </Typography>
-              {posts.map((post) => (
-                <div key={post.id} className="post-item">
-                  <Card
-                    sx={{ width: "300px", height: "auto" }}
-                    className="travel-card"
-                  >
+          <div className="travel-items-container" style={{marginLeft: '100px'}}>
+    <Typography variant="h5" style={{marginTop: '-50px'}}>
+      Community
+    </Typography>
+    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '16px', justifyContent: 'start', marginTop: '50px'}} > {/* Apply marginTop here */}
+      {posts.map((post) => (
+        <div key={post.id} style={{ flex: '0 0 calc(20% - 16px)' }}> {/* Adjust `flex` property */}
+          <Card
+            sx={{ width: "300px", height: '280px' }} // Adjust card width as needed
+            className="travel-card"
+          >
                     {post.image && (
                       <img
                         src={post.image}
@@ -112,10 +113,11 @@ const Community = () => {
                           post.createdAt.substring(11, 16)}
                       </Typography>
                     </Box>
-                  </Card>
-                </div>
-              ))}
-            </div>
+                    </Card>
+        </div>
+      ))}
+    </div>
+  </div>
           </div>
         </div>
       </div>

@@ -56,10 +56,10 @@ const Publish = () => {
 
   const handleTitleChange = (e) => {
     const words = e.target.value.split(" ");
-    if (words.length <= 20) {
+    if (words.length <= 10) {
       setPostTitle(e.target.value);
     } else {
-      alert("The title can only be 20 words long.");
+      alert("The title can only be 10 words long.");
     }
   };
 
@@ -130,10 +130,10 @@ const Publish = () => {
               <TextField
                 fullWidth
                 variant="outlined"
-                placeholder="Title (max 20 words)"
+                placeholder="Title (max 10 words)"
                 value={postTitle}
                 onChange={handleTitleChange}
-                inputProps={{ maxLength: 20 }}
+                inputProps={{ maxLength: 10 }}
                 style={{ height: "5%", width: "100%" }}
                 size="small"
               />
