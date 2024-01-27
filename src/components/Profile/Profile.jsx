@@ -28,7 +28,7 @@ import Header from "../Header/Header";
 import Sidebar from "../Sidebar/Sidebar";
 import { firebaseSignOut } from "../../Utilities/firebaseUtils";
 import { getFirebaseApp } from "../../Utilities/firebase";
-import { getDatabase, ref, onValue } from "firebase/database";
+import { getDatabase, ref, onValue, set, remove } from "firebase/database";
 import TravelCardItem from "../TravelCardItem/TravelCardItem";
 import "../Home/Home.css";
 import "./Wishlist.css";
@@ -36,7 +36,7 @@ import "./Wishlist.css";
 const Profile = () => {
   const [user] = useAuthState();
   const navigate = useNavigate();
-  const wishlist = JSON.parse(localStorage.getItem("wishlist")) || {};
+  const [userDestinations, setUserDestinations] = useState([]);
 
   const signout = () => {
     firebaseSignOut()
@@ -48,31 +48,42 @@ const Profile = () => {
       });
   };
 
-  const [addedToWishlist, setAddedToWishlist] = useState(() => {
-    const saved = localStorage.getItem("wishlist");
-    return saved ? JSON.parse(saved) : {};
-  });
+  useEffect(() => {
+    if (user) {
+      const db = getDatabase();
+      const wishlistRef = ref(db, `wishlists/${user.uid}`);
+  
+      onValue(wishlistRef, (snapshot) => {
+        const data = snapshot.val() || {};
+        const destinationList = Object.values(data);
+        setUserDestinations(destinationList);
+      }, {
+        onlyOnce: true
+      });
+    } else {
+      setUserDestinations([]);
+    }
+  }, [user]);
 
   const handleAddOrRemoveFromWishlist = (destination) => {
-    setAddedToWishlist((prevState) => {
-      const isAdded = prevState[destination.name]?.added;
-      const updatedState = {
-        ...prevState,
-        [destination.name]: {
-          added: !isAdded,
-          destination: destination,
-        },
-      };
+    const isInWishlist = userDestinations.some(dest => dest.name === destination.name);
 
-      // Update local storage and return updated state
-      localStorage.setItem("wishlist", JSON.stringify(updatedState));
-      return updatedState;
-    });
+    if (isInWishlist) {
+      const newWishlist = userDestinations.filter(dest => dest.name !== destination.name);
+      setUserDestinations(newWishlist);
+
+      const db = getDatabase();
+      const wishlistRef = ref(db, `wishlists/${user.uid}/${destination.name}`);
+      remove(wishlistRef);
+    } else {
+      const newWishlist = [...userDestinations, destination];
+      setUserDestinations(newWishlist);
+
+      const db = getDatabase();
+      const wishlistRef = ref(db, `wishlists/${user.uid}/${destination.name}`);
+      set(wishlistRef, destination);
+    }
   };
-
-  useEffect(() => {
-    localStorage.setItem("wishlist", JSON.stringify(addedToWishlist));
-  }, [addedToWishlist]);
 
   const [posts, setPosts] = useState([]);
 
@@ -217,22 +228,14 @@ const Profile = () => {
                     <div className="wishlist-container">
                       <div className="travel-items-container">
                         <div className="travel-items">
-                          {Object.entries(wishlist)
-                            .filter(([_, value]) => value.added)
-                            .map(([key, value], index) => (
-                              <TravelCardItem
-                                key={index}
-                                destination={value.destination}
-                                handleAddToWishlist={() =>
-                                  handleAddOrRemoveFromWishlist(
-                                    value.destination
-                                  )
-                                }
-                                addedToWishlist={
-                                  addedToWishlist[value.destination.name]?.added
-                                }
-                              />
-                            ))}
+                        {userDestinations.map((destination, index) => (
+                          <TravelCardItem
+                            key={index}
+                            destination={destination}
+                            addedToWishlist={true}
+                            handleAddToWishlist={() => handleAddOrRemoveFromWishlist(destination)}
+                          />
+                        ))}
                         </div>
                       </div>
                     </div>
