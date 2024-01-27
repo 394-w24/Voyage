@@ -27,7 +27,8 @@ const TravelModal = ({
   addedToWishlist,
   handleAddToWishlist,
 }) => {
-  const isAdded = addedToWishlist === true ? true : addedToWishlist[destination.name]?.added;
+  const isAdded =
+    addedToWishlist === true ? true : addedToWishlist[destination.name]?.added;
 
   return (
     <Modal
@@ -46,8 +47,7 @@ const TravelModal = ({
         <Typography id="modal-description" sx={{ mt: 2 }}>
           Here's some information about {destination.name}.
         </Typography>
-        <Typography sx={{ mt: 2 }}>{destination.info}
-        </Typography>
+        <Typography sx={{ mt: 2 }}>{destination.info}</Typography>
         <Button
           onClick={() => handleAddToWishlist(destination)}
           size="medium"

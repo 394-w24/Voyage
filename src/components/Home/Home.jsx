@@ -47,11 +47,13 @@ const Home = () => {
 
     if (user) {
       const wishlistRef = ref(getDatabase(), `/wishlists/${user.uid}`);
-      set(wishlistRef, newWishlist).then(() => {
-        console.log('Wishlist updated in Firebase');
-      }).catch(error => {
-        console.error('Error updating wishlist: ', error);
-      });
+      set(wishlistRef, newWishlist)
+        .then(() => {
+          console.log("Wishlist updated in Firebase");
+        })
+        .catch((error) => {
+          console.error("Error updating wishlist: ", error);
+        });
     }
   };
 
@@ -64,7 +66,7 @@ const Home = () => {
           <div className="travel-items-container">
             <div className="travel-items">
               {destinations.length > 0 ? (
-                destinations.map((destination, index) => ( 
+                destinations.map((destination, index) => (
                   <TravelCardItem
                     key={index}
                     destination={destination}

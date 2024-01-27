@@ -52,24 +52,32 @@ const Profile = () => {
     if (user) {
       const db = getDatabase();
       const wishlistRef = ref(db, `wishlists/${user.uid}`);
-  
-      onValue(wishlistRef, (snapshot) => {
-        const data = snapshot.val() || {};
-        const destinationList = Object.values(data);
-        setUserDestinations(destinationList);
-      }, {
-        onlyOnce: true
-      });
+
+      onValue(
+        wishlistRef,
+        (snapshot) => {
+          const data = snapshot.val() || {};
+          const destinationList = Object.values(data);
+          setUserDestinations(destinationList);
+        },
+        {
+          onlyOnce: true,
+        }
+      );
     } else {
       setUserDestinations([]);
     }
   }, [user]);
 
   const handleAddOrRemoveFromWishlist = (destination) => {
-    const isInWishlist = userDestinations.some(dest => dest.name === destination.name);
+    const isInWishlist = userDestinations.some(
+      (dest) => dest.name === destination.name
+    );
 
     if (isInWishlist) {
-      const newWishlist = userDestinations.filter(dest => dest.name !== destination.name);
+      const newWishlist = userDestinations.filter(
+        (dest) => dest.name !== destination.name
+      );
       setUserDestinations(newWishlist);
 
       const db = getDatabase();
@@ -228,14 +236,16 @@ const Profile = () => {
                     <div className="wishlist-container">
                       <div className="travel-items-container">
                         <div className="travel-items">
-                        {userDestinations.map((destination, index) => (
-                          <TravelCardItem
-                            key={index}
-                            destination={destination}
-                            addedToWishlist={true}
-                            handleAddToWishlist={() => handleAddOrRemoveFromWishlist(destination)}
-                          />
-                        ))}
+                          {userDestinations.map((destination, index) => (
+                            <TravelCardItem
+                              key={index}
+                              destination={destination}
+                              addedToWishlist={true}
+                              handleAddToWishlist={() =>
+                                handleAddOrRemoveFromWishlist(destination)
+                              }
+                            />
+                          ))}
                         </div>
                       </div>
                     </div>

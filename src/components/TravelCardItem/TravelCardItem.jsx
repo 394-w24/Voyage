@@ -6,14 +6,22 @@ import Typography from "@mui/material/Typography";
 import TravelModal from "../TravelModal/TravelModal";
 import "./TravelCardItem.css";
 
-const TravelCardItem = ({ destination, addedToWishlist, handleAddToWishlist }) => {
+const TravelCardItem = ({
+  destination,
+  addedToWishlist,
+  handleAddToWishlist,
+}) => {
   const [modalOpen, setModalOpen] = useState(false);
   const handleOpenModal = () => setModalOpen(true);
   const handleCloseModal = () => setModalOpen(false);
-  
+
   return (
     <>
-      <Card sx={{ height: "330px" }} onClick={handleOpenModal} className="travel-card">
+      <Card
+        sx={{ height: "330px" }}
+        onClick={handleOpenModal}
+        className="travel-card"
+      >
         <CardMedia
           component="img"
           height="140"
