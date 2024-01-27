@@ -95,6 +95,23 @@ const Profile = () => {
 
   const [posts, setPosts] = useState([]);
 
+  const handleDeletePost = (postId) => {
+    // Remove from local state
+    const updatedPosts = posts.filter((post) => post.id !== postId);
+    setPosts(updatedPosts);
+
+    // Remove from Firebase
+    const db = getDatabase();
+    const postRef = ref(db, `posts/${postId}`);
+    remove(postRef)
+      .then(() => {
+        console.log("Post deleted successfully!");
+      })
+      .catch((error) => {
+        console.error("Error deleting post: ", error);
+      });
+  };
+
   useEffect(() => {
     const app = getFirebaseApp();
     const database = getDatabase(app);
@@ -146,6 +163,7 @@ const Profile = () => {
                       <Button
                         variant="contained"
                         color="primary"
+                        size="medium"
                         onClick={signout}
                         sx={{ marginTop: 3 }}
                       >
@@ -162,7 +180,7 @@ const Profile = () => {
                 <Box
                   component="main"
                   sx={{
-                    maxHeight: "300px", // Maximum height is limited to 900px
+                    height: "300px",
                     marginTop: 7,
                     marginLeft: -7,
                   }}
@@ -187,7 +205,28 @@ const Profile = () => {
                                   style={{ width: "300px", height: "auto" }}
                                 />
                               )}
-                              <Typography variant="h6">{post.title}</Typography>
+                              <Box
+                                display="flex"
+                                alignItems="center"
+                                justifyContent="space-between"
+                                mb={1}
+                                style={{ width: "300px" }}
+                              >
+                                <Box display="flex" alignItems="center">
+                                  {" "}
+                                  <Typography variant="h6">
+                                    {post.title}
+                                  </Typography>
+                                </Box>
+                                <Button
+                                  variant="contained"
+                                  size="small"
+                                  color="primary"
+                                  onClick={() => handleDeletePost(post.id)}
+                                >
+                                  Delete Post
+                                </Button>
+                              </Box>
                               <Box
                                 display="flex"
                                 alignItems="center"
