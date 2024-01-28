@@ -91,9 +91,6 @@ Voyage
 │   │       └── TravelModal.jsx
 │   ├── jsonFiles
 │   │   └── trips.json
-│   ├── locales
-│   │   ├── en.json
-│   │   └── zh.json
 │   ├── Routes
 │   │   └── RouteDispatcher.jsx
 │   ├── Utilities
@@ -103,7 +100,6 @@ Voyage
 │   │   │   ├── gpt.js
 │   │   │   ├── gpt.jsx
 │   │   │   └── gpt.py
-│   │   └── i18n.js
 │   ├── App.css
 │   ├── App.jsx
 │   ├── index.css
