@@ -50,22 +50,70 @@ If everything is working, set up [your local and remote repositories](https://do
 ## Folder Structure
 
 ```
-your-app-name
+Voyage
 ├── node_modules
 ├── public
-│   ├── favicon.svg
-│   └── robots.txt
-└── src
-    ├── App.css
-    ├── App.jsx
-    ├── index.css
-    ├── index.jsx
-    └── logo.svg
+│   ├── favicon.ico
+│   └── index.html
+├── src
+│   ├── components
+│   │   ├── Community
+│   │   │   ├── Community.jsx
+│   │   │   └── CommunitySidebar.jsx
+│   │   ├── Filter
+│   │   │   ├── Filter.css
+│   │   │   └── Filter.jsx
+│   │   ├── Header
+│   │   │   ├── Header.css
+│   │   │   └── Header.jsx
+│   │   ├── Home
+│   │   │   ├── Home.css
+│   │   │   └── Home.jsx
+│   │   ├── Login
+│   │   │   ├── Login.css
+│   │   │   └── Login.jsx
+│   │   ├── Preferences
+│   │   │   ├── Preferences.css
+│   │   │   └── Preferences.jsx
+│   │   ├── Profile
+│   │   │   ├── Profile.css
+│   │   │   └── Profile.jsx
+│   │   ├── Recommendations
+│   │   │   └── Recommendations.jsx
+│   │   ├── Sidebar
+│   │   │   ├── Sidebar.css
+│   │   │   └── Sidebar.jsx
+│   │   ├── TravelCardItem
+│   │   │   ├── TravelCardItem.css
+│   │   │   └── TravelCardItem.jsx
+│   │   └── TravelModal
+│   │       ├── TravelModal.css
+│   │       └── TravelModal.jsx
+│   ├── jsonFiles
+│   │   └── trips.json
+│   ├── locales
+│   │   ├── en.json
+│   │   └── zh.json
+│   ├── Routes
+│   │   └── RouteDispatcher.jsx
+│   ├── Utilities
+│   │   ├── firebase.js
+│   │   ├── firebaseUtils.js
+│   │   ├── GPTTool
+│   │   │   ├── gpt.js
+│   │   │   ├── gpt.jsx
+│   │   │   └── gpt.py
+│   │   └── i18n.js
+│   ├── App.css
+│   ├── App.jsx
+│   ├── index.css
+│   └── index.jsx
 ├── .gitignore
-├── index.html
 ├── package.json
+├── package-lock.json
 ├── README.md
-├── vite.config.js
+└── vite.config.js
+
 ```
 
 ## Credits
