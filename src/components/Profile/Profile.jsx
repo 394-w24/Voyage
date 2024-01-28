@@ -195,9 +195,13 @@ const Profile = () => {
                   <div className="wishlist">
                     <div className="wishlist-container">
                       <div className="travel-items-container">
-                        <div className="travel-items">
+                        <div className="travel-items" style={{ display: 'flex', flexWrap: 'wrap', gap: '16px', justifyContent: 'start'}}>
                           {posts.map((post) => (
-                            <div key={post.id} className="travel-item">
+                            <div key={post.id} className="travel-item" style={{ flex: '0 0 calc(20% - 16px)' }}>
+                              <Card
+            sx={{ width: "300px", height: '280px' }} // Adjust card width as needed
+            className="travel-card"
+          >
                               {post.image && (
                                 <img
                                   src={post.image}
@@ -210,9 +214,9 @@ const Profile = () => {
                                 alignItems="center"
                                 justifyContent="space-between"
                                 mb={1}
-                                style={{ width: "300px" }}
+                                style={{ width: "300px", marginTop: 5 }}
                               >
-                                <Box display="flex" alignItems="center">
+                                <Box display="flex" alignItems="center" style={{ marginLeft: 5 }}>
                                   {" "}
                                   <Typography variant="h6">
                                     {post.title}
@@ -223,6 +227,7 @@ const Profile = () => {
                                   size="small"
                                   color="primary"
                                   onClick={() => handleDeletePost(post.id)}
+                                  style={{ marginRight: 3 }}
                                 >
                                   Delete Post
                                 </Button>
@@ -232,7 +237,7 @@ const Profile = () => {
                                 alignItems="center"
                                 justifyContent="space-between"
                                 mb={1}
-                                style={{ width: "300px" }}
+                                style={{ width: "300px", marginLeft: 3 }}
                               >
                                 <Box display="flex" alignItems="center">
                                   <Avatar
@@ -248,13 +253,13 @@ const Profile = () => {
                                     {post.userName}
                                   </Typography>
                                 </Box>
-                                <Typography variant="subtitle2">
+                                <Typography variant="subtitle2" style={{marginRight: 5}}>
                                   Posted at :{" "}
                                   {post.createdAt.substring(0, 10) +
                                     " " +
                                     post.createdAt.substring(11, 16)}
                                 </Typography>
-                              </Box>
+                              </Box></Card>
                             </div>
                           ))}
                         </div>
@@ -263,7 +268,7 @@ const Profile = () => {
                   </div>
                 </Box>
 
-                <Box component="main" sx={{ marginTop: 7, marginLeft: -7 }}>
+                <Box component="main" sx={{ marginTop: 15, marginLeft: -7 }}>
                   <Typography
                     variant="h5"
                     gutterBottom
