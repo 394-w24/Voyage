@@ -195,71 +195,91 @@ const Profile = () => {
                   <div className="wishlist">
                     <div className="wishlist-container">
                       <div className="travel-items-container">
-                        <div className="travel-items" style={{ display: 'flex', flexWrap: 'wrap', gap: '16px', justifyContent: 'start'}}>
+                        <div
+                          className="travel-items"
+                          style={{
+                            display: "flex",
+                            flexWrap: "wrap",
+                            gap: "16px",
+                            justifyContent: "start",
+                          }}
+                        >
                           {posts.map((post) => (
-                            <div key={post.id} className="travel-item" style={{ flex: '0 0 calc(20% - 16px)' }}>
+                            <div
+                              key={post.id}
+                              className="travel-item"
+                              style={{ flex: "0 0 calc(20% - 16px)" }}
+                            >
                               <Card
-            sx={{ width: "300px", height: '280px' }} // Adjust card width as needed
-            className="travel-card"
-          >
-                              {post.image && (
-                                <img
-                                  src={post.image}
-                                  alt="Post"
-                                  style={{ width: "300px", height: "auto" }}
-                                />
-                              )}
-                              <Box
-                                display="flex"
-                                alignItems="center"
-                                justifyContent="space-between"
-                                mb={1}
-                                style={{ width: "300px", marginTop: 5 }}
+                                sx={{ width: "300px", height: "280px" }} // Adjust card width as needed
+                                className="travel-card"
                               >
-                                <Box display="flex" alignItems="center" style={{ marginLeft: 5 }}>
-                                  {" "}
-                                  <Typography variant="h6">
-                                    {post.title}
-                                  </Typography>
-                                </Box>
-                                <Button
-                                  variant="contained"
-                                  size="small"
-                                  color="primary"
-                                  onClick={() => handleDeletePost(post.id)}
-                                  style={{ marginRight: 3 }}
-                                >
-                                  Delete Post
-                                </Button>
-                              </Box>
-                              <Box
-                                display="flex"
-                                alignItems="center"
-                                justifyContent="space-between"
-                                mb={1}
-                                style={{ width: "300px", marginLeft: 3 }}
-                              >
-                                <Box display="flex" alignItems="center">
-                                  <Avatar
-                                    alt={post.userName}
-                                    src={post.userAvatar}
-                                    sx={{
-                                      width: 20,
-                                      height: 20,
-                                      marginRight: 1,
-                                    }}
+                                {post.image && (
+                                  <img
+                                    src={post.image}
+                                    alt="Post"
+                                    style={{ width: "300px", height: "auto" }}
                                   />
-                                  <Typography variant="subtitle1">
-                                    {post.userName}
+                                )}
+                                <Box
+                                  display="flex"
+                                  alignItems="center"
+                                  justifyContent="space-between"
+                                  mb={1}
+                                  style={{ width: "300px", marginTop: 5 }}
+                                >
+                                  <Box
+                                    display="flex"
+                                    alignItems="center"
+                                    style={{ marginLeft: 5 }}
+                                  >
+                                    {" "}
+                                    <Typography variant="h6">
+                                      {post.title}
+                                    </Typography>
+                                  </Box>
+                                  <Button
+                                    variant="contained"
+                                    size="small"
+                                    color="primary"
+                                    onClick={() => handleDeletePost(post.id)}
+                                    style={{ marginRight: 3 }}
+                                  >
+                                    Delete Post
+                                  </Button>
+                                </Box>
+                                <Box
+                                  display="flex"
+                                  alignItems="center"
+                                  justifyContent="space-between"
+                                  mb={1}
+                                  style={{ width: "300px", marginLeft: 3 }}
+                                >
+                                  <Box display="flex" alignItems="center">
+                                    <Avatar
+                                      alt={post.userName}
+                                      src={post.userAvatar}
+                                      sx={{
+                                        width: 20,
+                                        height: 20,
+                                        marginRight: 1,
+                                      }}
+                                    />
+                                    <Typography variant="subtitle1">
+                                      {post.userName}
+                                    </Typography>
+                                  </Box>
+                                  <Typography
+                                    variant="subtitle2"
+                                    style={{ marginRight: 5 }}
+                                  >
+                                    Posted at :{" "}
+                                    {post.createdAt.substring(0, 10) +
+                                      " " +
+                                      post.createdAt.substring(11, 16)}
                                   </Typography>
                                 </Box>
-                                <Typography variant="subtitle2" style={{marginRight: 5}}>
-                                  Posted at :{" "}
-                                  {post.createdAt.substring(0, 10) +
-                                    " " +
-                                    post.createdAt.substring(11, 16)}
-                                </Typography>
-                              </Box></Card>
+                              </Card>
                             </div>
                           ))}
                         </div>
