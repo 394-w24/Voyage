@@ -96,10 +96,10 @@ Voyage
 │   ├── Utilities
 │   │   ├── firebase.js
 │   │   ├── firebaseUtils.js
-│   │   ├── GPTTool
-│   │   │   ├── gpt.js
-│   │   │   ├── gpt.jsx
-│   │   │   └── gpt.py
+│   │   └── GPTTool
+│   │       ├── gpt.js
+│   │       ├── gpt.jsx
+│   │       └── gpt.py
 │   ├── App.css
 │   ├── App.jsx
 │   ├── index.css
