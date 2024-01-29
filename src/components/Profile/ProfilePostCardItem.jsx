@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { Card, Typography, Box, Avatar } from "@mui/material";
+import { Card, Typography, Box, Avatar, IconButton } from "@mui/material";
+import DeleteIcon from "@mui/icons-material/Delete";
 import PostModal from "../PostModal/PostModal";
-import "./PostCardItem.css";
+import "../PostCardItem/PostCardItem.css";
 
-const PostCardItem = ({ post }) => {
+const ProfilePostCardItem = ({ post, onDelete }) => {
   const [modalOpen, setModalOpen] = useState(false);
 
   const handleOpenModal = () => setModalOpen(true);
@@ -14,13 +15,25 @@ const PostCardItem = ({ post }) => {
       <Card className="post-card" onClick={handleOpenModal}>
         {post.image && <img src={post.image} alt="Post" />}
         <Box className="post-card-info">
-          <Typography variant="h6">{post.title}</Typography>
           <Box
             display="flex"
             alignItems="center"
             justifyContent="space-between"
             mb={1}
-            sx={{ mt: 1 }}
+          >
+            <Typography variant="h6">{post.title}</Typography>
+            <IconButton
+              onClick={() => onDelete(post.id)}
+              aria-label="delete post"
+            >
+              <DeleteIcon />
+            </IconButton>
+          </Box>
+          <Box
+            display="flex"
+            alignItems="center"
+            justifyContent="space-between"
+            mb={1}
           >
             <Box display="flex" alignItems="center">
               <Avatar
@@ -44,4 +57,4 @@ const PostCardItem = ({ post }) => {
   );
 };
 
-export default PostCardItem;
+export default ProfilePostCardItem;

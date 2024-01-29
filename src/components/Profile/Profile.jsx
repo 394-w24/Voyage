@@ -32,6 +32,8 @@ import { getDatabase, ref, onValue, set, remove } from "firebase/database";
 import TravelCardItem from "../TravelCardItem/TravelCardItem";
 import "../Home/Home.css";
 import "./Wishlist.css";
+import "../Community/Community.css";
+import ProfilePostCardItem from "./ProfilePostCardItem";
 
 const Profile = () => {
   const [user] = useAuthState();
@@ -181,110 +183,38 @@ const Profile = () => {
                   component="main"
                   sx={{
                     marginTop: 7,
-                    marginLeft: -7,
+                    height: "600px",
                   }}
                 >
                   <Typography
                     variant="h5"
                     gutterBottom
-                    sx={{ marginBottom: -3, marginLeft: 7 }}
+                    sx={{ marginBottom: -3 }}
                   >
                     Post
                   </Typography>
-                  <div className="wishlist">
-                    <div className="wishlist-container">
-                      <div className="travel-items-container">
-                        <div
-                          className="travel-items"
-                          style={{
-                            display: "flex",
-                            flexWrap: "wrap",
-                            gap: "16px",
-                            justifyContent: "start",
-                          }}
-                        >
-                          {posts.map((post) => (
-                            <div
-                              key={post.id}
-                              className="travel-item"
-                              style={{ flex: "0 0 calc(20% - 16px)" }}
-                            >
-                              <Card
-                                sx={{ width: "300px", height: "auto" }} // Adjust card width as needed
-                                className="travel-card"
-                              >
-                                {post.image && (
-                                  <img
-                                    src={post.image}
-                                    alt="Post"
-                                    style={{ width: "300px", height: "auto" }}
-                                  />
-                                )}
-                                <Box
-                                  display="flex"
-                                  alignItems="center"
-                                  justifyContent="space-between"
-                                  mb={1}
-                                  style={{ width: "300px", marginTop: 5 }}
-                                >
-                                  <Box
-                                    display="flex"
-                                    alignItems="center"
-                                    style={{ marginLeft: 5 }}
-                                  >
-                                    {" "}
-                                    <Typography variant="h6">
-                                      {post.title}
-                                    </Typography>
-                                  </Box>
-                                  <Button
-                                    variant="contained"
-                                    size="small"
-                                    color="primary"
-                                    onClick={() => handleDeletePost(post.id)}
-                                    style={{ marginRight: 3 }}
-                                  >
-                                    Delete Post
-                                  </Button>
-                                </Box>
-                                <Box
-                                  display="flex"
-                                  alignItems="center"
-                                  justifyContent="space-between"
-                                  mb={1}
-                                  style={{ width: "300px", marginLeft: 3 }}
-                                >
-                                  <Box display="flex" alignItems="center">
-                                    <Avatar
-                                      alt={post.userName}
-                                      src={post.userAvatar}
-                                      sx={{
-                                        width: 20,
-                                        height: 20,
-                                        marginRight: 1,
-                                      }}
-                                    />
-                                    <Typography variant="subtitle1">
-                                      {post.userName}
-                                    </Typography>
-                                  </Box>
-                                  <Typography
-                                    variant="subtitle2"
-                                    style={{ marginRight: 5 }}
-                                  >
-                                    Posted at :{" "}
-                                    {post.createdAt.substring(0, 10) +
-                                      " " +
-                                      post.createdAt.substring(11, 16)}
-                                  </Typography>
-                                </Box>
-                              </Card>
-                            </div>
-                          ))}
+                  <Box
+                    component="main"
+                    sx={{
+                      marginLeft: -26,
+                    }}
+                  >
+                    <div className="community">
+                      <div className="community-container">
+                        <div className="post-items-container">
+                          <div className="post-items">
+                            {posts.map((post, index) => (
+                              <ProfilePostCardItem
+                                key={index}
+                                post={post}
+                                onDelete={handleDeletePost}
+                              />
+                            ))}
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </Box>
                 </Box>
 
                 <Box component="main" sx={{ marginTop: 15, marginLeft: -7 }}>
