@@ -1,6 +1,6 @@
 .wishlist {
     width: 75vw;
-    height: 100vh;
+    height: auto;
     display: flex;
     flex-direction: column;
     overflow: hidden;

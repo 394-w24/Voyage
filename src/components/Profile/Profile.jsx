@@ -180,7 +180,6 @@ const Profile = () => {
                 <Box
                   component="main"
                   sx={{
-                    height: "300px",
                     marginTop: 7,
                     marginLeft: -7,
                   }}
@@ -211,7 +210,7 @@ const Profile = () => {
                               style={{ flex: "0 0 calc(20% - 16px)" }}
                             >
                               <Card
-                                sx={{ width: "300px", height: "280px" }} // Adjust card width as needed
+                                sx={{ width: "300px", height: "auto" }} // Adjust card width as needed
                                 className="travel-card"
                               >
                                 {post.image && (
