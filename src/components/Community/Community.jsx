@@ -28,7 +28,8 @@ import Header from "../Header/Header";
 import Sidebar from "../Sidebar/Sidebar";
 import { ref, getDatabase, onValue } from "firebase/database";
 import { getFirebaseApp } from "../../Utilities/firebase"; // Ensure this path is correct
-import "../Home/Home.css";
+import PostCardItem from "../PostCardItem/PostCardItem";
+import "./Community.css";
 
 const Community = () => {
   const [posts, setPosts] = useState([]);
@@ -56,82 +57,28 @@ const Community = () => {
 
   return (
     <>
-      <div className="home">
+      <div className="community">
         <Header />
-        <div className="home-container">
+        <div className="community-container">
           <Sidebar />
-          <div className="travel-items-container">
-            <div
-              className="travel-items-container"
-              style={{ marginLeft: "100px" }}
-            >
-              <Typography variant="h5" style={{ marginTop: "-50px" }}>
-                Community
-              </Typography>
-              <div
-                style={{
-                  display: "flex",
-                  flexWrap: "wrap",
-                  gap: "16px",
-                  justifyContent: "start",
-                  marginTop: "50px",
-                }}
-              >
-                {" "}
-                {/* Apply marginTop here */}
-                {posts.map((post) => (
-                  <div key={post.id} style={{ flex: "0 0 calc(20% - 16px)" }}>
-                    {" "}
-                    {/* Adjust `flex` property */}
-                    <Card
-                      sx={{ width: "300px", height: "auto" }} // Adjust card width as needed
-                      className="travel-card"
-                    >
-                      {post.image && (
-                        <img
-                          src={post.image}
-                          alt="Post"
-                          style={{ width: "300px", height: "auto" }}
-                        />
-                      )}
-                      <Typography variant="h6" style={{ marginLeft: 3 }}>
-                        {post.title}
-                      </Typography>
-                      <Box
-                        display="flex"
-                        alignItems="center"
-                        justifyContent="space-between"
-                        mb={1}
-                        style={{ width: "300px" }}
-                      >
-                        <Box
-                          display="flex"
-                          alignItems="center"
-                          style={{ marginLeft: 3 }}
-                        >
-                          <Avatar
-                            alt={post.userName}
-                            src={post.userAvatar}
-                            sx={{ width: 20, height: 20, marginRight: 1 }}
-                          />
-                          <Typography variant="subtitle1">
-                            {post.userName}
-                          </Typography>
-                        </Box>
-                        <Typography
-                          variant="subtitle2"
-                          style={{ marginRight: 3 }}
-                        >
-                          Posted at :{" "}
-                          {post.createdAt.substring(0, 10) +
-                            " " +
-                            post.createdAt.substring(11, 16)}
-                        </Typography>
-                      </Box>
-                    </Card>
+          <div className="post-items-container">
+            <div className="post-items" style={{marginLeft: -15}}>
+              {posts.length > 0 ? (
+                posts.map((post, index) => (
+                  <PostCardItem
+                    key={index}
+                    post={post}
+                  />
+                ))
+              ) : (
+                <Grid item xs={12}>
+                  <div style={{ width: "100%", margin: "0 auto" }}>
+                    <Typography variant="h6" style={{ textAlign: "center" }}>
+                      No matching destinations for now, please try again.
+                    </Typography>
                   </div>
-                ))}
-              </div>
+                </Grid>
+              )}
             </div>
           </div>
         </div>

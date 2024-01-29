@@ -1,0 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Concert+One&display=swap");
+
+.post-card {
+  width: 300px; /* Fixed width of the card */
+  margin: 20px; /* Added margin around the card for spacing */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Shadow for the card */
+  border-radius: 8px; /* Optional: for rounded corners */
+  overflow: hidden; /* Ensures the content does not overflow the card */
+  background-color: #ffffff; /* Card background color */
+  display: flex;
+  flex-direction: column;
+}
+
+.post-card:hover {
+  box-shadow: 0 4px 12px 3px rgba(0, 0, 0, 0.4);
+  transform: scale(1.02);
+  filter: brightness(1.1);
+}
+
+.post-card img {
+  width: 300px; /* Image width to fill the card */
+  height: auto; /* Image height is set to auto */
+  display: block; /* Ensures no extra space below the image */
+}
+
+.post-card-info {
+  height: auto; /* Fixed height for the info section */
+  padding: 5px; /* Padding inside the info section */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.post-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  column-gap: 20px; /* Keeps horizontal gap between cards */
+  row-gap: 10px; /* Reduced vertical gap between rows of cards */
+  justify-content: center;
+  align-items: start;
+}
