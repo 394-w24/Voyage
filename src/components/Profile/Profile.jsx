@@ -196,7 +196,7 @@ const Profile = () => {
                   <Box
                     component="main"
                     sx={{
-                      marginLeft: -26,
+                      marginLeft: -22,
                     }}
                   >
                     <div className="community">
