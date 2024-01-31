@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { List, ListItem, ListItemIcon, ListItemText } from "@mui/material";
 import SettingsIcon from "@mui/icons-material/Settings";
@@ -10,34 +11,45 @@ import "./Sidebar.css";
 const Sidebar = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const [isSidebarOpen, setSidebarOpen] = useState(true);
 
   const handleNavigation = (path) => {
     navigate(path);
   };
+
+  const toggleSidebar = () => {
+    setSidebarOpen(!isSidebarOpen);
+  };
+
   return (
     <div className="sidebar">
-      <List>
-        <ListItem button onClick={() => handleNavigation("/home")}>
-          <ListItemIcon>
-            <SettingsIcon />
-          </ListItemIcon>
-          <ListItemText primary="HOME" />
-        </ListItem>
-        <ListItem button onClick={() => handleNavigation("/community")}>
-          <ListItemIcon>
-            <StarRateIcon />
-          </ListItemIcon>
-          <ListItemText primary="COMMUNITY" />
-        </ListItem>
-        <ListItem button onClick={() => handleNavigation("/profile")}>
-          <ListItemIcon>
-            <AccountCircleIcon />
-          </ListItemIcon>
-          <ListItemText primary="PROFILE" />
-        </ListItem>
-        {location.pathname === "/home" && <Filter />}
-        {location.pathname === "/community" && <CommunitySidebar />}
-      </List>
+      <button className="toggle-button" onClick={toggleSidebar}>
+        {isSidebarOpen ? "Hide" : "Show"}
+      </button>
+      <div className={`sidebar-content ${isSidebarOpen ? "open" : "closed"}`}>
+        <List>
+          <ListItem button onClick={() => handleNavigation("/home")}>
+            <ListItemIcon>
+              <SettingsIcon />
+            </ListItemIcon>
+            <ListItemText primary="HOME" />
+          </ListItem>
+          <ListItem button onClick={() => handleNavigation("/community")}>
+            <ListItemIcon>
+              <StarRateIcon />
+            </ListItemIcon>
+            <ListItemText primary="COMMUNITY" />
+          </ListItem>
+          <ListItem button onClick={() => handleNavigation("/profile")}>
+            <ListItemIcon>
+              <AccountCircleIcon />
+            </ListItemIcon>
+            <ListItemText primary="PROFILE" />
+          </ListItem>
+          {location.pathname === "/home" && <Filter />}
+          {location.pathname === "/community" && <CommunitySidebar />}
+        </List>
+      </div>
     </div>
   );
 };
