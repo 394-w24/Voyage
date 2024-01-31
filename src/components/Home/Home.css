@@ -8,7 +8,7 @@
 }
 
 .home-container {
-  width: 90%;
+  width: 100%;
   height: 100%;
   display: flex;
   flex-direction: row;
@@ -34,23 +34,28 @@
 }
 
 
-@media (max-width: 600px) {
-  .travel-items {
-    grid-template-columns: repeat(0, 240px);
-  }
-}
-
-@media (max-width: 1000px) {
-  .travel-items {
-    grid-template-columns: repeat(1, 240px);
-  }
-}
-
 @media (max-width: 1600px) {
+  .travel-items {
+    grid-template-columns: repeat(4, 240px);
+  }
+}
+
+@media (max-width: 1400px) {
+  .travel-items {
+    grid-template-columns: repeat(3, 240px);
+  }
+}
+
+@media (max-width: 1200px) {
   .travel-items {
     grid-template-columns: repeat(2, 240px);
   }
 }
 
 
+@media (max-width: 900px) {
+  .home {
+   overflow: auto;
+  }
+}
 
