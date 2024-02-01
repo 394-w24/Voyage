@@ -18,7 +18,7 @@ const TravelCardItem = ({
   return (
     <>
       <Card
-        sx={{ height: "330px" }}
+        sx={{ height: "350px" }}
         onClick={handleOpenModal}
         className="travel-card"
       >
