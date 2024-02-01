@@ -7,7 +7,7 @@ import Button from "@mui/material/Button";
 import AddIcon from "@mui/icons-material/Add";
 import CheckIcon from "@mui/icons-material/Check";
 import "./TravelModal.css";
-import GPT from "../../Utilities/GPTtool/gpt.jsx";
+import OpenAI from "openai";
 
 const style = {
   position: "absolute",
@@ -20,6 +20,38 @@ const style = {
   boxShadow: 24,
   p: 4,
 };
+
+//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
+const openai = new OpenAI({
+  apiKey: '',
+  dangerouslyAllowBrowser: true,
+  organization: 'org-y9B1VFvuzhsYHcpG3KJWqvKR'
+
+});
+
+
+
+const getGPTRequests = async () => {
+
+    const message = "Which is the capital of Albania?";
+    const response = await openai.chat.completions.create({
+    model: "gpt-3.5-turbo-16k",
+    messages: [{ role: "user", content: message }],
+    temperature: 0,
+    max_tokens: 1000,
+    })
+    console.log(response);
+    return response;
+    }
+
+var checking = 0;
+
+if (checking == 0) {
+  console.log(checking)
+  checking = checking + 1;
+  getGPTRequests();
+  console.log(checking)
+}
 
 const TravelModal = ({
   open,
@@ -97,19 +129,18 @@ const TravelModal = ({
           variant="contained" size="medium" color="primary"
           onClick={async () => {
             setGptResponse("Loading response...");
-            const response = await generateTravelPlan();
+            const response = await getGPTRequests();
             setGptResponse(response);
           }}
         >
           Generate Plan  
         </Button>
 
-        <GPT onDataFetched={setGptResponse} />
 
         {gptResponse && (
           <div>
-            <h3>Travel Plan</h3>
-            <p>{gptResponse}</p>
+            <h3>{gptResponse}</h3>
+            <p></p>
           </div>
         )}
         </Box>
