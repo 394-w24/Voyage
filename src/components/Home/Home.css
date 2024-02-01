@@ -34,28 +34,24 @@
 }
 
 
-@media (max-width: 1600px) {
+@media (max-width: 767px) {
+  .travel-items-container {
+    transform: scale(0.8); 
+    margin: 0;
+  }
+}
+
+@media (max-width: 450px) {
   .travel-items {
-    grid-template-columns: repeat(4, 240px);
+    width: 280px;
+    grid-template-columns: repeat(1, 1fr) !important;
   }
-}
 
-@media (max-width: 1400px) {
-  .travel-items {
-    grid-template-columns: repeat(3, 240px);
-  }
-}
-
-@media (max-width: 1200px) {
-  .travel-items {
-    grid-template-columns: repeat(2, 240px);
+  .travel-items-container {
+    transform: scale(0.8); 
+    margin: 0;
   }
 }
 
 
-@media (max-width: 900px) {
-  .home {
-   overflow: auto;
-  }
-}
 
