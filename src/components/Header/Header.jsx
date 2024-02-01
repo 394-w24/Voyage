@@ -1,6 +1,6 @@
 import "./Header.css";
-import MenuIcon from '@mui/icons-material/Menu';
-import SortIcon from '@mui/icons-material/Sort';
+import MenuIcon from "@mui/icons-material/Menu";
+import SortIcon from "@mui/icons-material/Sort";
 
 const Header = ({ isSidebarOpen, toggleSidebar }) => {
   return (

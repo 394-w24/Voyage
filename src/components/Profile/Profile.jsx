@@ -26,8 +26,8 @@ import theme from "/src/theme/theme.jsx";
 import CancelIcon from "@mui/icons-material/Cancel";
 import Header from "../Header/Header";
 import Sidebar from "../Sidebar/Sidebar";
-import MenuIcon from '@mui/icons-material/Menu';
-import SortIcon from '@mui/icons-material/Sort';
+import MenuIcon from "@mui/icons-material/Menu";
+import SortIcon from "@mui/icons-material/Sort";
 import { firebaseSignOut } from "../../Utilities/firebaseUtils";
 import { getFirebaseApp } from "../../Utilities/firebase";
 import { getDatabase, ref, onValue, set, remove } from "firebase/database";
@@ -138,18 +138,18 @@ const Profile = () => {
     return () => unsubscribe();
   }, [user]);
 
-  const [isSidebarOpen, setSidebarOpen] = useState(true); 
+  const [isSidebarOpen, setSidebarOpen] = useState(true);
 
   const toggleSidebar = () => {
-    setSidebarOpen(!isSidebarOpen); 
+    setSidebarOpen(!isSidebarOpen);
   };
 
   return (
     <>
       <div className="home">
-      <Header isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
+        <Header isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
         <div className="home-container">
-        <Sidebar isSidebarOpen={isSidebarOpen} />
+          <Sidebar isSidebarOpen={isSidebarOpen} />
           <div className="travel-items-container">
             <div className="travel-items">
               <Box component="main">

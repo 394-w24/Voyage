@@ -1,10 +1,15 @@
 /* Sidebar.css */
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
 }
 
-#root, .home, .community, .community-container { /* 添加你的主要容器类名 */
+#root,
+.home,
+.community,
+.community-container {
+  /* 添加你的主要容器类名 */
   height: 100%;
 }
 
@@ -42,6 +47,5 @@ html, body {
 }
 
 .sidebar-content.closed {
-  width: 0; 
+  width: 0;
 }
-

@@ -33,6 +33,8 @@ import CancelIcon from "@mui/icons-material/Cancel";
 import AddPhotoAlternateIcon from "@mui/icons-material/AddPhotoAlternate";
 import Header from "../Header/Header";
 import Sidebar from "../Sidebar/Sidebar";
+import MenuIcon from "@mui/icons-material/Menu";
+import SortIcon from "@mui/icons-material/Sort";
 import "../Home/Home.css";
 
 const Publish = () => {
@@ -116,17 +118,23 @@ const Publish = () => {
     navigate("/community");
   };
 
+  const [isSidebarOpen, setSidebarOpen] = useState(true);
+
+  const toggleSidebar = () => {
+    setSidebarOpen(!isSidebarOpen);
+  };
+
   return (
     <div className="home">
-      <Header />
+      <Header isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
       <div className="home-container">
-        <Sidebar />
+        <Sidebar isSidebarOpen={isSidebarOpen} />
         <div className="travel-items-container">
           <div className="travel-items">
-            <Typography variant="h5" gutterBottom>
-              Publish
-            </Typography>
-            <Box sx={{ marginTop: 2 }}>
+            <Box>
+              <Typography variant="h5" gutterBottom>
+                Publish
+              </Typography>
               <TextField
                 fullWidth
                 variant="outlined"
@@ -136,6 +144,7 @@ const Publish = () => {
                 inputProps={{ maxLength: 15 }}
                 style={{ height: "5%", width: "150%" }}
                 size="small"
+                sx={{ marginTop: 3 }}
               />
               <textarea
                 value={postText}
