@@ -14,10 +14,12 @@
   position: relative;
 }
 
+/* Carousel adjustments */
 .carousel {
   position: absolute;
   width: 100%;
   height: 100%;
+  display: block; /* Initially show carousel */
 }
 
 .bgImage {
@@ -27,30 +29,44 @@
   background-position: center;
 }
 
-.css-zbwuqm {
-  display: none;
-}
-
+/* Poster adjustments */
 .poster {
   position: absolute;
   left: 0;
   width: 65%;
   height: 100%;
+  display: none; /* Initially hide poster */
 }
 
+/* Media query to toggle visibility based on screen width */
+@media (max-width: 500px) {
+  .carousel {
+    display: none; /* Hide carousel on smaller screens */
+  }
+
+  .poster {
+    display: block; /* Show poster on smaller screens */
+  }
+}
+
+.css-zbwuqm {
+  display: none;
+}
 .login {
   position: absolute;
   right: 0;
-  width: 35%;
-  height: 100%;
+  width: 400px;
+  height: auto;
   background-color: rgba(255, 255, 255, 1);
   border-top-left-radius: 15px;
   border-bottom-left-radius: 15px;
   z-index: 999;
+  max-height: 100vh;
+  overflow-y: auto;
 }
 
 .icon-title-container {
-  display: flex;
+  display: auto;
   flex-direction: row;
   align-items: center;
   height: auto;
@@ -212,7 +228,7 @@
   margin: 2px 0 0 10px !important;
 }
 
-@media (max-width: 1280px) {
+@media (max-width: 3000px) {
   .login > * {
     transform: scale(0.8);
   }
