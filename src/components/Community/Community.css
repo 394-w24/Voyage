@@ -31,27 +31,3 @@
   overflow: auto;
   padding: 0px 0px 20px 0;
 }
-
-@media (max-width: 1800px) {
-  .post-items {
-    grid-template-columns: repeat(5, 250px);
-  }
-}
-
-@media (max-width: 1600px) {
-  .post-items {
-    grid-template-columns: repeat(4, 250px);
-  }
-}
-
-@media (max-width: 1400px) {
-  .post-items {
-    grid-template-columns: repeat(3, 250px);
-  }
-}
-
-@media (max-width: 1200px) {
-  .post-items {
-    grid-template-columns: repeat(2, 250px);
-  }
-}

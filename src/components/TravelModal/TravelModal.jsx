@@ -13,9 +13,9 @@ const style = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: 800,
+  width: "auto",
   maxHeight: "calc(100% - 96px)",
-  overflowY: "scroll",
+  overflow: "auto",
   bgcolor: "background.paper",
   boxShadow: 24,
   p: 4,
@@ -43,7 +43,7 @@ const TravelModal = ({
           src={destination.image}
           alt={destination.name}
           width="100%"
-          height="400px"
+          height="100%"
         />
         <Typography id="modal-description" sx={{ mt: 2 }}>
           Here's some information about {destination.name}.

@@ -33,7 +33,6 @@
   padding: 0px 0px 20px 0;
 }
 
-
 @media (max-width: 1800px) {
   .travel-items {
     grid-template-columns: repeat(4, 240px);

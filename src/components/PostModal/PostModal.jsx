@@ -7,9 +7,9 @@ const style = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: 800,
+  width: "auto",
   maxHeight: "calc(100% - 96px)",
-  overflowY: "scroll",
+  overflow: "auto",
   bgcolor: "background.paper",
   boxShadow: 24,
   p: 4,
@@ -23,7 +23,8 @@ const PostModal = ({ open, handleClose, post }) => {
           <img
             src={post.image}
             alt="Post"
-            style={{ width: "100%", height: "auto" }}
+            width="100%"
+            height="100%"
           />
         )}
         <Box display="flex" alignItems="center" style={{ marginTop: 5 }}>
