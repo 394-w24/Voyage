@@ -35,6 +35,7 @@ import Header from "../Header/Header";
 import Sidebar from "../Sidebar/Sidebar";
 import MenuIcon from "@mui/icons-material/Menu";
 import SortIcon from "@mui/icons-material/Sort";
+import CloudDoneIcon from '@mui/icons-material/CloudDone';
 import "../Home/Home.css";
 
 const Publish = () => {
@@ -48,13 +49,15 @@ const Publish = () => {
 
   const handleFileChange = (e) => {
     const file = e.target.files[0];
-    if (file && (file.type === "image/jpeg" || file.type === "image/png")) {
-      setFile(file);
-    } else {
-      alert("Only JPG and PNG files are allowed.");
-      setFile(null); // Reset the file input if the file is not acceptable
-    }
-  };
+  if (file && (file.type === "image/jpeg" || file.type === "image/png")) {
+    setFile(file);
+    setIsUploaded(true); // Set isUploaded to true as soon as the file is selected
+  } else {
+    alert("Only JPG and PNG files are allowed.");
+    setFile(null); // Reset the file input if the file is not acceptable
+    setIsUploaded(false); // Also reset the isUploaded state
+  }
+};
 
   const handleTitleChange = (e) => {
     const words = e.target.value.split(" ");
@@ -68,6 +71,8 @@ const Publish = () => {
   const handleTextChange = (e) => {
     setPostText(e.target.value);
   };
+
+  const [isUploaded, setIsUploaded] = useState(false);
 
   const fileInputRef = React.useRef(null);
 
@@ -165,8 +170,13 @@ const Publish = () => {
                 ref={fileInputRef}
               />
               <ButtonBase onClick={handleIconClick}>
-                <AddPhotoAlternateIcon style={{ fontSize: 40 }} />
+                {isUploaded ? (
+                  <CloudDoneIcon style={{ fontSize: 40 }} />
+                ) : (
+                  <AddPhotoAlternateIcon style={{ fontSize: 40 }} />
+                )}
               </ButtonBase>
+
               <Button
                 onClick={handlePublish}
                 variant="contained"
