@@ -3,12 +3,14 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { List, ListItem, ListItemIcon, ListItemText } from "@mui/material";
 import SettingsIcon from "@mui/icons-material/Settings";
 import StarRateIcon from "@mui/icons-material/StarRate";
+import MenuIcon from '@mui/icons-material/Menu';
+import SortIcon from '@mui/icons-material/Sort';
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import Filter from "../Filter/Filter";
 import CommunitySidebar from "../Community/CommunitySidebar";
 import "./Sidebar.css";
 
-const Sidebar = () => {
+const Sidebar = ({ isSidebarOpen }) => {
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -16,23 +18,8 @@ const Sidebar = () => {
     navigate(path);
   };
 
-  const toggleSidebar = () => {
-    setSidebarOpen(!isSidebarOpen);
-  };
-
-  const [isSidebarOpen, setSidebarOpen] = useState(true);
-
-  useEffect(() => {
-    if (window.innerWidth < 450) {
-      setSidebarOpen(false);
-    }
-  }, []);
-
   return (
     <div className="sidebar">
-      <button className="toggle-button" onClick={toggleSidebar}>
-        {isSidebarOpen ? "Hide" : "Show"}
-      </button>
       <div className={`sidebar-content ${isSidebarOpen ? "open" : "closed"}`}>
         <List>
           <ListItem button onClick={() => handleNavigation("/home")}>

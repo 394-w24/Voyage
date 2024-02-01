@@ -1,13 +1,22 @@
 /* Sidebar.css */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+#root, .home, .community, .community-container { /* 添加你的主要容器类名 */
+  height: 100%;
+}
 
 .sidebar {
   display: flex;
   flex-direction: column;
-  max-width: 270px;
+  max-width: 200px;
+  height: 100%;
 }
 
 .toggle-button {
-  background-color: #4caf50;
+  background-color: #1976d2;
   color: white;
   border: none;
   padding: 6px;
@@ -18,7 +27,8 @@
 }
 
 .sidebar-content {
-  width: 230px;
+  width: 200px;
+  height: 100%;
   background-color: white;
   border-right: 1px solid rgba(0, 0, 0, 0.12);
   overflow: auto;
@@ -27,7 +37,11 @@
   transition: width 0.2s; /* Add transition for smoother hide/show effect */
 }
 
+.sidebar-content.open {
+  width: 200px;
+}
+
 .sidebar-content.closed {
-  width: 0;
+  width: 0; 
 }
 

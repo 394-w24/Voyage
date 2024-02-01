@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import Header from "../Header/Header";
 import Sidebar from "../Sidebar/Sidebar";
+import MenuIcon from '@mui/icons-material/Menu';
+import SortIcon from '@mui/icons-material/Sort';
 import TravelCardItem from "../TravelCardItem/TravelCardItem";
 import { Grid, Typography } from "@mui/material";
 import data from "../../jsonFiles/trips.json";
@@ -57,12 +59,18 @@ const Home = () => {
     }
   };
 
+  const [isSidebarOpen, setSidebarOpen] = useState(true); 
+
+  const toggleSidebar = () => {
+    setSidebarOpen(!isSidebarOpen); 
+  };
+
   return (
     <>
       <div className="home">
-        <Header />
+      <Header isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
         <div className="home-container">
-          <Sidebar />
+          <Sidebar isSidebarOpen={isSidebarOpen} />
           <div className="travel-items-container">
             <div className="travel-items">
               {destinations.length > 0 ? (

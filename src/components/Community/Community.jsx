@@ -26,6 +26,8 @@ import theme from "/src/theme/theme.jsx";
 import CancelIcon from "@mui/icons-material/Cancel";
 import Header from "../Header/Header";
 import Sidebar from "../Sidebar/Sidebar";
+import MenuIcon from '@mui/icons-material/Menu';
+import SortIcon from '@mui/icons-material/Sort';
 import { ref, getDatabase, onValue } from "firebase/database";
 import { getFirebaseApp } from "../../Utilities/firebase"; // Ensure this path is correct
 import PostCardItem from "../PostCardItem/PostCardItem";
@@ -55,12 +57,18 @@ const Community = () => {
     return () => unsubscribe();
   }, []);
 
+  const [isSidebarOpen, setSidebarOpen] = useState(true); 
+
+  const toggleSidebar = () => {
+    setSidebarOpen(!isSidebarOpen); 
+  };
+
   return (
     <>
       <div className="community">
-        <Header />
+      <Header isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
         <div className="community-container">
-          <Sidebar />
+        <Sidebar isSidebarOpen={isSidebarOpen} />
           <div className="post-items-container">
             <div className="post-items" style={{marginLeft: -15}}>
               {posts.length > 0 ? (
