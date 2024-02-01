@@ -89,14 +89,7 @@ const TravelModal = ({
                 </CardContent>
               </Card>
             </Grid>
-            <Grid item xs={12} sm={6} md={4}>
-              <Card>
-                <CardContent>
-                  <Typography variant="h6">{gptResponse}</Typography>
-                  
-                </CardContent>
-              </Card>
-            </Grid>
+            
           </Grid>
         </Box>
         <Box component="main" sx={{ marginTop: 3 }}>
