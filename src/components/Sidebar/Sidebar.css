@@ -3,6 +3,7 @@
 .sidebar {
   display: flex;
   flex-direction: column;
+  max-width: 270px;
 }
 
 .toggle-button {
@@ -30,13 +31,3 @@
   width: 0;
 }
 
-/* Responsive styles */
-@media (max-width: 200px) {
-  .sidebar-content {
-    width: 100%;
-  }
-
-  .sidebar-content.closed {
-    width: 0;
-  }
-}
