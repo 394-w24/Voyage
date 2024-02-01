@@ -31,8 +31,7 @@ const openai = new OpenAI({
 
 
 const getGPTRequests = async () => {
-
-    const message = "Which is the capital of Albania?";
+    const message = `Generate a ${numDays} day itinerary for ${numTravelers} people visiting ${destination.name}`;
     const response = await openai.chat.completions.create({
     model: "gpt-3.5-turbo-16k",
     messages: [{ role: "user", content: message }],
@@ -59,6 +58,9 @@ const TravelModal = ({
   addedToWishlist,
   handleAddToWishlist,
 }) => {
+  const [numTravelers, setNumTravelers] = useState(""); 
+  const [numDays, setNumDays] = useState("");
+
   const [gptResponse, setGptResponse] = useState("");
 
   const isAdded =
@@ -102,6 +104,10 @@ const TravelModal = ({
                     margin="normal"
                     size="small"
                     fullWidth
+                    value={numTravelers}
+                    onChange={(event) => setNumTravelers(event.target.value)}
+                    // placeholder="Please enter the number of travelers"
+                    
                   />
                 </CardContent>
               </Card>
@@ -116,6 +122,9 @@ const TravelModal = ({
                     margin="normal"
                     size="small"
                     fullWidth
+                    value={numDays}
+                    onChange={(event) => setNumDays(event.target.value)}
+                    // placeholder="Please enter the number of days you plan to stay"
                   />
                 </CardContent>
               </Card>
