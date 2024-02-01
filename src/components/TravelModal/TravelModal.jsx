@@ -22,16 +22,14 @@ const style = {
 };
 
 const openai = new OpenAI({
-  apiKey: '',
+  apiKey: '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',
   dangerouslyAllowBrowser: true,
   organization: 'org-y9B1VFvuzhsYHcpG3KJWqvKR'
 
 });
 
-
-
-const getGPTRequests = async () => {
-    const message = `Generate a ${numDays} day itinerary for ${numTravelers} people visiting ${destination.name}`;
+const getGPTRequests = async (days, travelers, destination) => {
+    const message = `Generate a ${days} day itinerary for ${travelers} people visiting ${destination}`;
     const response = await openai.chat.completions.create({
     model: "gpt-3.5-turbo-16k",
     messages: [{ role: "user", content: message }],
@@ -136,8 +134,12 @@ const TravelModal = ({
         <Button
           variant="contained" size="medium" color="primary"
           onClick={async () => {
+            // console.log("clicked");
+            // console.log(numDays);
+            // console.log(numTravelers);
+            // console.log("name", destination.name);
             setGptResponse("Loading response...");
-            const response = await getGPTRequests();
+            const response = await getGPTRequests(numDays, numTravelers, destination.name);
             setGptResponse(response);
           }}
         >
