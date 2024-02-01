@@ -146,7 +146,7 @@ const Profile = () => {
 
   return (
     <>
-      <div className="home">
+      <div className="home" >
         <Header isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
         <div className="home-container">
           <Sidebar isSidebarOpen={isSidebarOpen} />
@@ -232,7 +232,7 @@ const Profile = () => {
                 <Box
                   component="main"
                   sx={{
-                    marginLeft: -7,
+                    marginLeft: -19,
                   }}
                 >
                   <div className="wishlist" style={{height: "auto"}}>

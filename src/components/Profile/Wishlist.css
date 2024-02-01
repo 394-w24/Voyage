@@ -1,52 +1,58 @@
 .wishlist {
-    width: 75vw;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    background-color: rgba(241, 249, 248, 1);
-  }
-  
-  .wishlist-container {
-    width: 100vw;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-  }
-  
-  .wishlist .travel-items-container {
-    flex-grow: 1;
-    max-height: 85vh;
-    align-items: flex-start; 
-  }
-  
-  .wishlist .travel-items {
-    display: grid;
-    width: 100%;
-    height: 100%;
-    grid-template-columns: repeat(5, 240px);
-    grid-template-rows: auto;
-    gap: 35px;
-    justify-content: start;
-    overflow: auto;
-    padding: 0px 0px 20px 0;
+  width: 100vw; /* Match the width of the community section */
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background-color: rgba(241, 249, 248, 1);
 }
 
-  @media (max-width: 1600px) {
-    .travel-items {
-      grid-template-columns: repeat(4, 240px);
-    }
+.wishlist-container {
+  width: 100vw; /* Match the width of the community container */
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.wishlist .travel-items-container {
+  flex-grow: 1;
+  padding: 0;
+  margin: 50px 150px 50px 150px; /* Match the margin of post-items-container */
+  max-height: 85vh;
+}
+
+.wishlist .travel-items {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  grid-template-columns: repeat(5, 240px);
+  grid-template-rows: auto;
+  gap: 35px; /* Adjust the gap to your liking */
+  justify-content: start; /* Changed from 'start' to 'center' for consistent alignment */
+  overflow: auto;
+  padding: 0px 0px 20px 0;
+}
+
+@media (max-width: 1800px) {
+  .wishlist .travel-items {
+    grid-template-columns: repeat(4, 240px);
   }
-  
-  @media (max-width: 1400px) {
-    .travel-items {
-      grid-template-columns: repeat(3, 240px);
-    }
+}
+
+@media (max-width: 1400px) {
+  .wishlist .travel-items {
+    grid-template-columns: repeat(3, 240px);
   }
-  
-  @media (max-width: 1200px) {
-    .travel-items {
-      grid-template-columns: repeat(2, 240px);
-    }
+}
+
+@media (max-width: 1000px) {
+  .wishlist .travel-items {
+    grid-template-columns: repeat(2, 240px);
   }
-  
+}
+
+@media (max-width: 600px) {
+  .wishlist .travel-items {
+    grid-template-columns: repeat(1, 240px);
+  }
+}
