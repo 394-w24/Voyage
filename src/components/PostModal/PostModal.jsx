@@ -20,20 +20,31 @@ const PostModal = ({ open, handleClose, post }) => {
     <Modal open={open} onClose={handleClose}>
       <Box sx={style} className="post-box">
         {post.image && (
-          <img src={post.image} alt="Post" style={{ width: "100%", height: "auto" }} />
+          <img
+            src={post.image}
+            alt="Post"
+            style={{ width: "100%", height: "auto" }}
+          />
         )}
         <Box display="flex" alignItems="center" style={{ marginTop: 5 }}>
-          <Avatar alt={post.userName} src={post.userAvatar} sx={{ width: 24, height: 24, marginRight: 1 }} />
+          <Avatar
+            alt={post.userName}
+            src={post.userAvatar}
+            sx={{ width: 24, height: 24, marginRight: 1 }}
+          />
           <Typography variant="subtitle1">{post.userName}</Typography>
         </Box>
         <Typography id="modal-title" variant="h6" component="h2" sx={{ mt: 1 }}>
           {post.title}
         </Typography>
-        <Typography id="modal-description" >
+        <Typography id="modal-description" sx={{ mt: 1 }}>
           {post.text}
         </Typography>
         <Typography variant="subtitle2" sx={{ mt: 2 }}>
-          Posted at: {post.createdAt.substring(0, 10) + " " + post.createdAt.substring(11, 16)}
+          Posted at:{" "}
+          {post.createdAt.substring(0, 10) +
+            " " +
+            post.createdAt.substring(11, 16)}
         </Typography>
       </Box>
     </Modal>

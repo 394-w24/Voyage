@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Card, Typography, Box, Avatar, IconButton } from "@mui/material";
-import DeleteIcon from "@mui/icons-material/Delete";
+import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import PostModal from "../PostModal/PostModal";
+import { grey } from "@mui/material/colors";
 import "../PostCardItem/PostCardItem.css";
 
 const ProfilePostCardItem = ({ post, onDelete }) => {
@@ -13,44 +14,29 @@ const ProfilePostCardItem = ({ post, onDelete }) => {
   return (
     <>
       <Card className="post-card" onClick={handleOpenModal}>
-        {post.image && <img src={post.image} alt="Post" />}
-        <Box className="post-card-info">
-          <Box
-            display="flex"
-            alignItems="center"
-            justifyContent="space-between"
-            mb={1}
-          >
-            <Typography variant="h6">{post.title}</Typography>
+        <div className="post-card-image-container">
+          {post.image && <img src={post.image} alt="Post" />}
+          <Typography variant="h6" className="post-card-title">
+            {post.title}
+          </Typography>
+          <Box className="profile-post-avatar-username">
+            <Avatar alt={post.userName} src={post.userAvatar} />
+            <Typography variant="subtitle1" className="username">
+              {post.userName}
+            </Typography>
             <IconButton
-              onClick={() => onDelete(post.id)}
+              className="delete-post-button"
+              onClick={(e) => {
+                e.stopPropagation();
+                onDelete(post.id);
+              }}
               aria-label="delete post"
+              size="medium"
             >
-              <DeleteIcon />
+              <DeleteForeverIcon sx={{ color: grey[50] }} />
             </IconButton>
           </Box>
-          <Box
-            display="flex"
-            alignItems="center"
-            justifyContent="space-between"
-            mb={1}
-          >
-            <Box display="flex" alignItems="center">
-              <Avatar
-                alt={post.userName}
-                src={post.userAvatar}
-                sx={{ width: 20, height: 20, marginRight: 1 }}
-              />
-              <Typography variant="subtitle1">{post.userName}</Typography>
-            </Box>
-            <Typography variant="subtitle2">
-              Posted at:{" "}
-              {post.createdAt.substring(0, 10) +
-                " " +
-                post.createdAt.substring(11, 16)}
-            </Typography>
-          </Box>
-        </Box>
+        </div>
       </Card>
       <PostModal open={modalOpen} handleClose={handleCloseModal} post={post} />
     </>

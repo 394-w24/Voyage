@@ -1,10 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Concert+One&display=swap");
 
 .post-card {
-  width: 300px; /* Fixed width of the card */
+  position: relative;
+  width: 250px;
+  height: 250px; /* Set height of the card to make it square */
   margin: 20px; /* Added margin around the card for spacing */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Shadow for the card */
-  border-radius: 8px; /* Optional: for rounded corners */
+  border-radius: 16px; /* Increased for more rounded corners */
   overflow: hidden; /* Ensures the content does not overflow the card */
   background-color: #ffffff; /* Card background color */
   display: flex;
@@ -17,10 +19,48 @@
   filter: brightness(1.1);
 }
 
+.post-card:hover .post-card-image-container img {
+  filter: blur(2px);
+}
+
 .post-card img {
-  width: 300px; /* Image width to fill the card */
-  height: auto; /* Image height is set to auto */
-  display: block; /* Ensures no extra space below the image */
+  width: 100%;
+  height: 250px; /* Set a fixed height to crop the image */
+  object-fit: cover; /* This will crop and center the image without distorting it */
+  object-position: center; /* Center the image within the element */
+}
+
+.post-avatar-username {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.post-avatar-username .MuiAvatar-root {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+
+.profile-post-avatar-username {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin-left: 10px;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.profile-post-avatar-username .MuiAvatar-root {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
 }
 
 .post-card-info {
@@ -33,9 +73,26 @@
 
 .post-items {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  column-gap: 20px; /* Keeps horizontal gap between cards */
-  row-gap: 10px; /* Reduced vertical gap between rows of cards */
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  column-gap: 20px;
   justify-content: center;
   align-items: start;
+}
+
+.post-card-title {
+  display: none;
+  position: absolute;
+  bottom: 35px;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  color: white;
+}
+
+.post-card:hover .post-card-title {
+  display: block;
+}
+
+.username {
+  margin-right: auto; /* Pushes everything else to the right */
 }

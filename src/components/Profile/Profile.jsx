@@ -203,7 +203,7 @@ const Profile = () => {
                     marginTop: -5,
                   }}
                 >
-                  <div className="community">
+                  <div className="community" style={{height: "auto"}}>
                     <div className="community-container">
                       <div className="post-items-container">
                         <div className="post-items">
@@ -235,7 +235,7 @@ const Profile = () => {
                     marginLeft: -7,
                   }}
                 >
-                  <div className="wishlist">
+                  <div className="wishlist" style={{height: "auto"}}>
                     <div className="wishlist-container">
                       <div className="travel-items-container">
                         <div className="travel-items">
