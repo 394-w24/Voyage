@@ -2,3 +2,8 @@
   border: none !important;
   overflow: auto !important;
 }
+
+.card-content {
+  max-height: 200px;
+  overflow: auto;
+}

@@ -14,7 +14,8 @@ const style = {
   left: "50%",
   transform: "translate(-50%, -50%)",
   width: 800,
-  height: 800,
+  maxHeight: 'calc(100% - 96px)', 
+  overflowY: 'scroll',
   bgcolor: "background.paper",
   boxShadow: 24,
   p: 4,
@@ -60,7 +61,7 @@ const TravelModal = ({
           <Grid container spacing={3}>
             <Grid item xs={12} sm={6} md={4}>
               <Card>
-                <CardContent>
+                <CardContent className="card-content">
                   <Typography variant="h6">Number of travelers</Typography>
                   <TextField
                     label="#"
