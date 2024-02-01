@@ -16,9 +16,8 @@
   
   .wishlist .travel-items-container {
     flex-grow: 1;
-    margin: 50px; /* You may want to increase the right margin if necessary */
     max-height: 85vh;
-    align-items: flex-start; /* This aligns the container's items to the top if it's a flex container */
+    align-items: flex-start; 
   }
   
   .wishlist .travel-items {

@@ -187,52 +187,54 @@ const Profile = () => {
                   )}
                 </Box>
 
+                <Typography
+                  variant="h5"
+                  gutterBottom
+                  sx={{
+                    marginTop: 8,
+                  }}
+                >
+                  Post
+                </Typography>
                 <Box
                   component="main"
                   sx={{
-                    marginTop: 7,
-                    height: "600px",
+                    marginLeft: -21,
+                    marginTop: -5,
                   }}
                 >
-                  <Typography
-                    variant="h5"
-                    gutterBottom
-                    sx={{ marginBottom: -3 }}
-                  >
-                    Post
-                  </Typography>
-                  <Box
-                    component="main"
-                    sx={{
-                      marginLeft: -22,
-                    }}
-                  >
-                    <div className="community">
-                      <div className="community-container">
-                        <div className="post-items-container">
-                          <div className="post-items">
-                            {posts.map((post, index) => (
-                              <ProfilePostCardItem
-                                key={index}
-                                post={post}
-                                onDelete={handleDeletePost}
-                              />
-                            ))}
-                          </div>
+                  <div className="community">
+                    <div className="community-container">
+                      <div className="post-items-container">
+                        <div className="post-items">
+                          {posts.map((post, index) => (
+                            <ProfilePostCardItem
+                              key={index}
+                              post={post}
+                              onDelete={handleDeletePost}
+                            />
+                          ))}
                         </div>
                       </div>
                     </div>
-                  </Box>
+                  </div>
                 </Box>
 
-                <Box component="main" sx={{ marginTop: 15, marginLeft: -7 }}>
-                  <Typography
-                    variant="h5"
-                    gutterBottom
-                    sx={{ marginBottom: -3, marginLeft: 7 }}
-                  >
-                    Wishlist
-                  </Typography>
+                <Typography
+                  variant="h5"
+                  gutterBottom
+                  sx={{
+                    marginTop: 5,
+                  }}
+                >
+                  Wishlist
+                </Typography>
+                <Box
+                  component="main"
+                  sx={{
+                    marginLeft: -7,
+                  }}
+                >
                   <div className="wishlist">
                     <div className="wishlist-container">
                       <div className="travel-items-container">
