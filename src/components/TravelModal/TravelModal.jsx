@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react"; 
 import { Grid, Card, CardContent, TextField } from "@mui/material";
 import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
@@ -7,6 +7,7 @@ import Button from "@mui/material/Button";
 import AddIcon from "@mui/icons-material/Add";
 import CheckIcon from "@mui/icons-material/Check";
 import "./TravelModal.css";
+import GPT from "../../Utilities/GPTtool/gpt.jsx";
 
 const style = {
   position: "absolute",
@@ -27,6 +28,8 @@ const TravelModal = ({
   addedToWishlist,
   handleAddToWishlist,
 }) => {
+  const [gptResponse, setGptResponse] = useState("");
+
   const isAdded =
     addedToWishlist === true ? true : addedToWishlist[destination.name]?.added;
 
@@ -86,12 +89,36 @@ const TravelModal = ({
                 </CardContent>
               </Card>
             </Grid>
+            <Grid item xs={12} sm={6} md={4}>
+              <Card>
+                <CardContent>
+                  <Typography variant="h6">{gptResponse}</Typography>
+                  
+                </CardContent>
+              </Card>
+            </Grid>
           </Grid>
         </Box>
         <Box component="main" sx={{ marginTop: 3 }}>
-          <Button variant="contained" size="medium" color="primary">
-            Generate Plan
-          </Button>
+        <Button
+          variant="contained" size="medium" color="primary"
+          onClick={async () => {
+            setGptResponse("Loading response...");
+            const response = await generateTravelPlan();
+            setGptResponse(response);
+          }}
+        >
+          Generate Plan  
+        </Button>
+
+        <GPT onDataFetched={setGptResponse} />
+
+        {gptResponse && (
+          <div>
+            <h3>Travel Plan</h3>
+            <p>{gptResponse}</p>
+          </div>
+        )}
         </Box>
       </Box>
     </Modal>
