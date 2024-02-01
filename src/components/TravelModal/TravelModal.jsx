@@ -21,7 +21,6 @@ const style = {
   p: 4,
 };
 
-//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
 const openai = new OpenAI({
   apiKey: '',
   dangerouslyAllowBrowser: true,
