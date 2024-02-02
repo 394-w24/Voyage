@@ -19,6 +19,7 @@ import AcUnitIcon from "@mui/icons-material/AcUnit";
 import WbSunnyIcon from "@mui/icons-material/WbSunny";
 import FilterDramaIcon from "@mui/icons-material/FilterDrama";
 import ThermostatIcon from "@mui/icons-material/Thermostat";
+import AirIcon from '@mui/icons-material/Air';
 import { useNavigate } from "react-router-dom";
 import destinationsData from "../../jsonFiles/trips.json";
 
@@ -39,7 +40,7 @@ const seasons = [
 ];
 
 const temperatures = [
-  { icon: <AcUnitIcon style={{ fontSize: 60 }} />, label: "Cold" },
+  { icon: <AirIcon style={{ fontSize: 60 }} />, label: "Cold" },
   { icon: <ThermostatIcon style={{ fontSize: 60 }} />, label: "Mild" },
   { icon: <WbSunnyIcon style={{ fontSize: 60 }} />, label: "Sunny" },
 ];

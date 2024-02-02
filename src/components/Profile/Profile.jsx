@@ -146,7 +146,7 @@ const Profile = () => {
 
   return (
     <>
-      <div className="home" >
+      <div className="home">
         <Header isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
         <div className="home-container">
           <Sidebar isSidebarOpen={isSidebarOpen} />
@@ -159,17 +159,27 @@ const Profile = () => {
                   </Typography>
                   {user ? (
                     <Box sx={{ marginTop: 2 }}>
-                      <Avatar
-                        alt={user.displayName || "User"}
-                        src={user.photoURL}
-                        sx={{ width: 100, height: 100 }} // Adjust the size as needed
-                      />
-                      <Typography variant="h6">
-                        Welcome, {user.displayName || "User"}!
-                      </Typography>
-                      <Typography variant="subtitle1">
-                        Email: {user.email}
-                      </Typography>
+                      <Box
+                        sx={{
+                          marginTop: 2,
+                          display: "flex",
+                          alignItems: "center",
+                        }}
+                      >
+                        <Avatar
+                          alt={user.displayName || "User"}
+                          src={user.photoURL}
+                          sx={{ width: 100, height: 100, marginRight: 2 }} // Adjust the size as needed
+                        />
+                        <Box>
+                          <Typography variant="h6">
+                            Welcome, {user.displayName || "User"}!
+                          </Typography>
+                          <Typography variant="subtitle1">
+                            Email: {user.email}
+                          </Typography>
+                        </Box>
+                      </Box>
                       <Button
                         variant="contained"
                         color="primary"
@@ -203,7 +213,7 @@ const Profile = () => {
                     marginTop: -5,
                   }}
                 >
-                  <div className="community" style={{height: "auto"}}>
+                  <div className="community" style={{ height: "auto" }}>
                     <div className="community-container">
                       <div className="post-items-container">
                         <div className="post-items">
@@ -235,7 +245,7 @@ const Profile = () => {
                     marginLeft: -19,
                   }}
                 >
-                  <div className="wishlist" style={{height: "auto"}}>
+                  <div className="wishlist" style={{ height: "auto" }}>
                     <div className="wishlist-container">
                       <div className="travel-items-container">
                         <div className="travel-items">

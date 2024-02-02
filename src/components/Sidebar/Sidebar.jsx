@@ -3,6 +3,9 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { List, ListItem, ListItemIcon, ListItemText } from "@mui/material";
 import SettingsIcon from "@mui/icons-material/Settings";
 import StarRateIcon from "@mui/icons-material/StarRate";
+import PeopleIcon from '@mui/icons-material/People';
+import CottageIcon from '@mui/icons-material/Cottage';
+import TravelExploreIcon from '@mui/icons-material/TravelExplore';
 import MenuIcon from "@mui/icons-material/Menu";
 import SortIcon from "@mui/icons-material/Sort";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
@@ -24,15 +27,15 @@ const Sidebar = ({ isSidebarOpen }) => {
         <List>
           <ListItem button onClick={() => handleNavigation("/home")}>
             <ListItemIcon>
-              <SettingsIcon />
+              <CottageIcon />
             </ListItemIcon>
             <ListItemText primary="HOME" />
           </ListItem>
           <ListItem button onClick={() => handleNavigation("/community")}>
             <ListItemIcon>
-              <StarRateIcon />
+              <TravelExploreIcon />
             </ListItemIcon>
-            <ListItemText primary="COMMUNITY" />
+            <ListItemText primary="EXPLORE" />
           </ListItem>
           <ListItem button onClick={() => handleNavigation("/profile")}>
             <ListItemIcon>

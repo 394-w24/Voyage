@@ -35,7 +35,7 @@ import Header from "../Header/Header";
 import Sidebar from "../Sidebar/Sidebar";
 import MenuIcon from "@mui/icons-material/Menu";
 import SortIcon from "@mui/icons-material/Sort";
-import CloudDoneIcon from '@mui/icons-material/CloudDone';
+import CloudDoneIcon from "@mui/icons-material/CloudDone";
 import "../Home/Home.css";
 import "./Publish.css";
 
@@ -50,15 +50,15 @@ const Publish = () => {
 
   const handleFileChange = (e) => {
     const file = e.target.files[0];
-  if (file && (file.type === "image/jpeg" || file.type === "image/png")) {
-    setFile(file);
-    setIsUploaded(true); // Set isUploaded to true as soon as the file is selected
-  } else {
-    alert("Only JPG and PNG files are allowed.");
-    setFile(null); // Reset the file input if the file is not acceptable
-    setIsUploaded(false); // Also reset the isUploaded state
-  }
-};
+    if (file && (file.type === "image/jpeg" || file.type === "image/png")) {
+      setFile(file);
+      setIsUploaded(true); // Set isUploaded to true as soon as the file is selected
+    } else {
+      alert("Only JPG and PNG files are allowed.");
+      setFile(null); // Reset the file input if the file is not acceptable
+      setIsUploaded(false); // Also reset the isUploaded state
+    }
+  };
 
   const handleTitleChange = (e) => {
     const words = e.target.value.split(" ");
@@ -135,61 +135,51 @@ const Publish = () => {
       <Header isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
       <div className="home-container">
         <Sidebar isSidebarOpen={isSidebarOpen} />
-        <div className="travel-items-container" style={{ overflowY: 'auto' }}>
-          <div className="travel-items">
-            <Box>
-              <Typography variant="h5" gutterBottom>
-                Publish
-              </Typography>
-              <div className="responsive-container">
-                <TextField
-                  fullWidth
-                  variant="outlined"
-                  placeholder="Title (max 15 words)"
-                  value={postTitle}
-                  onChange={handleTitleChange}
-                  inputProps={{ maxLength: 15 }}
-                  size="small"
-                  sx={{ marginTop: 3 }}
-                />
-                <textarea
-                  value={postText}
-                  onChange={handleTextChange}
-                  rows={6}
-                  style={{
-                    height: "50%",
-                    width: "130%",
-                    marginTop: "1rem",
-                    marginBottom: "1rem",
-                  }}
-                />
-              </div>
-              <input
-                type="file"
-                onChange={handleFileChange}
-                accept=".jpg, .png"
-                style={{ display: "none" }} // Hide the actual file input
-                ref={fileInputRef}
-              />
-              <ButtonBase onClick={handleIconClick}>
-                {isUploaded ? (
-                  <CloudDoneIcon style={{ fontSize: 40 }} />
-                ) : (
-                  <AddPhotoAlternateIcon style={{ fontSize: 40 }} />
-                )}
-              </ButtonBase>
-
-              <Button
-                onClick={handlePublish}
-                variant="contained"
-                size="small"
-                color="primary"
-                style={{ marginLeft: "1rem" }}
-              >
-                Publish
-              </Button>
-            </Box>
-          </div>
+        <div className="publish-items-container">
+          <Box className="publish-box">
+            <Typography variant="h5" gutterBottom>
+              Publish
+            </Typography>
+            <TextField
+              fullWidth
+              variant="outlined"
+              placeholder="Title (max 15 words)"
+              value={postTitle}
+              onChange={handleTitleChange}
+              inputProps={{ maxLength: 15 }}
+              size="small"
+              className="title-input"
+            />
+            <textarea
+              value={postText}
+              onChange={handleTextChange}
+              className="text-area"
+            />
+            <input
+              type="file"
+              onChange={handleFileChange}
+              accept=".jpg, .png"
+              className="file-input"
+              ref={fileInputRef}
+            />
+            <ButtonBase onClick={handleIconClick} className="upload-button">
+              {isUploaded ? (
+                <CloudDoneIcon style={{ fontSize: 40 }} />
+              ) : (
+                <AddPhotoAlternateIcon style={{ fontSize: 40 }} />
+              )}
+            </ButtonBase>
+            <Button
+              onClick={handlePublish}
+              variant="contained"
+              size="small"
+              color="primary"
+              className="publish-button"
+              style={{ marginLeft: "4px" }}
+            >
+              Publish
+            </Button>
+          </Box>
         </div>
       </div>
     </div>
