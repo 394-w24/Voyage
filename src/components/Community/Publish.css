@@ -1,0 +1,11 @@
+.responsive-container {
+    width: 100%;
+  }
+  
+  @media (min-width: 600px) {
+    .responsive-container {
+      max-width: 600px; 
+      margin: 0 auto;
+    }
+  }
+  

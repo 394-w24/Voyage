@@ -37,6 +37,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import SortIcon from "@mui/icons-material/Sort";
 import CloudDoneIcon from '@mui/icons-material/CloudDone';
 import "../Home/Home.css";
+import "./Publish.css";
 
 const Publish = () => {
   const [user] = useAuthState();
@@ -134,34 +135,35 @@ const Publish = () => {
       <Header isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
       <div className="home-container">
         <Sidebar isSidebarOpen={isSidebarOpen} />
-        <div className="travel-items-container">
+        <div className="travel-items-container" style={{ overflowY: 'auto' }}>
           <div className="travel-items">
             <Box>
               <Typography variant="h5" gutterBottom>
                 Publish
               </Typography>
-              <TextField
-                fullWidth
-                variant="outlined"
-                placeholder="Title (max 15 words)"
-                value={postTitle}
-                onChange={handleTitleChange}
-                inputProps={{ maxLength: 15 }}
-                style={{ height: "5%", width: "150%" }}
-                size="small"
-                sx={{ marginTop: 3 }}
-              />
-              <textarea
-                value={postText}
-                onChange={handleTextChange}
-                minRows={3}
-                style={{
-                  height: "50%",
-                  width: "200%",
-                  marginTop: "1rem",
-                  marginBottom: "1rem",
-                }} // Adjust the width to 100%
-              />
+              <div className="responsive-container">
+                <TextField
+                  fullWidth
+                  variant="outlined"
+                  placeholder="Title (max 15 words)"
+                  value={postTitle}
+                  onChange={handleTitleChange}
+                  inputProps={{ maxLength: 15 }}
+                  size="small"
+                  sx={{ marginTop: 3 }}
+                />
+                <textarea
+                  value={postText}
+                  onChange={handleTextChange}
+                  rows={6}
+                  style={{
+                    height: "50%",
+                    width: "130%",
+                    marginTop: "1rem",
+                    marginBottom: "1rem",
+                  }}
+                />
+              </div>
               <input
                 type="file"
                 onChange={handleFileChange}
