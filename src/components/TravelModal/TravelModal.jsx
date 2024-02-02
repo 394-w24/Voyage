@@ -22,9 +22,9 @@ const style = {
 };
 
 const openai = new OpenAI({
-  apiKey: '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',
+  apiKey: '',
   dangerouslyAllowBrowser: true,
-  organization: 'org-y9B1VFvuzhsYHcpG3KJWqvKR'
+  organization: 'org-y9B1VFvuzhsYHcpG3KJWqvKR',
 
 });
 
