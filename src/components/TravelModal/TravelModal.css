@@ -4,6 +4,10 @@
 }
 
 .card-content {
-  max-height: 200px;
+  max-height: 400px;
+  overflow: auto;
+}
+
+.travel-plan-card-content {
   overflow: auto;
 }

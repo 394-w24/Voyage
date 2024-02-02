@@ -24,14 +24,24 @@ const style = {
   p: 4,
 };
 
-const openai = new OpenAI({
-  apiKey: openaiApiKey,
-  dangerouslyAllowBrowser: true,
-  organization: "org-y9B1VFvuzhsYHcpG3KJWqvKR",
-});
+const style2 = {
+  width: "auto",
+  maxHeight: "calc(100% - 96px)",
+  overflow: "auto",
+  bgcolor: "background.paper",
+  marginTop: 2,
+  p: 0.1,
+};
 
-const getGPTRequests = async (days, travelers, destination) => {
-  const message = `Generate a ${days} day itinerary for ${travelers} people visiting ${destination} with bullet points of things to do in the morning, afternoon, and evening. Give explanations for each activity. Do not use numbers when listing activities.`;
+const getGPTRequests = async (days, travelers, destination, apiKey) => {
+  const openai = new OpenAI({
+    apiKey: apiKey,
+    dangerouslyAllowBrowser: true,
+    organization: "org-y9B1VFvuzhsYHcpG3KJWqvKR",
+  });
+  const message = `Generate a ${days} day itinerary for ${travelers} people visiting ${destination} with bullet points of things to do in the morning, 
+                    afternoon, and evening. Give explanations for each activity. 
+                    Do not use numbers when listing activities. Break each day into a paragraph.`;
   const response = await openai.chat.completions.create({
     model: "gpt-3.5-turbo-16k",
     messages: [{ role: "user", content: message }],
@@ -50,6 +60,7 @@ const TravelModal = ({
 }) => {
   const [numTravelers, setNumTravelers] = useState("");
   const [numDays, setNumDays] = useState("");
+  const [apiKey, setApiKey] = useState("");
   const [additionalInfo, setAdditionalInfo] = useState("");
   const [travelPlan, setTravelPlan] = useState("");
   const [loading, setLoading] = useState(false);
@@ -59,7 +70,8 @@ const TravelModal = ({
     const response = await getGPTRequests(
       numDays,
       numTravelers,
-      destination.name
+      destination.name,
+      apiKey
     );
     setTravelPlan(response.choices[0].message.content);
     setLoading(false);
@@ -111,22 +123,6 @@ const TravelModal = ({
                     value={numTravelers}
                     onChange={(event) => setNumTravelers(event.target.value)}
                   />
-                </CardContent>
-              </Card>
-            </Grid>
-            <Grid item xs={12} sm={6} md={4}>
-              <Card>
-                <CardContent>
-                  <Typography variant="h6">Number of days</Typography>
-                  <TextField
-                    label="#"
-                    variant="outlined"
-                    margin="normal"
-                    size="small"
-                    fullWidth
-                    value={numDays}
-                    onChange={(event) => setNumDays(event.target.value)}
-                  />
                   <Typography variant="subtitle2" style={{ marginTop: 15 }}>
                     Duration of the Trip
                   </Typography>
@@ -136,6 +132,20 @@ const TravelModal = ({
                     margin="normal"
                     size="small"
                     fullWidth
+                    value={numDays}
+                    onChange={(event) => setNumDays(event.target.value)}
+                  />
+                  <Typography variant="subtitle2" style={{ marginTop: 15 }}>
+                    Api Key
+                  </Typography>
+                  <TextField
+                    label="your openAI api key"
+                    variant="outlined"
+                    margin="normal"
+                    size="small"
+                    fullWidth
+                    value={apiKey}
+                    onChange={(event) => setApiKey(event.target.value)}
                   />
                 </CardContent>
               </Card>
@@ -152,20 +162,17 @@ const TravelModal = ({
             Generate Plan
           </Button>
 
-          <Button
-            variant="contained"
-            size="medium"
-            color="primary"
-            onClick={async () => {
-              const parsedItinerary = parseItinerary(travelPlan);
-              setGptResponse(parsedItinerary);
-            }}
-          >
-            retry
-          </Button>
-
-          {travelPlan && <div>{travelPlan}</div>}
+          {/* {travelPlan && <div>{travelPlan}</div>} */}
         </Box>
+
+        {travelPlan && 
+        <Box sx={style2} className="travel-box">
+          <Card>
+            <CardContent className="travel-plan-card-content">
+              <div>{travelPlan}</div>
+            </CardContent>
+          </Card>
+        </Box>}
       </Box>
     </Modal>
   );
