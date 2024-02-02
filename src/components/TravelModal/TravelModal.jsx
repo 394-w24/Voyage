@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Grid, Card, CardContent, TextField } from "@mui/material";
 import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
@@ -6,6 +6,7 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import AddIcon from "@mui/icons-material/Add";
 import CheckIcon from "@mui/icons-material/Check";
+import Divider from "@mui/material/Divider";
 import "./TravelModal.css";
 import OpenAI from "openai";
 
@@ -40,8 +41,7 @@ const getGPTRequests = async (days, travelers, destination, apiKey) => {
     organization: "org-y9B1VFvuzhsYHcpG3KJWqvKR",
   });
   const message = `Generate a ${days} day itinerary for ${travelers} people visiting ${destination} with bullet points of things to do in the morning, 
-                    afternoon, and evening. Give explanations for each activity. 
-                    Do not use numbers when listing activities. Break each day into a paragraph.`;
+                    afternoon, and evening. Give explanations for each activity. Do not use numbers when listing activities.`;
   const response = await openai.chat.completions.create({
     model: "gpt-3.5-turbo-16k",
     messages: [{ role: "user", content: message }],
@@ -77,13 +77,81 @@ const TravelModal = ({
     setLoading(false);
   };
 
+  const handleModalClose = () => {
+    document.dispatchEvent(new CustomEvent("resetTravelModal"));
+    handleClose();
+  };
+
   const isAdded =
     addedToWishlist === true ? true : addedToWishlist[destination.name]?.added;
+
+  const formatTravelPlan = (plan, days) => {
+    const dayRegex = /Day \d+:/g;
+    const timeRegex = /(?:Morning:|Afternoon:|Evening:)/g;
+    const activityRegex = /-\s/g;
+    const formattedPlan = [];
+    let dayPlans = plan.split(dayRegex);
+    dayPlans.forEach((dayPlan, index) => {
+      if (dayPlan.trim() === "") return;
+      if (days > 1 && index > 0) {
+        formattedPlan.push(
+          <Typography variant="h6" sx={{ my: 2 }}>
+            Day {index}:
+          </Typography>
+        );
+      }
+      let timeSegments = dayPlan.split(timeRegex);
+      timeSegments = timeSegments.filter((segment) => segment.trim() !== "");
+
+      timeSegments.forEach((segment, idx) => {
+        if (idx % 3 === 0)
+          formattedPlan.push(
+            <Typography variant="subtitle1">Morning:</Typography>
+          );
+        if (idx % 3 === 1)
+          formattedPlan.push(
+            <Typography variant="subtitle1">Afternoon:</Typography>
+          );
+        if (idx % 3 === 2)
+          formattedPlan.push(
+            <Typography variant="subtitle1">Evening:</Typography>
+          );
+        const activities = segment
+          .trim()
+          .split(activityRegex)
+          .filter((activity) => activity.trim() !== "");
+        activities.forEach((activity, activityIdx) => {
+          formattedPlan.push(
+            <Typography variant="subtitle2" key={activityIdx} sx={{ my: 1 }}>
+              - {activity.trim()}
+            </Typography>
+          );
+        });
+        if (idx < timeSegments.length - 1) {
+          formattedPlan.push(<Divider sx={{ my: 1 }} />);
+        }
+      });
+
+      if (days > 1 && index < dayPlans.length - 1) {
+        formattedPlan.push(<Divider sx={{ my: 1 }} />);
+      }
+    });
+    return formattedPlan;
+  };
+
+  useEffect(() => {
+    if (!open) {
+      setNumTravelers("");
+      setNumDays("");
+      setApiKey("");
+      setTravelPlan("");
+    }
+  }, [open]);
 
   return (
     <Modal
       open={open}
-      onClose={handleClose}
+      onClose={handleModalClose}
       aria-labelledby="modal-title"
       aria-describedby="modal-description"
     >
@@ -161,18 +229,17 @@ const TravelModal = ({
           >
             Generate Plan
           </Button>
-
-          {/* {travelPlan && <div>{travelPlan}</div>} */}
         </Box>
 
-        {travelPlan && 
-        <Box sx={style2} className="travel-box">
-          <Card>
-            <CardContent className="travel-plan-card-content">
-              <div>{travelPlan}</div>
-            </CardContent>
-          </Card>
-        </Box>}
+        {travelPlan && (
+          <Box sx={style2} className="travel-box">
+            <Card>
+              <CardContent className="travel-plan-card-content">
+                {formatTravelPlan(travelPlan, Number(numDays))}
+              </CardContent>
+            </Card>
+          </Box>
+        )}
       </Box>
     </Modal>
   );

@@ -13,7 +13,10 @@ const TravelCardItem = ({
 }) => {
   const [modalOpen, setModalOpen] = useState(false);
   const handleOpenModal = () => setModalOpen(true);
-  const handleCloseModal = () => setModalOpen(false);
+  const handleCloseModal = () => {
+    setModalOpen(false);
+    document.dispatchEvent(new CustomEvent("resetTravelModal"));
+  };
 
   return (
     <>
