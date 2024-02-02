@@ -40,15 +40,6 @@ const getGPTRequests = async (days, travelers, destination) => {
     return response;
     }
 
-// var checking = 0;
-
-// if (checking == 0) {
-//   console.log(checking)
-//   checking = checking + 1;
-//   getGPTRequests();
-//   console.log(checking)
-// }
-
 const TravelModal = ({
   open,
   handleClose,
@@ -58,6 +49,7 @@ const TravelModal = ({
 }) => {
   const [numTravelers, setNumTravelers] = useState(""); 
   const [numDays, setNumDays] = useState("");
+  const [additionalInfo, setAdditionalInfo] = useState("");
   const [travelPlan, setTravelPlan] = useState("");
   const [gptResponse, setGptResponse] = useState("");
 
@@ -173,11 +165,6 @@ const TravelModal = ({
         <Button
           variant="contained" size="medium" color="primary"
           onClick={async () => {
-            // console.log("clicked");
-            // console.log(numDays);
-            // console.log(numTravelers);
-            // console.log("name", destination.name);
-            // setGptResponse("Loading response...");
             // const response = await getGPTRequests(numDays, numTravelers, destination.name);
 
             // setGptResponse(response.choices[0].message.content);
@@ -192,65 +179,46 @@ const TravelModal = ({
           retry  
         </Button>
 
-        {/* {Array.isArray(gptResponse) &&
+        {Array.isArray(gptResponse) &&
           gptResponse.map((day, index) => (
             <div key={index}>
               <h3>Day {day.dayTitle}</h3>
-              
+              <ul>
                 {day.activities.map((activity, activityIndex) => (
-                  <ul>
-                
                   <ul key={activityIndex}>
-                  <strong>{activity.timeOfDay}:</strong>{" "}
-                    
+                    <br></br>
+                    <strong>{activity.timeOfDay}</strong>{" "}
                     {activity.description}
                   </ul>
-                  </ul>
                 ))}
-              
+              </ul>
             </div>
-          ))} */}
+          ))}
 
-{/* {Array.isArray(gptResponse) &&
-  gptResponse.map((day, index) => (
-    <div key={index}>
-      <h3>{day.dayTitle}</h3>
-      <ul>
-        {day.activities.map((activity, activityIndex) => (
-          <ul key={activityIndex}>
-            <strong>{activity.timeOfDay}</strong>{" "}
-            {activity.description}
-          </ul>
-        ))}
-      </ul>
-    </div>
-  ))} */}
-
-{Array.isArray(gptResponse) &&
-  gptResponse.map((day, index) => (
-    <div key={index}>
-      <h3>Day {day.dayTitle}</h3>
-      <ul>
-        {day.activities.map((activity, activityIndex) => (
-          <ul key={activityIndex}>
-            <strong>{activity.timeOfDay}</strong>{" "}
-            <br></br>
-            {activity.description}
-            <br></br>
-          </ul>
-        ))}
-      </ul>
-    </div>
-  ))}
-
-
-
-        {/* {gptResponse && (
-          <div>
-            <h3>{gptResponse}</h3>
-            <p></p>
-          </div>
-        )} */}
+          <Grid item xs={12} sm={6} md={4}>
+              <Card>
+                <CardContent>
+                  <Typography variant="h6">Anything else you would like to add to the trip?</Typography>
+                  <TextField
+                    variant="outlined"
+                    margin="normal"
+                    size="small"
+                    fullWidth
+                    value={additionalInfo}
+                    onChange={(event) => setAdditionalInfo(event.target.value)}
+                  />
+                </CardContent>
+              </Card>
+            </Grid>
+            <Button
+              variant="contained" size="medium" color="primary"
+              onClick={async () => {
+                
+                
+              }}
+            >
+              Submit  
+            </Button>
         </Box>
       </Box>
     </Modal>
