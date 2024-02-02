@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Grid, Card, CardContent, TextField } from "@mui/material";
 import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
@@ -7,6 +7,9 @@ import Button from "@mui/material/Button";
 import AddIcon from "@mui/icons-material/Add";
 import CheckIcon from "@mui/icons-material/Check";
 import "./TravelModal.css";
+import OpenAI from "openai";
+
+const openaiApiKey = import.meta.env.VITE_OPENAI_API_KEY;
 
 const style = {
   position: "absolute",
@@ -21,6 +24,23 @@ const style = {
   p: 4,
 };
 
+const openai = new OpenAI({
+  apiKey: openaiApiKey,
+  dangerouslyAllowBrowser: true,
+  organization: "org-y9B1VFvuzhsYHcpG3KJWqvKR",
+});
+
+const getGPTRequests = async (days, travelers, destination) => {
+  const message = `Generate a ${days} day itinerary for ${travelers} people visiting ${destination} with bullet points of things to do in the morning, afternoon, and evening. Give explanations for each activity. Do not use numbers when listing activities.`;
+  const response = await openai.chat.completions.create({
+    model: "gpt-3.5-turbo-16k",
+    messages: [{ role: "user", content: message }],
+    temperature: 0,
+    max_tokens: 1000,
+  });
+  return response;
+};
+
 const TravelModal = ({
   open,
   handleClose,
@@ -28,6 +48,23 @@ const TravelModal = ({
   addedToWishlist,
   handleAddToWishlist,
 }) => {
+  const [numTravelers, setNumTravelers] = useState("");
+  const [numDays, setNumDays] = useState("");
+  const [additionalInfo, setAdditionalInfo] = useState("");
+  const [travelPlan, setTravelPlan] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const handleGeneratePlan = async () => {
+    setLoading(true);
+    const response = await getGPTRequests(
+      numDays,
+      numTravelers,
+      destination.name
+    );
+    setTravelPlan(response.choices[0].message.content);
+    setLoading(false);
+  };
+
   const isAdded =
     addedToWishlist === true ? true : addedToWishlist[destination.name]?.added;
 
@@ -71,6 +108,24 @@ const TravelModal = ({
                     margin="normal"
                     size="small"
                     fullWidth
+                    value={numTravelers}
+                    onChange={(event) => setNumTravelers(event.target.value)}
+                  />
+                </CardContent>
+              </Card>
+            </Grid>
+            <Grid item xs={12} sm={6} md={4}>
+              <Card>
+                <CardContent>
+                  <Typography variant="h6">Number of days</Typography>
+                  <TextField
+                    label="#"
+                    variant="outlined"
+                    margin="normal"
+                    size="small"
+                    fullWidth
+                    value={numDays}
+                    onChange={(event) => setNumDays(event.target.value)}
                   />
                   <Typography variant="subtitle2" style={{ marginTop: 15 }}>
                     Duration of the Trip
@@ -88,9 +143,28 @@ const TravelModal = ({
           </Grid>
         </Box>
         <Box component="main" sx={{ marginTop: 3 }}>
-          <Button variant="contained" size="medium" color="primary">
+          <Button
+            variant="contained"
+            size="medium"
+            color="primary"
+            onClick={handleGeneratePlan}
+          >
             Generate Plan
           </Button>
+
+          <Button
+            variant="contained"
+            size="medium"
+            color="primary"
+            onClick={async () => {
+              const parsedItinerary = parseItinerary(travelPlan);
+              setGptResponse(parsedItinerary);
+            }}
+          >
+            retry
+          </Button>
+
+          {travelPlan && <div>{travelPlan}</div>}
         </Box>
       </Box>
     </Modal>
