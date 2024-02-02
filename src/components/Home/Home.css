@@ -16,7 +16,7 @@
 
 .travel-items-container {
   flex-grow: 1;
-  padding-top: 50px;
+  margin: 50px;
   max-height: 85vh;
   display: flex;
 }
