@@ -140,7 +140,7 @@ const TravelModal = ({
             // console.log("name", destination.name);
             setGptResponse("Loading response...");
             const response = await getGPTRequests(numDays, numTravelers, destination.name);
-            setGptResponse(response);
+            setGptResponse(response.choices[0].message.content);
           }}
         >
           Generate Plan  

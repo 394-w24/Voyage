@@ -12,7 +12,7 @@ export function GPTRequests() {
   // async function for chat request
   async function chatReq(req, res) {
     try {
-      const message = "Which is the capital of Albania?";
+      const message = "Generate an itinerary for people traveling";
       const response = await openai.chat.completions.create({
         model: "gpt-3.5-turbo",
         messages: [{ role: "user", content: message }],
