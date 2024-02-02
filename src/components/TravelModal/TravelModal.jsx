@@ -29,7 +29,7 @@ const openai = new OpenAI({
 });
 
 const getGPTRequests = async (days, travelers, destination) => {
-    const message = `Generate a ${days} day itinerary for ${travelers} people visiting ${destination}`;
+    const message = `Generate a ${days} day itinerary for ${travelers} people visiting ${destination} with bullet points of things to do in the morning, afternoon, and evening. Give explanations for each activity. Do not use numbers when listing activities.`;
     const response = await openai.chat.completions.create({
     model: "gpt-3.5-turbo-16k",
     messages: [{ role: "user", content: message }],
@@ -58,11 +58,30 @@ const TravelModal = ({
 }) => {
   const [numTravelers, setNumTravelers] = useState(""); 
   const [numDays, setNumDays] = useState("");
-
+  const [travelPlan, setTravelPlan] = useState("");
   const [gptResponse, setGptResponse] = useState("");
 
   const isAdded =
     addedToWishlist === true ? true : addedToWishlist[destination.name]?.added;
+
+  const parseItinerary = (itinerary) => {
+    const days = itinerary.split("Day ").slice(1);
+
+    return days.map((day, index) => {
+      const lines = day.trim().split("\n");
+      const dayTitle = lines[0];
+      const activities = lines.slice(1).map((activity) => {
+        // Remove the dash before the time of day and extra colons at the end
+        const [timeOfDay, description] = activity.replace(/^- |:$/g, '').split(": ");
+        return { timeOfDay, description };
+      });
+
+      return {
+        dayTitle,
+        activities,
+      };
+    });
+  };
 
   return (
     <Modal
@@ -140,19 +159,94 @@ const TravelModal = ({
             // console.log("name", destination.name);
             setGptResponse("Loading response...");
             const response = await getGPTRequests(numDays, numTravelers, destination.name);
-            setGptResponse(response.choices[0].message.content);
+            setTravelPlan(response.choices[0].message.content);
+            const parsedItinerary = parseItinerary(
+              response.choices[0].message.content
+            );
+            setGptResponse(parsedItinerary);
+            // setGptResponse(response.choices[0].message.content);
           }}
         >
           Generate Plan  
         </Button>
 
+        <Button
+          variant="contained" size="medium" color="primary"
+          onClick={async () => {
+            // console.log("clicked");
+            // console.log(numDays);
+            // console.log(numTravelers);
+            // console.log("name", destination.name);
+            // setGptResponse("Loading response...");
+            // const response = await getGPTRequests(numDays, numTravelers, destination.name);
 
-        {gptResponse && (
+            // setGptResponse(response.choices[0].message.content);
+            const parsedItinerary = parseItinerary(
+              travelPlan
+            );
+            setGptResponse(parsedItinerary);
+          }}
+        >
+          retry  
+        </Button>
+
+        {/* {Array.isArray(gptResponse) &&
+          gptResponse.map((day, index) => (
+            <div key={index}>
+              <h3>Day {day.dayTitle}</h3>
+              
+                {day.activities.map((activity, activityIndex) => (
+                  <ul>
+                
+                  <ul key={activityIndex}>
+                  <strong>{activity.timeOfDay}:</strong>{" "}
+                    
+                    {activity.description}
+                  </ul>
+                  </ul>
+                ))}
+              
+            </div>
+          ))} */}
+
+{/* {Array.isArray(gptResponse) &&
+  gptResponse.map((day, index) => (
+    <div key={index}>
+      <h3>{day.dayTitle}</h3>
+      <ul>
+        {day.activities.map((activity, activityIndex) => (
+          <ul key={activityIndex}>
+            <strong>{activity.timeOfDay}</strong>{" "}
+            {activity.description}
+          </ul>
+        ))}
+      </ul>
+    </div>
+  ))} */}
+
+{Array.isArray(gptResponse) &&
+  gptResponse.map((day, index) => (
+    <div key={index}>
+      <h3>Day {day.dayTitle}</h3>
+      <ul>
+        {day.activities.map((activity, activityIndex) => (
+          <ul key={activityIndex}>
+            <strong>{activity.timeOfDay}</strong>{" "}
+            {activity.description}
+          </ul>
+        ))}
+      </ul>
+    </div>
+  ))}
+
+
+
+        {/* {gptResponse && (
           <div>
             <h3>{gptResponse}</h3>
             <p></p>
           </div>
-        )}
+        )} */}
         </Box>
       </Box>
     </Modal>
