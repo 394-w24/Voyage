@@ -49,6 +49,7 @@ const TravelModal = ({
 }) => {
   const [numTravelers, setNumTravelers] = useState("");
   const [numDays, setNumDays] = useState("");
+  const [additionalInfo, setAdditionalInfo] = useState("");
   const [travelPlan, setTravelPlan] = useState("");
   const [loading, setLoading] = useState(false);
 
