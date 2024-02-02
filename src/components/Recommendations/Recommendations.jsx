@@ -20,8 +20,6 @@ import {
 } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import theme from "/src/theme/theme.jsx";
-import CustomAppBar from "../CustomAppBar";
-import CustomDrawer from "../CustomDrawer";
 
 const Recommendations = () => {
   const location = useLocation();

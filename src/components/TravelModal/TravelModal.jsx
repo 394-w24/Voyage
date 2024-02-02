@@ -1,4 +1,4 @@
-import React, { useState } from "react"; 
+import React, { useState } from "react";
 import { Grid, Card, CardContent, TextField } from "@mui/material";
 import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
@@ -8,6 +8,8 @@ import AddIcon from "@mui/icons-material/Add";
 import CheckIcon from "@mui/icons-material/Check";
 import "./TravelModal.css";
 import OpenAI from "openai";
+
+const openaiApiKey = import.meta.env.VITE_OPENAI_API_KEY;
 
 const style = {
   position: "absolute",
@@ -22,32 +24,21 @@ const style = {
 };
 
 const openai = new OpenAI({
-  apiKey: '',
+  apiKey: openaiApiKey,
   dangerouslyAllowBrowser: true,
-  organization: 'org-y9B1VFvuzhsYHcpG3KJWqvKR',
-
+  organization: "org-y9B1VFvuzhsYHcpG3KJWqvKR",
 });
 
 const getGPTRequests = async (days, travelers, destination) => {
-    const message = `Generate a ${days} day itinerary for ${travelers} people visiting ${destination} with bullet points of things to do in the morning, afternoon, and evening. Give explanations for each activity. Do not use numbers when listing activities.`;
-    const response = await openai.chat.completions.create({
+  const message = `Generate a ${days} day itinerary for ${travelers} people visiting ${destination} with bullet points of things to do in the morning, afternoon, and evening. Give explanations for each activity. Do not use numbers when listing activities.`;
+  const response = await openai.chat.completions.create({
     model: "gpt-3.5-turbo-16k",
     messages: [{ role: "user", content: message }],
     temperature: 0,
     max_tokens: 1000,
-    })
-    console.log(response);
-    return response;
-    }
-
-var checking = 0;
-
-if (checking == 0) {
-  console.log(checking)
-  checking = checking + 1;
-  getGPTRequests();
-  console.log(checking)
-}
+  });
+  return response;
+};
 
 const TravelModal = ({
   open,
@@ -56,32 +47,24 @@ const TravelModal = ({
   addedToWishlist,
   handleAddToWishlist,
 }) => {
-  const [numTravelers, setNumTravelers] = useState(""); 
+  const [numTravelers, setNumTravelers] = useState("");
   const [numDays, setNumDays] = useState("");
   const [travelPlan, setTravelPlan] = useState("");
-  const [gptResponse, setGptResponse] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const handleGeneratePlan = async () => {
+    setLoading(true);
+    const response = await getGPTRequests(
+      numDays,
+      numTravelers,
+      destination.name
+    );
+    setTravelPlan(response.choices[0].message.content);
+    setLoading(false);
+  };
 
   const isAdded =
     addedToWishlist === true ? true : addedToWishlist[destination.name]?.added;
-
-  const parseItinerary = (itinerary) => {
-    const days = itinerary.split("Day ").slice(1);
-
-    return days.map((day, index) => {
-      const lines = day.trim().split("\n");
-      const dayTitle = lines[0];
-      const activities = lines.slice(1).map((activity) => {
-        // Remove the dash before the time of day and extra colons at the end
-        const [timeOfDay, description] = activity.replace(/^- |:$/g, '').split(": ");
-        return { timeOfDay, description };
-      });
-
-      return {
-        dayTitle,
-        activities,
-      };
-    });
-  };
 
   return (
     <Modal
@@ -123,8 +106,6 @@ const TravelModal = ({
                     fullWidth
                     value={numTravelers}
                     onChange={(event) => setNumTravelers(event.target.value)}
-                    // placeholder="Please enter the number of travelers"
-                    
                   />
                 </CardContent>
               </Card>
@@ -141,112 +122,35 @@ const TravelModal = ({
                     fullWidth
                     value={numDays}
                     onChange={(event) => setNumDays(event.target.value)}
-                    // placeholder="Please enter the number of days you plan to stay"
                   />
                 </CardContent>
               </Card>
             </Grid>
-            
           </Grid>
         </Box>
         <Box component="main" sx={{ marginTop: 3 }}>
-        <Button
-          variant="contained" size="medium" color="primary"
-          onClick={async () => {
-            // console.log("clicked");
-            // console.log(numDays);
-            // console.log(numTravelers);
-            // console.log("name", destination.name);
-            setGptResponse("Loading response...");
-            const response = await getGPTRequests(numDays, numTravelers, destination.name);
-            setTravelPlan(response.choices[0].message.content);
-            const parsedItinerary = parseItinerary(
-              response.choices[0].message.content
-            );
-            setGptResponse(parsedItinerary);
-            // setGptResponse(response.choices[0].message.content);
-          }}
-        >
-          Generate Plan  
-        </Button>
+          <Button
+            variant="contained"
+            size="medium"
+            color="primary"
+            onClick={handleGeneratePlan}
+          >
+            Generate Plan
+          </Button>
 
-        <Button
-          variant="contained" size="medium" color="primary"
-          onClick={async () => {
-            // console.log("clicked");
-            // console.log(numDays);
-            // console.log(numTravelers);
-            // console.log("name", destination.name);
-            // setGptResponse("Loading response...");
-            // const response = await getGPTRequests(numDays, numTravelers, destination.name);
+          <Button
+            variant="contained"
+            size="medium"
+            color="primary"
+            onClick={async () => {
+              const parsedItinerary = parseItinerary(travelPlan);
+              setGptResponse(parsedItinerary);
+            }}
+          >
+            retry
+          </Button>
 
-            // setGptResponse(response.choices[0].message.content);
-            const parsedItinerary = parseItinerary(
-              travelPlan
-            );
-            setGptResponse(parsedItinerary);
-          }}
-        >
-          retry  
-        </Button>
-
-        {/* {Array.isArray(gptResponse) &&
-          gptResponse.map((day, index) => (
-            <div key={index}>
-              <h3>Day {day.dayTitle}</h3>
-              
-                {day.activities.map((activity, activityIndex) => (
-                  <ul>
-                
-                  <ul key={activityIndex}>
-                  <strong>{activity.timeOfDay}:</strong>{" "}
-                    
-                    {activity.description}
-                  </ul>
-                  </ul>
-                ))}
-              
-            </div>
-          ))} */}
-
-{/* {Array.isArray(gptResponse) &&
-  gptResponse.map((day, index) => (
-    <div key={index}>
-      <h3>{day.dayTitle}</h3>
-      <ul>
-        {day.activities.map((activity, activityIndex) => (
-          <ul key={activityIndex}>
-            <strong>{activity.timeOfDay}</strong>{" "}
-            {activity.description}
-          </ul>
-        ))}
-      </ul>
-    </div>
-  ))} */}
-
-{Array.isArray(gptResponse) &&
-  gptResponse.map((day, index) => (
-    <div key={index}>
-      <h3>Day {day.dayTitle}</h3>
-      <ul>
-        {day.activities.map((activity, activityIndex) => (
-          <ul key={activityIndex}>
-            <strong>{activity.timeOfDay}</strong>{" "}
-            {activity.description}
-          </ul>
-        ))}
-      </ul>
-    </div>
-  ))}
-
-
-
-        {/* {gptResponse && (
-          <div>
-            <h3>{gptResponse}</h3>
-            <p></p>
-          </div>
-        )} */}
+          {travelPlan && <div>{travelPlan}</div>}
         </Box>
       </Box>
     </Modal>

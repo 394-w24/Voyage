@@ -4,7 +4,6 @@ import { useAuthState } from "../Utilities/firebaseUtils";
 import Login from "../Components/Login/Login";
 import Home from "../Components/Home/Home";
 import Recommendations from "../components/Recommendations/Recommendations";
-import Preferences from "../components/Preferences/Preferences";
 import Profile from "../components/Profile/Profile";
 import Community from "../Components/Community/Community";
 import Publish from "../Components/Community/Publish";
@@ -48,14 +47,7 @@ const RouteDispatcher = () => {
             </PrivateRoute>
           }
         />
-        <Route
-          path="/preferences"
-          element={
-            <PrivateRoute>
-              <Preferences />
-            </PrivateRoute>
-          }
-        />
+        
         <Route
           path="/profile"
           element={
