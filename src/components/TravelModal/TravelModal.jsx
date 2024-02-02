@@ -40,14 +40,14 @@ const getGPTRequests = async (days, travelers, destination) => {
     return response;
     }
 
-var checking = 0;
+// var checking = 0;
 
-if (checking == 0) {
-  console.log(checking)
-  checking = checking + 1;
-  getGPTRequests();
-  console.log(checking)
-}
+// if (checking == 0) {
+//   console.log(checking)
+//   checking = checking + 1;
+//   getGPTRequests();
+//   console.log(checking)
+// }
 
 const TravelModal = ({
   open,
@@ -181,10 +181,12 @@ const TravelModal = ({
             // const response = await getGPTRequests(numDays, numTravelers, destination.name);
 
             // setGptResponse(response.choices[0].message.content);
+            console.log("travelPlan", travelPlan);
             const parsedItinerary = parseItinerary(
               travelPlan
             );
             setGptResponse(parsedItinerary);
+            console
           }}
         >
           retry  
@@ -232,7 +234,9 @@ const TravelModal = ({
         {day.activities.map((activity, activityIndex) => (
           <ul key={activityIndex}>
             <strong>{activity.timeOfDay}</strong>{" "}
+            <br></br>
             {activity.description}
+            <br></br>
           </ul>
         ))}
       </ul>
