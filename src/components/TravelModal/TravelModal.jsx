@@ -34,11 +34,18 @@ const style2 = {
   p: 0.1,
 };
 
-const getGPTRequests = async (days, travelers, destination, apiKey) => {
+const getGPTRequests = async (
+  days,
+  travelers,
+  destination,
+  apiKey,
+  temperature
+) => {
   const openai = new OpenAI({
     apiKey: apiKey,
     dangerouslyAllowBrowser: true,
     organization: "org-y9B1VFvuzhsYHcpG3KJWqvKR",
+    temperature: parseFloat(temperature),
   });
   const message = `Generate a ${days} day itinerary for ${travelers} people visiting ${destination} with bullet points of things to do in the morning, 
                     afternoon, and evening. Give explanations for each activity. Do not use numbers when listing activities.`;
@@ -61,6 +68,7 @@ const TravelModal = ({
   const [numTravelers, setNumTravelers] = useState("");
   const [numDays, setNumDays] = useState("");
   const [apiKey, setApiKey] = useState("");
+  const [temperature, setTemperature] = useState(1);
   const [additionalInfo, setAdditionalInfo] = useState("");
   const [travelPlan, setTravelPlan] = useState("");
   const [loading, setLoading] = useState(false);
@@ -71,15 +79,18 @@ const TravelModal = ({
       numDays,
       numTravelers,
       destination.name,
-      apiKey
+      apiKey,
+      temperature
     );
     setTravelPlan(response.choices[0].message.content);
     setLoading(false);
+    setIsPlanGenerated(true);
   };
 
   const handleModalClose = () => {
     document.dispatchEvent(new CustomEvent("resetTravelModal"));
     handleClose();
+    setIsPlanGenerated(false);
   };
 
   const isAdded =
@@ -139,11 +150,14 @@ const TravelModal = ({
     return formattedPlan;
   };
 
+  const [isPlanGenerated, setIsPlanGenerated] = useState(false);
+
   useEffect(() => {
     if (!open) {
       setNumTravelers("");
       setNumDays("");
       setApiKey("");
+      setTemperature(1);
       setTravelPlan("");
     }
   }, [open]);
@@ -215,6 +229,18 @@ const TravelModal = ({
                     value={apiKey}
                     onChange={(event) => setApiKey(event.target.value)}
                   />
+                  <Typography variant="subtitle2" style={{ marginTop: 15 }}>
+                    AI Temperature
+                  </Typography>
+                  <TextField
+                    label="From 0 to 2"
+                    variant="outlined"
+                    margin="normal"
+                    size="small"
+                    fullWidth
+                    value={temperature}
+                    onChange={(event) => setTemperature(event.target.value)}
+                  />
                 </CardContent>
               </Card>
             </Grid>
@@ -227,7 +253,7 @@ const TravelModal = ({
             color="primary"
             onClick={handleGeneratePlan}
           >
-            Generate Plan
+            {isPlanGenerated ? "Try Again" : "Generate Plan"}
           </Button>
         </Box>
 
