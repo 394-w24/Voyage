@@ -152,6 +152,22 @@ const TravelModal = ({
 
   const [isPlanGenerated, setIsPlanGenerated] = useState(false);
 
+  const Loader = () => {
+    const [text, setText] = useState("");
+    useEffect(() => {
+      const interval = setInterval(() => {
+        setText((prevText) => {
+          if (prevText.length === 3) {
+            return "";
+          }
+          return prevText + ".";
+        });
+      }, 300);
+      return () => clearInterval(interval);
+    }, []);
+    return <h4>Loading itinerary, please wait{text}</h4>;
+  };
+
   useEffect(() => {
     if (!open) {
       setNumTravelers("");
@@ -256,6 +272,8 @@ const TravelModal = ({
             {isPlanGenerated ? "Try Again" : "Generate Plan"}
           </Button>
         </Box>
+
+        {loading && <Loader />}
 
         {travelPlan && (
           <Box sx={style2} className="travel-box">
