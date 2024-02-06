@@ -8,6 +8,7 @@ import AddIcon from "@mui/icons-material/Add";
 import CheckIcon from "@mui/icons-material/Check";
 import "./TravelModal.css";
 import OpenAI from "openai";
+import { itineraryParser } from "./itineraryParser";
 
 const openaiApiKey = import.meta.env.VITE_OPENAI_API_KEY;
 
@@ -50,19 +51,26 @@ const TravelModal = ({
 }) => {
   const [numTravelers, setNumTravelers] = useState("");
   const [numDays, setNumDays] = useState("");
-  const [additionalInfo, setAdditionalInfo] = useState("");
-  const [travelPlan, setTravelPlan] = useState("");
   const [loading, setLoading] = useState(false);
+  const [parsedPlan, setParsedPlan] = useState(null);
+  const [additionalInfo, setAdditionalInfo] = useState("");
+
 
   const handleGeneratePlan = async () => {
     setLoading(true);
+    setParsedPlan("Loading itinerary...");
     const response = await getGPTRequests(
       numDays,
       numTravelers,
       destination.name
     );
-    setTravelPlan(response.choices[0].message.content);
+    const travelPlan = itineraryParser(response.choices[0].message.content);
+    setParsedPlan(travelPlan);
+    // console.log("response", response);
+    // console.log("travelPlan", travelPlan);
+    // console.log("parsedPlan", parsedPlan);
     setLoading(false);
+
   };
 
   const isAdded =
@@ -117,17 +125,7 @@ const TravelModal = ({
             <Grid item xs={12} sm={6} md={4}>
               <Card>
                 <CardContent>
-                  <Typography variant="h6">Number of days</Typography>
-                  <TextField
-                    label="#"
-                    variant="outlined"
-                    margin="normal"
-                    size="small"
-                    fullWidth
-                    value={numDays}
-                    onChange={(event) => setNumDays(event.target.value)}
-                  />
-                  <Typography variant="subtitle2" style={{ marginTop: 15 }}>
+                  <Typography variant="subtitle2" >
                     Duration of the Trip
                   </Typography>
                   <TextField
@@ -136,6 +134,8 @@ const TravelModal = ({
                     margin="normal"
                     size="small"
                     fullWidth
+                    value={numDays}
+                    onChange={(event) => setNumDays(event.target.value)}
                   />
                 </CardContent>
               </Card>
@@ -152,19 +152,22 @@ const TravelModal = ({
             Generate Plan
           </Button>
 
-          <Button
-            variant="contained"
-            size="medium"
-            color="primary"
-            onClick={async () => {
-              const parsedItinerary = parseItinerary(travelPlan);
-              setGptResponse(parsedItinerary);
-            }}
-          >
-            retry
-          </Button>
+          {Array.isArray(parsedPlan) &&
+            parsedPlan.map((day, index) => (
+              <div key={index}>
+                <u> <h3>Day {day.dayTitle}</h3></u>
+                <ul>
+                  {day.activities.map((activity, activityIndex) => (
+                    <ul key={activityIndex}>
+                      <br></br>
+                      <strong>{activity.timeOfDay}</strong>{" "}
+                      {activity.description}
+                    </ul>
+                  ))}
+                </ul>
+              </div>
+            ))}
 
-          {travelPlan && <div>{travelPlan}</div>}
         </Box>
       </Box>
     </Modal>
