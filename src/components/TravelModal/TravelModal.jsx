@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Grid, Card, CardContent, TextField } from "@mui/material";
 import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
@@ -58,7 +58,6 @@ const TravelModal = ({
 
   const handleGeneratePlan = async () => {
     setLoading(true);
-    setParsedPlan("Loading itinerary...");
     const response = await getGPTRequests(
       numDays,
       numTravelers,
@@ -66,15 +65,33 @@ const TravelModal = ({
     );
     const travelPlan = itineraryParser(response.choices[0].message.content);
     setParsedPlan(travelPlan);
-    // console.log("response", response);
-    // console.log("travelPlan", travelPlan);
-    // console.log("parsedPlan", parsedPlan);
     setLoading(false);
 
   };
 
   const isAdded =
     addedToWishlist === true ? true : addedToWishlist[destination.name]?.added;
+
+
+  const Loader = () => {
+    const [text, setText] = useState('');
+    useEffect(() => {
+      const interval = setInterval(() => {
+        setText(prevText => {
+          if (prevText.length === 3) {
+            return ''; 
+          }
+          return prevText + '.'; 
+        });
+      }, 300);
+      return () => clearInterval(interval);
+    }, []);
+    return (
+      <h3>
+        Loading itinerary, please wait{text}
+      </h3>
+    );
+  };
 
   return (
     <Modal
@@ -152,6 +169,11 @@ const TravelModal = ({
             Generate Plan
           </Button>
 
+      
+          {/* {loading && <h3>Loading itinerary, please wait...</h3>} */}
+
+          {loading && <Loader />}
+
           {Array.isArray(parsedPlan) &&
             parsedPlan.map((day, index) => (
               <div key={index}>
@@ -168,10 +190,42 @@ const TravelModal = ({
               </div>
             ))}
 
+            <Grid item xs={12} sm={6} md={4} marginTop={3}>
+              <Card>
+                <CardContent>
+                  <Typography variant="subtitle2" >
+                    Additional Information
+                  </Typography>
+                  <TextField
+                    label="Add follow-up questions, preferences, etc. here..."
+                    variant="outlined"
+                    margin="normal"
+                    size="small"
+                    fullWidth
+                    value={additionalInfo}
+                    onChange={(event) => setAdditionalInfo(event.target.value)}
+                  />
+                </CardContent>
+              </Card>
+              <Box sx={{ marginTop: 3 }}>
+                <Button
+                  variant="contained"
+                  size="medium"
+                  color="primary"
+                  // onClick={}
+                >
+                  Regenerate
+                </Button>
+              </Box>
+            </Grid>
+
         </Box>
       </Box>
     </Modal>
   );
+  
+
+
 };
 
 export default TravelModal;
