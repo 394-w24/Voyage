@@ -16,6 +16,8 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
+import Select from "@mui/material/Select";
+import MenuItem from "@mui/material/MenuItem";
 import "./Login.css";
 
 const bgImages = [
@@ -24,7 +26,7 @@ const bgImages = [
   "https://raw.githubusercontent.com/Hongda-OSU/PicGo-2.3.1/master/imgjezael-melgoza-alY6_OpdwRQ-unsplash.jpg",
   "https://raw.githubusercontent.com/Hongda-OSU/PicGo-2.3.1/master/imgjorge-alcala-fbtHV94f-bA-unsplash.jpg",
   "https://raw.githubusercontent.com/Hongda-OSU/PicGo-2.3.1/master/imgtheodor-lundqvist-WHhbYArwFt8-unsplash.jpg",
-  "https://raw.githubusercontent.com/Hongda-OSU/PicGo-2.3.1/master/imgstefan-pflaum-ytZOB9FLIqk-unsplash.jpg"
+  "https://raw.githubusercontent.com/Hongda-OSU/PicGo-2.3.1/master/imgstefan-pflaum-ytZOB9FLIqk-unsplash.jpg",
 ];
 
 const Login = () => {
@@ -40,6 +42,52 @@ const Login = () => {
   const fillInTestAccount = () => {
     setEmail("test@example.com");
     setPassword("testpassword");
+  };
+
+  const fillInBlueAccount = () => {
+    setEmail("blue@gmail.com");
+    setPassword("123456");
+  };
+
+  const fillInGreenAccount = () => {
+    setEmail("green@gmail.com");
+    setPassword("123456");
+  };
+
+  const fillInPinkAccount = () => {
+    setEmail("pink@gmail.com");
+    setPassword("123456");
+  };
+
+  const fillInRedAccount = () => {
+    setEmail("red@gmail.com");
+    setPassword("123456");
+  };
+
+  const fillInYellowAccount = () => {
+    setEmail("yellow@gmail.com");
+    setPassword("123456");
+  };
+
+  const [accountType, setAccountType] = useState("");
+
+  const handleAccountTypeChange = (event) => {
+    const selectedAccountType = event.target.value;
+    setAccountType(selectedAccountType);
+    if (selectedAccountType === "beta") {
+      fillInTestAccount();
+    } else if (selectedAccountType === "blue") {
+      fillInBlueAccount();
+    } else if (selectedAccountType === "green") {
+      fillInGreenAccount();
+    } else if (selectedAccountType === "pink") {
+      fillInPinkAccount();
+    } else if (selectedAccountType === "red") {
+      fillInRedAccount();
+    } else if (selectedAccountType === "yellow") {
+      fillInYellowAccount();
+    }
+    // Add more cases if you have more account types
   };
 
   useEffect(() => {
@@ -150,14 +198,42 @@ const Login = () => {
               control={<Switch defaultChecked className="switch" />}
               label="Remember me"
             />
-            <Button
+            <Select
+              value={accountType}
+              onChange={handleAccountTypeChange}
+              displayEmpty
+              inputProps={{ "aria-label": "Without label" }}
+              variant="outlined"
+              className="account-type-select"
+              size="small"
+              sx={{
+                ".MuiOutlinedInput-notchedOutline": {
+                  border: "none",
+                },
+                ".MuiSelect-select": {
+                  color: "#007aff",
+                  fontSize: "0.825rem",
+                },
+              }}
+            >
+              <MenuItem value="" disabled>
+                Select Account
+              </MenuItem>
+              <MenuItem value="beta">Beta</MenuItem>
+              <MenuItem value="blue">Blue</MenuItem>
+              <MenuItem value="green">Green</MenuItem>
+              <MenuItem value="pink">Pink</MenuItem>
+              <MenuItem value="red">Red</MenuItem>
+              <MenuItem value="yellow">Yellow</MenuItem>
+            </Select>
+            {/* <Button
               variant="text"
               disableRipple
               className="beta-account-button"
               onClick={fillInTestAccount}
             >
               Use Beta Account
-            </Button>
+            </Button> */}
           </div>
           <div className="signin-container">
             <Button
